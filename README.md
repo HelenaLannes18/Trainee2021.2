@@ -1,6 +1,7 @@
-Trainee2021.2
+# Trainee2021.2
+
 Space-H
-Projeto Trainee, Code Jr, Grupo X, 2021.2
+Projeto Trainee, Code Jr, Grupo 6, 2021.2
 Desenvolvedores:
 * Mateus Alves
 * Pedro Souza
@@ -68,4 +69,4 @@ Adicionar alteração específica: git add arquivo-especifico
 Para mesclar sua branch com a master (estando dentro da sua branch): git merge main
 
 Para confirmar o merge: git push origin suabranch# Trainee2021.2
-# Trainee2021.2
+
