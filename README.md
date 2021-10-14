@@ -1,72 +1,74 @@
 # Trainee2021.2
+# Space-H
+## Projeto Trainee, Code Jr, Grupo 6, 2021.2
 
-Space-H
-Projeto Trainee, Code Jr, Grupo 6, 2021.2
 Desenvolvedores:
-* Mateus Alves
-* Pedro Souza
-* Maria Luiza Dornelas
-* Gustavo Dias
+- Mateus Alves
+- Pedro Souza
+- Maria Luiza Dornelas
+- Gustavo Dias
+
 
 Scrum Master:
 
-Helena Lannes
-GIT TUTORIAL
-Primeira configuração
-Pelo terminal entre na pasta onde irá guardar o projeto: cd /caminho/para/a/pasta, depois inicialize o git na pasta com o comando: git init
+- Helena Lannes
 
-Outro jeito de fazer o citado acima: clique com o botão direito na pasta e selecione "Git Bash Here" para abrir o terminal do git
+## GIT TUTORIAL
+### Primeira configuração
 
-Crie um clone do repositório: git clone link-para-o-repositorio
+- Pelo terminal entre na pasta onde irá guardar o projeto: cd /caminho/para/a/pasta, depois inicialize o git na pasta com o comando: git init 
 
-Entre na pasta criada pelo comando clone: cd /caminho/para/a/pasta/nova
+- Outro jeito de fazer o citado acima: clique com o botão direito na pasta e selecione "Git Bash Here" para abrir o terminal do git
 
-Crie sua branch usando como o padrão o nome da feature que você está a desenvolver: git checkout -b frontend_painel_adm
+- Crie um clone do repositório: git clone link-para-o-repositorio
 
-Após criada a branch você será redirecionado automaticamente a ela, neste espaço que você desenvolverá sua parte do projteto
+- Entre na pasta criada pelo comando clone: cd /caminho/para/a/pasta/nova
 
-Rotina
-Adicione as alterações feitas: git add .
+- Crie sua branch usando como o padrão o nome da feature que você está a desenvolver: git checkout -b frontend_painel_adm
 
-Cheque em qual branch está e quais alterações foram adicionadas: git status
+- Após criada a branch você será redirecionado automaticamente a ela, neste espaço que você desenvolverá sua parte do projteto
 
-Dê um commit com uma mensagem especificando as alterações realizadas: git commit -m "mensagem especificando o que foi feito"
+### Rotina
+- Adicione as alterações feitas: git add .
 
-Envie o commit feito para sua branch: git push origin suabranch
+- Cheque em qual branch está e quais alterações foram adicionadas: git status
 
-Quando estiver tudo prontinho
-Volte para a main: git checkout main
+- Dê um commit com uma mensagem especificando as alterações realizadas: git commit -m "mensagem especificando o que foi feito"
 
-Atualize a main: git pull
+- Envie o commit feito para sua branch: git push origin suabranch
 
-Volte para a sua branch: git checkout nomedabranch
+### Quando estiver tudo prontinho
+- Volte para a main: git checkout main
 
-Mescle a main com a sua branch : git merge main
+- Atualize a main: git pull
 
-Confirme o merge (apenas quando solicitado pelo Scrum Master): git push origin suabranch
+- Volte para a sua branch: git checkout nomedabranch
 
-Espera a confirmação do seu SCRUM
+- Mescle a main com a sua branch : git merge main
 
-Volte para a main: git checkout main
+- Confirme o merge (apenas quando solicitado pelo Scrum Master): git push origin suabranch
 
-Mescle a main com as alterações enviadas para sua branch (apenas quando solicitado pelo SM): git merge suabranch
+- Espera a confirmação do seu SCRUM 
 
-Confirme o merge (apenas quando solicitado pelo SM): git push origin main
+- Volte para a main: git checkout main
 
-Comandos básicos
-Para atualizar a main: git pull
+- Mescle a main com as alterações enviadas para sua branch (apenas quando solicitado pelo SM): git merge suabranch
 
-Para atualizar alguma branch: git pull origin branch
+- Confirme o merge (apenas quando solicitado pelo SM): git push origin main
 
-Ver informações da branch: git status
+### Comandos básicos
+- Para atualizar a main: git pull
 
-Para trocar de branch: git checkout branch_desejada
+- Para atualizar alguma branch: git pull origin branch
 
-Adicionar todas as alterações feitas: git add .
+- Ver informações da branch: git status
 
-Adicionar alteração específica: git add arquivo-especifico
+- Para trocar de branch: git checkout branch_desejada
 
-Para mesclar sua branch com a master (estando dentro da sua branch): git merge main
+- Adicionar todas as alterações feitas: git add .
 
-Para confirmar o merge: git push origin suabranch# Trainee2021.2
+- Adicionar alteração específica: git add arquivo-especifico
 
+- Para mesclar sua branch com a master (estando dentro da sua branch): git merge main
+
+- Para confirmar o merge: git push origin suabranch
