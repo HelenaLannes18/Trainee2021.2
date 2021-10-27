@@ -1,0 +1,39 @@
+html,body{
+    font-family: 'Squada One', cursive;
+    font-size: 0;
+    background-color: #000000;
+    text-align: justify;
+}
+hr{
+    margin-top:10px;
+    margin-bottom: 10px;
+
+}
+body{
+    padding-left: 3%;
+}
+.imagem_produto{
+    width: 25%;
+    border-radius: 100px;
+}
+.cla_e_prec{
+    float: right;
+    margin-right: 55%;
+}
+h2{
+    font-size: 35px;
+    font-weight: normal;
+    color: #4F0AD8;
+}
+p{
+    font-size: 22px;
+    color:#ffffff;
+}
+h1{
+    font-size: 50px;
+    color:#101820;
+    text-decoration: underline;
+}
+.desc_e_pa{
+    padding-right: 30%;
+}
