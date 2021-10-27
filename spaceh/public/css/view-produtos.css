@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+
 /*
     Reset
 */
@@ -5,10 +7,49 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;   
+    padding: 0;
+    font-family: 'Squada One', cursive;   
 }
 
 li, a, button {
     color: #000000;
     text-decoration: none;
+}
+
+.container {
+    max-width: 1140px;
+    margin: auto;
+}
+
+/*
+    Navbar
+*/
+
+.navbar {
+    width: 100vw;
+    height: 9.375rem;
+    border: 1px solid #000000;
+}
+
+/*
+    Ordering Area: Contains search and ordering
+*/
+
+.ordering-area {
+    width: 100%;
+    padding: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #8a8d8f;
+    font-size: 1.25rem;
+}
+
+#ordering__select {
+    padding: 5px;
+    font-size: 1.25rem;
+}
+
+#ordering__search-bar {
+    padding: 5px;
+    font-size: 1.25rem;
 }

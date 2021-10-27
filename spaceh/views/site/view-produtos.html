@@ -8,6 +8,27 @@
     <link rel="stylesheet" href="/spaceh/public/css/view-produtos.css">
 </head>
 <body>
+
+    <!-- Navbar -->
+    <div class="navbar"></div>
+
+    <div class="container">
+        <!-- Ordering Area: Contains search and ordering -->
+
+        <div class="ordering-area">
+            <div class="ordering__options">
+                <span>Ordenar:</span>
+                <select name="ordering-products" id="ordering__select">
+                    <option value="relevance">Relevância</option>
+                    <option value="category">Categoria</option>
+                    <option value="rising-price">Preço Crescente</option>
+                    <option value="decreasing-price">Preço Decrescente</option>
+                </select>
+            </div>
+            <input type="search" name="search-bar" id="ordering__search-bar" placeholder="Pesquisar">
+        </div>
+
+    </div>
     
 </body>
 </html>
