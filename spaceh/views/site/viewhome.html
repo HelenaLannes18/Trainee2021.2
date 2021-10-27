@@ -1,112 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Space-H | Tem espaço para tudo que procurar.</title>
-    <link rel="stylesheet" href="cssvh.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link href="cssvh.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
-    <div class="asidel">
+<!--Carousel-->
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <img src="imgh/slides 5.png" style="width:100%" >
+  <div class="text">Texto 1</div>
+</div>
+
+<div class="mySlides fade">
+  <img src="imgh/slides 6.png" style="width:100%">
+  <div class="text">Texto 2</div>
+</div>
+
+<div class="mySlides fade">
+  <img src="imgh/slides 2.png" style="width:100%">
+  <div class="text">Texto 3</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+
+<br>
+
+<div style="text-align:center" style="background-color: black;" >
+
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+/* script para o funcionamento do carrossel */
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+<!--Destaques-->
+
+<div class="center">
+  <div class="destaques">
+    <h1>Destaques</h1>
+    <hr>
+  </div>
+
+      <div class="background">
+
+        <div class="img-produto">
+
+          <img src="imgh/214337.png" href="#">
+
+          <h1>Nome</h1>
+          <h2>Preço</h2>
+          <h3>Categoria</h3>
+
+        </div>
+
+      </div>
+
+      <div class="background">
 
         
+        <div class="img-produto">
 
-    </div>
+          <img src="imgh/214337.png" href="#">
 
-    <div class="center">
-
-        <div class="destaques-da-semana">
-
-            <div class="title">
-
-                <h1>Destaques da Semana</h1>
-
-            </div>
-
-            <div class="carousel">
-
-                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="imgh/214337.png" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                          <h5>First slide label</h5>
-                          <p>Some representative placeholder content for the first slide.</p>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <img src="imgh/214337.png" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                          <h5>Second slide label</h5>
-                          <p>Some representative placeholder content for the second slide.</p>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <img src="imgh/214337.png" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                          <h5>Third slide label</h5>
-                          <p>Some representative placeholder content for the third slide.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
-
-            </div>
+          <h1>Nome</h1>
+          <h2>Preço</h2>
+          <h3>Categoria</h3>
 
         </div>
 
-        <div class="ofertas-da-semana">
+      </div>
 
-            <div class="title">
+      <div class="background">
 
-                <h1>Ofertas especiais</h1>
+        
+        <div class="img-produto">
 
-            </div>
+          <img src="imgh/214337.png" href="#">
 
-            <div class="imgofertas">
-
-            </div>
-
-        </div>
-
-        <div class="ultimos-produtos">
-
-            <div class="title">
-
-                <h1>Ultimos produtos</h1>
-
-            </div>
-
-            <div class="imgultimos">
-
-            </div>
+          <h1>Nome</h1>
+          <h2>Preço</h2>
+          <h3>Categoria</h3>
 
         </div>
 
-    </div>
-    
-    <div class="asider">
+      </div>
 
-    </div>
-    
+      <div class="background">
+
+        
+        <div class="img-produto">
+
+          <img src="imgh/214337.png" href="#">
+
+          <h1>Nome</h1>
+          <h2>Preço</h2>
+          <h3>Categoria</h3>
+
+        </div>
+  
+</div>
+  
+<!--Links para outras páginas-->
+
 </body>
 </html>
