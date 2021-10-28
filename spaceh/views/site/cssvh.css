@@ -9,9 +9,16 @@
 body {
 
   font-family: 'Squada One', cursive;
-  background-color: whitesmoke;
+  background-color: white;
 
 }
+
+a,button{
+
+  text-decoration: none;
+
+}
+
 .mySlides {
   
   display: none;
@@ -21,16 +28,15 @@ body {
 img {
   
   vertical-align: middle;
-  height: 65vh;
   
 }
 
 /* container do carrossel */
 
 .slideshow-container {
-  max-width: 100%;
+  max-width: 2000px;
   position: relative;
-  
+  margin: auto;
 }
 
 /* setinhas */
@@ -41,7 +47,7 @@ img {
   top: 50%;
   width: auto;
   padding: 16px;
-  margin-top: -22px;
+  margin-top: -2%;
   color: white;
   font-weight: bold;
   font-size: 18px;
@@ -132,8 +138,8 @@ img {
 .destaques{
   
   width: 10%;
-  text-align: center;
-  margin: auto;
+  text-align: left;
+  margin-left: 5%;
   color: #101820;
   margin-top: 2vh;
 
@@ -142,77 +148,17 @@ img {
 .destaque h1{
   
   color: #101820;
+  letter-spacing: 40px;
 
 }
 
 .destaques hr{
-
+  
   height: 0.5vh;
   background-color: #101820;
+  margin-right:23%;
 
 }
-
-.background{
-
-  margin-top: 2%;
-  background-color: #101820;
-  width: 21%;
-  display: inline-block;
-  margin-right: 1%;
-  margin-left: 1%;
-  height: 60vh;
-  border-radius: 1%;
-  color: white;
-  
-}
-
-.img-produto img{
-
-  border-radius: 1%;
-  margin-top: 2%;
-  width: 97%;
-  background-color: white;
-  height: 10%;
-  
-}
-
-.carousel-item {
-  height: 32rem;
-}
-.carousel-item > img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  height: 32rem;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* diminui o texto em telas menores */
@@ -223,4 +169,78 @@ img {
 
   }
   
+}
+
+@media (max-width:1200px){
+  
+  .background{
+  
+    margin-top: 2%;
+    background-color: #101820;
+    width: 21%;
+    display: block;
+  
+  }
+
+ 
+}
+
+.product {
+  width: 300px;
+  margin-top: 30px;
+  margin-right: 3% ;
+  margin-left:3%;
+  border-radius: 20px;
+  box-shadow: 0px 0px 12px rgb(0 0 0 / 25%);
+  overflow: hidden;
+  transition: all .3s linear;
+  display: inline-block;
+}
+
+.product:hover {
+  box-shadow: 0px 0px 6px #4f0ad8;
+  transform: scale(1.02);
+}
+
+.product__image {
+  width: 100%;
+  height: 230px;
+}
+
+.product__info {
+  padding: 0px 20px;
+  color: #101820;
+}
+
+.product__name {
+  padding: 15px 0px;
+  font-size: 1.875rem;
+}
+
+.product__price {
+  display: block;
+  font-size: 1.25rem;
+}
+
+.product__category {
+  padding: 10px;
+  margin: 10px 0px;
+  display: inline-block;
+  background-color: #8a8d8f;
+  border-radius: 20px;
+}
+
+.product__cta {
+  width: 100%;
+  padding: 15px 0px;
+  display: block;
+  color: #ffffff;
+  background-color: #4f0ad8;
+  font-size: 1.25rem;
+  border: none;
+  cursor: pointer;
+}
+
+.product__cta:hover {
+  background-color: #4f0ad8da;
 }
