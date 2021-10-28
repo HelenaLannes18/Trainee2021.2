@@ -74,19 +74,6 @@ img {
   background-color: rgba(0,0,0,0.8);
 }
 
-/* texto do carrossel */
-
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-  
-}
-
 /* as bolinhas */
 
 .dot {
@@ -137,18 +124,18 @@ img {
 
 .destaques{
   
-  width: 10%;
+  width: 100%;
   text-align: left;
   margin-left: 5%;
   color: #101820;
   margin-top: 2vh;
+  font-size: 40px;
 
 }
 
 .destaque h1{
   
   color: #101820;
-  letter-spacing: 40px;
 
 }
 
@@ -156,8 +143,7 @@ img {
   
   height: 0.5vh;
   background-color: #101820;
-  margin-right:23%;
-
+  max-width: 18.8%;
 }
 
 
@@ -168,21 +154,6 @@ img {
     font-size: 11px;
 
   }
-  
-}
-
-@media (max-width:1200px){
-  
-  .background{
-  
-    margin-top: 2%;
-    background-color: #101820;
-    width: 21%;
-    display: block;
-  
-  }
-
- 
 }
 
 .product {
