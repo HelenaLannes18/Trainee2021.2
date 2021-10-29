@@ -63,11 +63,9 @@ li, a, button {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
-    flex-wrap: wrap;
 }
 
 .product {
-    display: none;
     width: 300px;
     margin-bottom: 50px;
     border-radius: 20px;
@@ -122,4 +120,43 @@ li, a, button {
 
 .product__cta:hover {
     background-color: #4f0ad8da;
+}
+
+
+/*
+    Pagination
+*/
+
+.paginate {
+    margin: auto;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paginate--active {
+    color: #ffffff;
+    background-color: #4f0ad8;
+    border-radius: 50%;
+}
+
+.paginate__item {
+    padding: 15px;
+    cursor: pointer;
+} 
+
+#paginate__numbers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#paginate__numbers div {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
 }

@@ -1,7 +1,7 @@
-let produtosJson = [
+let productsJson = [
     {id:1, name:'Produto 1', img:'../../public/assets/1.png', price:99999, category:'Categoria 1'},
-    {id:3, name:'Produto 3', img:'../../public/assets/1.png', price:99999, category:'Categoria 3'},
-    {id:2, name:'Produto 2', img:'../../public/assets/1.png', price:99999, category:'Categoria 2'},
+    {id:2, name:'Produto 2', img:'../../public/assets/1.png', price:99999, category:'Categoria 3'},
+    {id:3, name:'Produto 3', img:'../../public/assets/1.png', price:99999, category:'Categoria 2'},
     {id:4, name:'Produto 4', img:'../../public/assets/1.png', price:99999, category:'Categoria 2'},
     {id:5, name:'Produto 5', img:'../../public/assets/1.png', price:99999, category:'Categoria 3'},
     {id:6, name:'Produto 6', img:'../../public/assets/1.png', price:99999, category:'Categoria 2'},
