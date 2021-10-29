@@ -60,12 +60,14 @@ li, a, button {
 
 .showcase-area {
     padding: 50px 0px 0px 0px;
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
     flex-wrap: wrap;
 }
 
 .product {
+    display: none;
     width: 300px;
     margin-bottom: 50px;
     border-radius: 20px;
