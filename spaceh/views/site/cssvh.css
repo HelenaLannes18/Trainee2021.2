@@ -125,27 +125,21 @@ img {
 .destaques{
   
   width: 100%;
-  text-align: left;
-  margin-left: 5%;
+  text-align: center;
   color: #101820;
   margin-top: 2vh;
   font-size: 40px;
+  margin-bottom: 2vh;
 
 }
 
-.destaque h1{
+.destaques h1{
   
   color: #101820;
+  text-decoration: underline;
+  font-weight: 100;
 
 }
-
-.destaques hr{
-  
-  height: 0.5vh;
-  background-color: #101820;
-  max-width: 18.8%;
-}
-
 
 /* diminui o texto em telas menores */
 @media only screen and (max-width: 100%) {
@@ -166,6 +160,7 @@ img {
   overflow: hidden;
   transition: all .3s linear;
   display: inline-block;
+  margin-bottom: 40px;
 }
 
 .product:hover {
