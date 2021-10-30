@@ -17,7 +17,7 @@ li, a, button {
 }
 
 .container {
-    max-width: 1140px;
+    max-width: 71.25rem;
     margin: auto;
     padding: 0px 20px;
 }
@@ -68,7 +68,7 @@ li, a, button {
 }
 
 .product {
-    width: 300px;
+    width: 18.75rem;
     margin-bottom: 50px;
     border-radius: 20px;
     box-shadow: 0px 0px 12px rgb(0 0 0 / 25%);
@@ -167,15 +167,15 @@ li, a, button {
     Responsive Layout
 */
 
-/* Less than 700px */
+/* Small */
 
-@media screen and (min-width: 300px) and (max-width: 700px) {
+@media screen and (max-width: 760px) {
     .container {
         width: 100%;
         margin: auto;
     }
     .navbar {
-        display: none;
+        width: 100%;
     }
 
     .ordering-area {
@@ -200,25 +200,31 @@ li, a, button {
     }
 
     .product {
-        width: 250px;
+        width: 17.5rem;
     }
 }
 
-/* Less than 1024px and more than 700px */
+/* Medium */
 
-@media screen and (min-width: 700px) and (max-width: 1024px) {
+@media screen and (min-width: 760px) and (max-width: 1200px) {
     .container {
         width: 100%;
         margin: auto;
     }
     .navbar {
-        display: none;
+        width: 100%;
     }
 
     .ordering-area {
         width: 100%;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        /* flex-direction: column;
+        align-items: center; */
+    }
+
+    .ordering-area span {
+        display: none;
     }
 
     .showcase-area {
@@ -228,6 +234,6 @@ li, a, button {
     }
 
     .product {
-        width: 300px;
+        width: 18.75rem;
     }
 }
