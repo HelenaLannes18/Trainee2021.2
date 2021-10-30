@@ -44,7 +44,6 @@ function productCards(item) {
     qS('.showcase-area').append(productDiv)
 }
 
-
 /*
     Pagination
 */
@@ -125,7 +124,6 @@ const productList = {
         let end = start + state.perPage;
 
         const paginatedItems = productsJson.slice(start, end);
-
         paginatedItems.forEach(productList.create)
     }
 }
@@ -184,7 +182,6 @@ function update() {
     buttons.update();
 }
 
-
 function init() {
     update()
     controls.createListeners();
@@ -192,4 +189,26 @@ function init() {
 
 init();
 
+
+/*
+    Search
+*/
+
+qS('#ordering__search-bar').addEventListener('keyup', ()=>{
+    const search = qS('#ordering__search-bar').value;
+
+    if(search.length > 0) {
+        qS('.showcase-area').innerHTML = "";
+
+        for(product of productsJson) {
+            if(product.name.toLowerCase().includes(search.toLowerCase())) {
+                productCards(product);
+            }
+        }
+
+    } else {
+        productList.update();
+    }
+
+});
 

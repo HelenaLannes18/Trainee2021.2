@@ -19,6 +19,7 @@ li, a, button {
 .container {
     max-width: 1140px;
     margin: auto;
+    padding: 0px 20px;
 }
 
 /*
@@ -45,6 +46,7 @@ li, a, button {
 }
 
 #ordering__select {
+    width: 200px;
     padding: 5px;
     font-size: 1.25rem;
 }
@@ -159,4 +161,73 @@ li, a, button {
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
+}
+
+/*
+    Responsive Layout
+*/
+
+/* Less than 700px */
+
+@media screen and (min-width: 300px) and (max-width: 700px) {
+    .container {
+        width: 100%;
+        margin: auto;
+    }
+    .navbar {
+        display: none;
+    }
+
+    .ordering-area {
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ordering-area span {
+        display: none;
+    }
+
+    #ordering__search-bar {
+        margin-top: 10px;
+    }
+
+    .showcase-area {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .product {
+        width: 250px;
+    }
+}
+
+/* Less than 1024px and more than 700px */
+
+@media screen and (min-width: 700px) and (max-width: 1024px) {
+    .container {
+        width: 100%;
+        margin: auto;
+    }
+    .navbar {
+        display: none;
+    }
+
+    .ordering-area {
+        width: 100%;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+
+    .showcase-area {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+    }
+
+    .product {
+        width: 300px;
+    }
 }

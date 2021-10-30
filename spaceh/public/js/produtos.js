@@ -1,4 +1,4 @@
-let productsJson = [
+const productsJson = [
     {id:1, name:'Produto 1', img:'../../public/assets/1.png', price:99999, category:'Categoria 1'},
     {id:2, name:'Produto 2', img:'../../public/assets/1.png', price:99999, category:'Categoria 3'},
     {id:3, name:'Produto 3', img:'../../public/assets/1.png', price:99999, category:'Categoria 2'},
