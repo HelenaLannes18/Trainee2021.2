@@ -125,6 +125,17 @@ const productList = {
 
         const paginatedItems = productsJson.slice(start, end);
         paginatedItems.forEach(productList.create)
+    },
+    updateWithSearch(searchContent) {
+        qS('.showcase-area').innerHTML = " ";
+
+        // calculate what elements must be shown in each page
+        let page = state.page - 1; // Arrays start on 0
+        let start = page * state.perPage;
+        let end = start + state.perPage;
+
+        const paginatedItems = searchContent.slice(start, end);
+        paginatedItems.forEach(productList.create)
     }
 }
 
@@ -194,21 +205,16 @@ init();
     Search
 */
 
-qS('#ordering__search-bar').addEventListener('keyup', ()=>{
-    const search = qS('#ordering__search-bar').value;
 
-    if(search.length > 0) {
-        qS('.showcase-area').innerHTML = "";
+const searchBar = qS('#ordering__search-bar');
 
-        for(product of productsJson) {
-            if(product.name.toLowerCase().includes(search.toLowerCase())) {
-                productCards(product);
-            }
-        }
+searchBar.addEventListener('keyup', (e) => {
+    const searchString = e.target.value.toLowerCase();
 
-    } else {
-        productList.update();
-    }
+    const filteredProducts = productsJson.filter((product) => {
+        return (product.name.toLowerCase().includes(searchString));
+    })
+
+    productList.updateWithSearch(filteredProducts);
 
 });
-
