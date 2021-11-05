@@ -78,9 +78,9 @@ html, body {
 }
 
 .teste {
-    position: absolute;
-    right: 140px;
-    bottom: 50px;
+  
+    margin-right: 4%;
+    text-align: center;
   
 }
 
@@ -91,88 +91,20 @@ h3 {
 
 }
 
-.img1 {
-    position: absolute;
-    display: flex;
-    margin:0px;
-    right: 340px;
-    bottom: 60px;
-    width: 20px;  
-   }
+.teste img{
 
-   .img2 {
-    position: absolute;
-    display: flex;
-    margin:0px;
-    right: 310px;
-    bottom: 100px;
-    width: 25px;  
-   }
+    max-width: 3%;
 
-   .img3 {
-    position: absolute;
-    display: flex;
-    margin:0px;
-    right: 335px;
-    bottom: 140px;
-    width: 25px;  
-   }
+}
 
-   @media( max-width: 998px)
-   {
-    .teste {
-        position: absolute;
-        right: 50px;
-        bottom: 50px;
-      
-    }
-    .img1 {
-        display: none;
-    }
-    .img2 {
-        display: none;
-    }
-    .img3 {
-        display: none;
-    }
-   }
-   
-   @media only screen and ( min-width: 646px) and (max-width: 768px)
-   {
-    .teste {
-        position: absolute;
-        right: 20px;
-        bottom: 50px;
-      
-    }
-    .img1 {
-        display: none;
-    }
-    .img2 {
-        display: none;
-    }
-    .img3 {
-        display: none;
-    }
-   }
+@media  (max-width: 425px){
 
-   @media  (max-width: 646px)
-   {
-    .teste {
-        display: none;
-      
+    .teste img{
+
+        max-width: 6%;
+    
     }
-    .img1 {
-        display: none;
-    }
-    .img2 {
-        display: none;
-    }
-    .img3 {
-        display: none;
-    }
-    img{
-        display: none;
-    }
-   }
+    
+
+}
    
