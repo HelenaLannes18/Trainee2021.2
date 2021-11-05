@@ -210,3 +210,11 @@ img {
 .product__cta:hover {
   background-color: #4f0ad8da;
 }
+
+@media (max-width: 425px) {
+
+  h1 {
+  font-size:34px;
+  }
+
+}
