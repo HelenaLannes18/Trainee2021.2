@@ -42,6 +42,7 @@ li, a, button {
 .dashboard__info {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin: 20px 0px;
 }
 
@@ -96,3 +97,14 @@ li, a, button {
     padding: 5px 0px;
 }
 
+.dashboard__profile li span {
+    color: red;
+}
+
+.dashboard__message {
+    width: calc(100% - 33.75rem);
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 10px;
+    text-align: center;
+    line-height: 2.3125rem;
+}
