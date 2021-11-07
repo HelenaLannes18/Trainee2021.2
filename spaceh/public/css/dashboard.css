@@ -95,6 +95,13 @@ li, a, button {
     width: 100%;
     font-size: 1.25rem;
     padding: 5px 0px;
+    margin: 5px 0px;
+    border-radius: 10px;
+}
+
+.dashboard__links li:hover,
+.dashboard__profile li:hover {
+    background-color: rgba(0, 0, 0, .1);
 }
 
 .dashboard__profile li span {
@@ -102,9 +109,40 @@ li, a, button {
 }
 
 .dashboard__message {
-    width: calc(100% - 33.75rem);
+    width: 100%;
+    margin-top: 20px;
     background-color: rgba(0, 0, 0, .1);
     border-radius: 10px;
     text-align: center;
     line-height: 2.3125rem;
+}
+
+/*
+    Responsive Layout
+*/
+
+/* Small */
+
+@media screen and (max-width: 760px) {
+    .container {
+        width: 100%;
+        margin: auto;
+    }
+    .navbar {
+        width: 100%;
+    }
+
+    .dashboard__info {
+        justify-content: space-between;
+    }
+
+    .info__button {
+        width: 40vw;
+    }
+
+    .dashboard__profile {
+        right: 0;
+        left: auto;
+    }
+
 }
