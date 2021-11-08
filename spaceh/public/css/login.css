@@ -1,0 +1,97 @@
+html,body{
+    font-family: 'Squada One', cursive;
+    font-size: 16px;
+    background-color: #ffffff;
+    
+    background-color: #fff;
+}
+
+.main_o{
+    
+    height: 80%;
+    width: 50%;
+    
+    margin: 10% 25% 10% 25%;
+    border: 7px groove #101820;
+    border-radius: 14px;
+    padding: 0;
+    background-color: #101820;
+}
+.main_i{
+    
+    text-align: center;
+    
+    border:12px solid #4f0ad8;
+    border-radius: 12px;
+    padding: 3% 3%;
+    background-color:#8a8d8f;
+
+
+}
+
+.l_logo{
+    width: 80%;
+    height: 100%;
+    padding: 0%;
+    margin-top: 3%;
+    margin-left: 2%;
+    margin-right: 2%;
+    text-align: center;
+
+
+}
+
+.info_box{
+    text-align: center;
+    padding-left: 2%;
+    padding-right: 2%;
+    text-align: left;
+
+}
+.info_box h1{
+    font-size: 30px;
+    line-height: 26px;
+    color: #4f0ad8;
+    margin-top: 15%;
+    margin-bottom: 0%;
+}
+.info_box p{
+    line-height: 24px;
+    font-size: 24px;
+}
+.blank_box{
+    border: 3px groove #101820;
+    background-color: #fff;
+}
+
+.login_button{
+    text-align: right;
+    margin-top: 5%;
+    margin-left: 60%;
+    padding: 0%;
+
+}
+.button_text{
+    text-align: center;
+    margin:15% 0% 15% 0%;
+    padding: 0;
+    border: 5px groove #101820;
+    border-radius: 15px;
+}
+.button_text {
+    
+    text-align:right;
+    font-size: 16px;
+    font-weight: 100;
+    
+}
+.button_text p{
+
+    text-align: center;
+    margin:0;
+    line-height: 35px;
+    font-size: 20px;
+    color: #4f0ad8;
+
+}
+
