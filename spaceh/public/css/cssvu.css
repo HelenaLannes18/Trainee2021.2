@@ -1,0 +1,50 @@
+*{
+    font-family: 'Squada One', cursive;
+    margin:0;
+    padding:0;
+}
+
+.titulo{
+
+    text-align: center;
+    text-decoration: underline;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    color: #101820;
+
+}
+.titulo h1{
+
+   font-size: 3rem;
+
+}
+
+thead{
+
+    font-size: 2rem;
+
+}
+.foto-tabela {
+    width: 100%;
+    
+}
+.linha-foto {
+    width: 20%;
+}
+
+
+.larguraEditar{
+    width: 15%;
+   
+}
+
+td{
+
+    font-size: 1.5rem ;
+    
+}
+#add{
+
+    align-items: left;
+
+}
