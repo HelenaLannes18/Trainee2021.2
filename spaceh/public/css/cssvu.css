@@ -32,6 +32,11 @@ thead{
     width: 20%;
 }
 
+.linha {
+    width: 20%;
+    
+}
+
 
 .larguraEditar{
     width: 15%;
@@ -41,10 +46,16 @@ thead{
 td{
 
     font-size: 1.5rem ;
+    text-align: center;
     
 }
-#add{
+.btn {
+    align-items: center;
+}
+.botao-adicionar{
+    display: flex;
+    justify-content: flex-end;
 
-    align-items: left;
-
+        animation-name: aparicao-lateral;
+        animation-duration: 1.5s;
 }
