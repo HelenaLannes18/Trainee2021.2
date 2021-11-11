@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+
+/*
+    Reset
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Squada One', cursive;   
+}
+
+li, a, button {
+    color: #000000;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 71.25rem;
+    margin: auto;
+    padding: 0px 20px;
+}
+
+/*
+    Navbar
+*/
+
+.navbar {
+    width: 100%;
+    height: 9.375rem;
+    border-bottom: 1px solid #000000;
+}
+
+
+/*
+    Header
+*/
+
+.products__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.header__title {
+    font-size: 1.8rem;
+
+}
+
+#products__search {
+    width: 50%;
+    padding: 0.625rem;
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+
+#products__search::placeholder {
+    font-size: 1rem;
+}
+
+.products__header button {
+    padding: 0.7rem;
+    color: #ffffff;
+    background-color: #4f0ad8;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+} 
+
+
+
+/*
+    Responsive Layout
+*/
+
+/* Small */
+
+@media screen and (max-width: 760px) {
+    .container {
+        width: 100%;
+        margin: auto;
+    }
+    .navbar {
+        width: 100%;
+    }
+
+    .products__header {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #products__search {
+        width: 100%;
+        margin: 10px 0px;
+    }
+
+    .products__header button {
+        width: 100%;
+    }
+
+
+}
+
+/* Medium */
+
+@media screen and (min-width: 760px) and (max-width: 1200px) {
+    .container {
+        width: 100%;
+        margin: auto;
+    }
+    .navbar {
+        width: 100%;
+    }
+
+}
