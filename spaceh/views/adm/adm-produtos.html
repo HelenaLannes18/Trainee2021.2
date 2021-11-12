@@ -18,10 +18,80 @@
         <div class="products__header">
             <h2 class="header__title">Lista de Produtos</h2>
             <input type="search" name="products__search" id="products__search" placeholder="Pesquise um produto" disabled>
-            <button>Adicionar Produto</button>
+            <button class="product__add button-animation">Adicionar Produto</button>
         </div>
+
+        <!-- Products List -->
+
+        <table class="products__table">
+            <tr class="table__header">
+                <th>Imagem</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+                <th>Categoria</th>
+                <th>Opções</th>
+            </tr>
+            <tr class="product__row">
+                <td class="product__image"><img src="../../public/assets/2.png" alt=""></td>
+                <td>Produto 1</td>
+                <td>Descrição Legal do produto</td>
+                <td>R$ 999.99</td>
+                <td>Categoria I</td>
+                <td>
+                    <a href="#"><button class="product__button button--view button-animation">Visualizar</button></a>
+                    <button class="product__button button--edit button-animation">Editar</button>
+                    <button class="product__button button--delete button-animation">Excluir</button>
+                </td>
+            </tr>
+        </table>
 
     </div>
 
+    <!-- Modal: Add Product-->
+
+    <div id ="modal__add__product" class="modal__container">
+        <div class="modal">
+            <button class="close__modal" id="close__modal">x</button>
+            <h3>Adicionar Produto</h3>
+            <form>
+                <input type="text" name="add-product__name" id="add-product__name" placeholder="Nome">
+                <input type="text" name="add-product__description" id="add-product__description" placeholder="Preço (R$)">
+                <input type="number" name="add-product__price" id="add-product__price" placeholder="Preço">
+                <input type="text" name="add-product__category" id="add-product__category" placeholder="Categoria">
+                <input type="button" value="Cadastrar Produto" class="button-animation">
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Edit Product-->
+
+    <div id ="modal__edit__product" class="modal__container">
+        <div class="modal">
+            <button class="close__modal" id="close__modal">x</button>
+            <h3>Editar Produto</h3>
+            <form>
+                <input type="text" name="edit-product__name" id="edit-product__name" placeholder="Nome">
+                <input type="text" name="edit-product__description" id="edit-product__description" placeholder="Preço (R$)">
+                <input type="number" name="edit-product__price" id="edit-product__price" placeholder="Preço">
+                <input type="text" name="edit-product__category" id="edit-product__category" placeholder="Categoria">
+                <input type="button" value="Salvar Alterações" class="button-animation">
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Edit Product-->
+
+    <div id ="modal__delete__product" class="modal__container">
+        <div class="modal">
+            <button class="close__modal" id="close__modal">x</button>
+            <h3>Deseja realmente excluir o produto da lista?</h3>
+            <button class="delete__product__modal button-animation" id="confirm-delete">Sim</button>
+            <button class="delete__product__modal button-animation" id="cancel-delete">Cancelar</button>
+        </div>
+    </div>
+
+
+    <script src="../../public/js/admProdutos.js"></script>
 </body>
 </html>
