@@ -15,74 +15,72 @@
 </head>
 <body>
 
-    <!--Título da Página-->
-    
-    <div class="titulo">
-        <h1>GESTÃO DE USUÁRIOS</h1>
-    </div>
+   <!-- TÍTULO DA PÁGINA -->
+   <h2 class="titulo-pagina mt-5"><b style="font-size: 4rem;">GESTÃO DE USUÁRIOS</b></h2>
+   <div class="linhaHorizontal mb-5"></div>
 
-    <!--Criando lista de usuários-->
-
-    <div class="lista-usuarios"style="width:85%;margin:0 auto;"style="position: relative;">
-      <!-- BOTÃO ADD -->
-<div class="container botao-adicionar mb-3 " data-toggle="modal" data-target="#modalAdicionar">
-  <button type="button"class="btn btn-info" style="width:20%;font-size:25px;color: white;background-color: #4f0ad8;border:none;position: relative;bottom: 10px;left: 1%;">Adicionar</button>
+<!-- BOTÃO ADICIONAR -->
+<div class="container botao-adicionar mb-3" data-toggle="modal" data-target="#modalAdicionar">
+   <button type="button" class="btn cor-botoes" style="background-color: #4f0ad8;color: white;font-size: 1.5rem;">Adicionar</button>
 </div>
 
-
-        <table class="table table-bordered table-hover shadow" style="border-color: #101820;">
-            <thead style="background-color: #4f0ad8;color: white;margin: auto;">
-              <tr>
-
-                    <th scope="col" class="linha-foto">Foto</th>
-                    <th scope="col" class="linha">Nome</th>
-                    <th scope="col" class="linha">Email</th>
-                    <th scope="col" class="linha">Senha</th>
-                    <th scope="col" class="larguraEditar">Editar</th>
-
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row"><img src="../../public/assets/imgvu/am1.png" class="img-thumbnail" alt="..."></th>
-                <td class="align-middle">Among Ciano</td>
-                <td class="align-middle">ciano@mail.com</td>
-                <td class="align-middle">daledele</td>
-                <td class="align-middle"><div class="btn-group" role="group" aria-label="Basic example">
-                  <button type="button" class="btn btn-primary"style="background-color: #8a8d8f;border:none">Editar</button>
-                  <button type="button" class="btn btn-primary"style="background-color: #4f0ad8;border:none">Excluir</button>
-                </div></td>
-              </tr>
-              <tr>
-                <th scope="row"><img src="../../public/assets/imgvu/am2.png" class="img-thumbnail" alt="..."></th>
-                <td class="align-middle">Among Rosa</td>
-                <td class="align-middle">rosa@mail.com</td>
-                <td class="align-middle">deradinho</td>
-                <td class="align-middle"><div class="btn-group" role="group" aria-label="Basic example">
-                  <button type="button" class="btn btn-primary"style="background-color: #8a8d8f;border:none">Editar</button>
-                  <button type="button" class="btn btn-primary"style="background-color: #4f0ad8;border:none">Excluir</button>
-                </div></td>
-              </tr>
-              <tr>
-                <th scope="row"><img src="../../public/assets/imgvu/am3.png" class="img-thumbnail" alt="..."></th>
-                <td class="align-middle">Among Azul</td>
-                <td class="align-middle">azul@mail.com</td>
-                <td class="align-middle">vrewvrew</td>
-                <td class="align-middle"><div class="btn-group" role="group" aria-label="Basic example">
-                  <button type="button" class="btn btn-primary"style="background-color: #8a8d8f;border:none">Editar</button>
-                  <button type="button" class="btn btn-primary" style="background-color: #4f0ad8;border:none">Excluir</button>
-                </div></td>
-              </tr>
-              
-            </tbody>
+<!-- CONTEÚDO PRINCIPAL -->
+   <div class="container table-responsive conteudo-principal mb-5">
+       <table class="table table-bordered table-hover shadow">
+           <thead>
+           <tr>
+               <th scope="col"class="titulo-tabela linha-foto"style="background-color:#4f0ad8;">Foto</th>
+               <th scope="col"class="titulo-tabela"style="background-color:#4f0ad8;">Nome</th>
+               <th scope="col"class="titulo-tabela colunasInvisiveis"style="background-color:#4f0ad8;">Email</th>
+               <th scope="col"class="titulo-tabela colunasInvisiveis"style="background-color:#4f0ad8;">Senha</th>
+               <th scope="col"class="titulo-tabela larguraAcao"style="background-color:#4f0ad8;">Ação</th>
+           </tr>
+           </thead>
+           <tbody>
            
-          </table>
+           <tr>
+               <th scope="row"><img src="../../public/assets/imgvu/am2.png" alt="Foto do Usuário" class="foto-tabela"></th>
+               <td class="align-middle">Amonguinho da Silva</td>
+               <td class="align-middle colunasInvisiveis">silva@mail.com</td>
+               <td class="align-middle colunasInvisiveis">daledele</td>
+               <td class="align-middle">
+                   <div class="btn-group d-flex justify-content-center" role="group">
+                       <button type="button" class="btn btn-success border" data-toggle="modal" data-target="#modalEditar">Editar<i class="fa fa-pencil" aria-hidden="true"></i></button>
+                       <button type="button" class="btn btn-danger border" data-toggle="modal" data-target="#modalExcluir">Excluir<i class="fa fa-trash" aria-hidden="true"></i></button>
+                   </div>        
+               </td>
+           </tr>
 
-          <div class="d-grid gap-2 col-3 mx-auto"id="edit" style="width:100%;margin:2% 0;height:6vh">
-            <button class="btn btn-primary" type="button" style="background-color:#4f0ad8;font-size: 25px;border:none">Editar usuários</button>
-          </div>
+           <tr>
+            <th scope="row"><img src="../../public/assets/imgvu/am3.png" alt="Foto do Usuário" class="foto-tabela"></th>
+            <td class="align-middle">Amonguinho Dias</td>
+            <td class="align-middle colunasInvisiveis">dias@mail.com</td>
+            <td class="align-middle colunasInvisiveis">daledele</td>
+            <td class="align-middle">
+                <div class="btn-group d-flex justify-content-center" role="group">
+                    <button type="button" class="btn btn-success border" data-toggle="modal" data-target="#modalEditar">Editar<i class="fa fa-pencil" aria-hidden="true"></i></button>
+                    <button type="button" class="btn btn-danger border" data-toggle="modal" data-target="#modalExcluir">Excluir<i class="fa fa-trash" aria-hidden="true"></i></button>
+                </div>        
+            </td>
+        </tr>
 
-    </div>
+        <tr>
+          <th scope="row"><img src="../../public/assets/imgvu/am1.png" alt="Foto do Usuário" class="foto-tabela"></th>
+          <td class="align-middle">Amonguinho Júnior</td>
+          <td class="align-middle colunasInvisiveis">junior@mail.com</td>
+          <td class="align-middle colunasInvisiveis">daledele</td>
+          <td class="align-middle">
+              <div class="btn-group d-flex justify-content-center" role="group">
+                  <button type="button" class="btn btn-success border" data-toggle="modal" data-target="#modalEditar">Editar<i class="fa fa-pencil" aria-hidden="true"></i></button>
+                  <button type="button" class="btn btn-danger border" data-toggle="modal" data-target="#modalExcluir">Excluir<i class="fa fa-trash" aria-hidden="true"></i></button>
+              </div>        
+          </td>
+      </tr>
+          
+           </tbody>
+       </table>
+   </div>
+
 
 </body>
 </html>
