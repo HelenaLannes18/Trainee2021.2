@@ -1,33 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Squada+One&display=swap");
 
 /*
     Reset
 */
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Squada One', cursive;   
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Squada One", cursive;
 }
 
-li, a, button {
-    color: #000000;
-    text-decoration: none;
+li,
+a,
+button {
+  color: #000000;
+  text-decoration: none;
 }
 
 .container {
-    max-width: 71.25rem;
-    margin: auto;
-    padding: 0px 20px;
+  max-width: 71.25rem;
+  margin: auto;
+  padding: 0px 20px;
 }
 
 .button-animation {
-    transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
 }
 
 .button-animation:hover {
-    box-shadow: 0px 0px 4px #000000;
+  box-shadow: 0px 0px 4px #000000;
 }
 
 /*
@@ -35,210 +37,208 @@ li, a, button {
 */
 
 .navbar {
-    width: 100%;
-    height: 9.375rem;
-    border-bottom: 1px solid #000000;
+  width: 100%;
+  height: 9.375rem;
+  border-bottom: 1px solid #000000;
 }
-
 
 /*
     Header
 */
 
 .products__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
 }
 
 .header__title {
-    font-size: 1.8rem;
-
+  font-size: 1.8rem;
 }
 
 #products__search {
-    width: 50%;
-    padding: 0.625rem;
-    border: 1px solid #000000;
-    border-radius: 10px;
+  width: 50%;
+  padding: 0.625rem;
+  border: 1px solid #000000;
+  border-radius: 10px;
 }
 
 #products__search::placeholder {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 .products__header button {
-    padding: 0.7rem;
-    color: #ffffff;
-    background-color: #4f0ad8;
-    font-size: 1rem;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-} 
+  padding: 0.7rem;
+  color: #ffffff;
+  background-color: #4f0ad8;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
 
 /*
     Products List
 */
 
 .products__table {
-    width: 100%;
-    table-layout: fixed;
-    text-align: center;
-    font-size: 1.3rem;
+  width: 100%;
+  table-layout: fixed;
+  text-align: center;
+  font-size: 1.3rem;
 }
 
 .products__table td {
-    border: 1px solid #8a8d8f;
+  border: 1px solid #8a8d8f;
 }
 
 .table__header {
-    color: #ffffff;
-    background-color: #4f0ad8;
-    font-size: 1.5rem;
-    text-shadow: 2px 2px 1px #000000;
+  color: #ffffff;
+  background-color: #4f0ad8;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 1px #000000;
 }
 
 .table__header th {
-    padding: 10px;
+  padding: 10px;
 }
 
 .product__image img {
-    width: 100%;
+  width: 100%;
+  margin-top: 5px;
 }
 
 .product__button {
-    width: 60%;
-    display: block;
-    padding: 0.625rem;
-    margin: 10px auto;
-    color: #ffffff;
-    font-size: 1rem;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
+  width: 60%;
+  display: block;
+  padding: 0.625rem;
+  margin: 10px auto;
+  color: #ffffff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .button--view {
-    background-color: #4f0ad8;
+  background-color: #4f0ad8;
 }
 
 .button--edit {
-    background-color: #101820;
+  background-color: #101820;
 }
 
 .button--delete {
-    background-color: #ff0000;
+  background-color: #ff0000;
 }
-
 
 /*
     Modal
 */
 
 .modal__container {
-    width: 100vw;
-    height: 100vh;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, .5);
-    z-index: 2000;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
 }
 
 .modal__container.show {
-    display: flex;
+  display: flex;
 }
 
 .modal {
-    width: 60%;
-    min-width: 300px;
-    padding: 10px 0px;
-    position: relative;
-    background-color: #ffffff;
-    text-align: center;
-    font-size: 1.3rem;
-    border-radius: 20px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+  width: 60%;
+  max-width: 800px;
+  min-width: 300px;
+  padding: 10px 0px;
+  position: relative;
+  background-color: #ffffff;
+  text-align: center;
+  font-size: 1.3rem;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes modal {
-    from {
-        opacity: 0;
-        transform: translate3d(0, -60px, 0);
-    }
-    to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
+  from {
+    opacity: 0;
+    transform: translate3d(0, -60px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 .show .modal {
-    animation: modal .3s;
+  animation: modal 0.3s;
 }
 
 .close__modal {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    color: #ffffff;
-    background-color: #4f0ad8;
-    font-size: 1.5rem;
-    border-radius: 50%;
-    border: 4px solid #ffffff;
-    box-shadow: 0px 4px 5px rgba(0, 0, 0, .3);
-    cursor: pointer;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  color: #ffffff;
+  background-color: #4f0ad8;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
 
 .modal form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal input {
-    width: 40%;
-    padding: .8rem;
-    margin: 10px 0px;
-    font-size: 1.2rem;
+  width: 40%;
+  padding: 0.8rem;
+  margin: 10px 0px;
+  font-size: 1.2rem;
 }
 
 .modal input[type="button"] {
-    color: #ffffff;
-    background-color: #4f0ad8;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
+  color: #ffffff;
+  background-color: #4f0ad8;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 .delete__product__modal {
-    width: 40%;
-    display: block;
-    padding: .6rem;
-    margin: 20px auto;
-    color: #ffffff;
-    font-size: 1.3rem;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
+  width: 40%;
+  display: block;
+  padding: 0.6rem;
+  margin: 20px auto;
+  color: #ffffff;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 #confirm-delete {
-    background-color: #4f0ad8;
+  background-color: #4f0ad8;
 }
 
 #cancel-delete {
-    background-color: #ff0000;
+  background-color: #ff0000;
 }
-
 
 /*
     Responsive Layout
@@ -247,41 +247,88 @@ li, a, button {
 /* Small */
 
 @media screen and (max-width: 760px) {
-    .container {
-        width: 100%;
-        margin: auto;
-    }
-    .navbar {
-        width: 100%;
-    }
+  .container {
+    width: 100%;
+    margin: auto;
+  }
+  .navbar {
+    width: 100%;
+  }
 
-    .products__header {
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-    }
+  .products__header {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    #products__search {
-        width: 100%;
-        margin: 10px 0px;
-    }
+  #products__search {
+    width: 100%;
+    margin: 10px 0px;
+  }
 
-    .products__header button {
-        width: 100%;
-    }
+  .products__header button {
+    width: 100%;
+  }
 
+  .table__header {
+    display: none;
+  }
 
+  table,
+  table tbody,
+  table tr,
+  table td {
+    display: block;
+    width: 100%;
+  }
+
+  table tr {
+    margin-bottom: 15px;
+  }
+
+  table td {
+    text-align: center;
+    padding-right: 15px;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    padding-left: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .product__image img {
+    width: 100%;
+  }
+
+  /*
+        Modal
+    */
+
+  .modal input {
+    width: 90%;
+  }
 }
 
-/* Medium */
-
 @media screen and (min-width: 760px) and (max-width: 1200px) {
-    .container {
-        width: 100%;
-        margin: auto;
-    }
-    .navbar {
-        width: 100%;
-    }
+  .container {
+    width: 100%;
+    margin: auto;
+  }
+  .navbar {
+    width: 100%;
+  }
 
+  .product__button {
+    width: 80%;
+  }
 }
