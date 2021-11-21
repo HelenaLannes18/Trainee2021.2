@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,23 +11,49 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
-
     <title>Usuários</title>
+
 </head>
 <body>
 
-   <!-- TÍTULO DA PÁGINA -->
+<!-- TÍTULO DA PÁGINA -->
    <h2 class="titulo-pagina mt-5"><b style="font-size: 4rem;">GESTÃO DE USUÁRIOS</b></h2>
    <div class="linhaHorizontal mb-5"></div>
 
 <!-- BOTÃO ADICIONAR -->
-<div class="container botao-adicionar mb-3" data-toggle="modal" data-target="#modalAdicionar">
-   <button type="button" class="btn cor-botoes" style="background-color: #4f0ad8;color: white;font-size: 1.5rem;">Adicionar</button>
-</div>
+    <div class="container botao-adicionar mb-3" data-toggle="modal" data-target="#modalAdicionar">
+      <button type="button" class="btn cor-botoes" style="background-color: #4f0ad8;color: white;font-size: 1.5rem;">Adicionar</button>
+    </div>
+      <!-- Modal -->
+        <div class="modal fade" id="modalAdicionar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Adicionar novo produto</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                          <label for="formGroupExampleInput">Nome do Produto</label>
+                          <input type="text" class="form-control" id="formGroupExampleInput">
+                        </div>
+                      </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="fechar" data-dismiss="modal">Fechar</button>
+                  <button type="button" class="salvar">Salvar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
 
 <!-- CONTEÚDO PRINCIPAL -->
    <div class="container table-responsive conteudo-principal mb-5">
-       <table class="table table-bordered table-hover shadow">
+       <table class="table table-bordered table-hover shadow" style="border: 1px #101820;">
            <thead>
            <tr>
                <th scope="col"class="titulo-tabela linha-foto"style="background-color:#4f0ad8;">Foto</th>
@@ -81,6 +108,7 @@
        </table>
    </div>
 
+    
 
 </body>
 </html>
