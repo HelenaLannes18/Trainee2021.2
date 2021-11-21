@@ -93,3 +93,13 @@ tr:hover{
 
     
 }
+
+.finalizar{
+    
+    font-size: 1.3rem;
+    color: white;
+    background-color: #4f0ad8;
+    border-radius: 6%;
+    border: 1px solid #101820;
+
+}

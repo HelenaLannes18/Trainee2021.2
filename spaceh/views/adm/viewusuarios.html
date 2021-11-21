@@ -11,6 +11,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <title>Usuários</title>
 
 </head>
@@ -46,8 +50,8 @@
                <td class="align-middle colunasInvisiveis">daledele</td>
                <td class="align-middle">
                    <div class="btn-group d-flex justify-content-center" role="group">
-                       <button type="button" class="btn btn-success border" data-toggle="modal" data-target="#modalEditar">Editar<i class="fa fa-pencil" aria-hidden="true"></i></button>
-                       <button type="button" class="btn btn-danger border" data-toggle="modal" data-target="#modalExcluir">Excluir<i class="fa fa-trash" aria-hidden="true"></i></button>
+                       <button type="button" class="btn btn-success border" data-toggle="modal" data-target="#modalEditarUser">Editar<i class="fa fa-pencil" aria-hidden="true"></i></button>
+                       <button type="button" class="btn btn-danger border" data-toggle="modal" data-target="#modalExcluirUser">Excluir<i class="fa fa-trash" aria-hidden="true"></i></button>
                    </div>        
                </td>
            </tr>
@@ -59,8 +63,8 @@
             <td class="align-middle colunasInvisiveis">daledele</td>
             <td class="align-middle">
                 <div class="btn-group d-flex justify-content-center" role="group">
-                    <button type="button" class="btn btn-success border" data-toggle="modal" data-target="#modalEditar">Editar<i class="fa fa-pencil" aria-hidden="true"></i></button>
-                    <button type="button" class="btn btn-danger border" data-toggle="modal" data-target="#modalExcluir">Excluir<i class="fa fa-trash" aria-hidden="true"></i></button>
+                    <button type="button" class="btn btn-success border" data-toggle="modal" data-target="#modalEditarUser">Editar<i class="fa fa-pencil" aria-hidden="true"></i></button>
+                    <button type="button" class="btn btn-danger border" data-toggle="modal" data-target="#modalExcluirUser">Excluir<i class="fa fa-trash" aria-hidden="true"></i></button>
                 </div>        
             </td>
         </tr>
@@ -72,39 +76,120 @@
           <td class="align-middle colunasInvisiveis">daledele</td>
           <td class="align-middle">
               <div class="btn-group d-flex justify-content-center" role="group">
-                  <button type="button" class="btn btn-success border" data-toggle="modal" data-target="#modalEditar">Editar<i class="fa fa-pencil" aria-hidden="true"></i></button>
-                  <button type="button" class="btn btn-danger border" data-toggle="modal" data-target="#modalExcluir">Excluir<i class="fa fa-trash" aria-hidden="true"></i></button>
+                  <button type="button" class="btn btn-success border" data-toggle="modal" data-target="#modalEditarUser">Editar<i class="fa fa-pencil" aria-hidden="true"></i></button>
+                  <button type="button" class="btn btn-danger border" data-toggle="modal" data-target="#modalExcluirUser">Excluir<i class="fa fa-trash" aria-hidden="true"></i></button>
               </div>        
           </td>
       </tr>
-          
-      
 
-    <!-- Modal -->
-    <div class="modal fade" id="modalAdicionarUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Adicionar Novo Usuario</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <form>
-                <div class="form-group">
-                  <label for="formGroupExampleInput">Nome do Usuario</label>
-                  <input type="text" class="form-control" id="formGroupExampleInput">
-                </div>
-              </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="fechar" data-dismiss="modal">Fechar</button>
-          <button type="button" class="salvar">Salvar</button>
+    <!-- Modal Adicionar -->
+      <div class="modal fade" id="modalAdicionarUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Adicionar novo usuário</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                      <label for="formGroupExampleInput">Nome de Usuário</label>
+                      <input type="text" class="form-control" id="formGroupExampleInput">
+                    </div>
+                    <div class="form-group">
+                      <label for="formGroupExampleInput">Email</label>
+                      <input type="text" class="form-control" id="formGroupExampleInput">
+                    </div>
+                    <div class="form-group">
+                      <label for="formGroupExampleInput">Senha</label>
+                      <input type="text" class="form-control" id="formGroupExampleInput">
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-3">Enviar foto:</label>
+                      <div class="col-xs-3">
+                        <input type="file" name="profilepic" />
+                      </div>
+                    </div>
+
+                  </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="finalizar" data-dismiss="modal">Fechar</button>
+              <button type="button" class="finalizar">Salvar</button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+
+    <!-- Modal Editar -->
+      <div class="modal fade" id="modalEditarUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Editar usuário</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                      <label for="formGroupExampleInput">Nome de Usuário</label>
+                      <input type="text" class="form-control" id="formGroupExampleInput">
+                    </div>
+                    <div class="form-group">
+                      <label for="formGroupExampleInput">Email</label>
+                      <input type="text" class="form-control" id="formGroupExampleInput">
+                    </div>
+                    <div class="form-group">
+                      <label for="formGroupExampleInput">Senha</label>
+                      <input type="text" class="form-control" id="formGroupExampleInput">
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-3">Enviar foto:</label>
+                      <div class="col-xs-3">
+                        <input type="file" name="profilepic" />
+                      </div>
+                    </div>
+    
+                  </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="finalizar" data-dismiss="modal">Fechar</button>
+              <button type="button" class="finalizar">Salvar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Modal Excluir -->
+      <div class="modal fade" id="modalExcluirUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Excluir usuário</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                      <label for="formGroupExampleInput">Tem certeza de que quer excluir esse usuário?</label>
+                      
+                    </div>
+                  </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="finalizar" data-dismiss="modal" style="background-color: rgb(220, 53, 69);font-size: 1.3rem;border-radius: 6%;">Excluir</button>
+              <button type="button" class="finalizar" data-dismiss="modal">Fechar</button>
+              <button type="button" class="finalizar">Salvar</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
