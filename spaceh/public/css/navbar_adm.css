@@ -1,0 +1,43 @@
+.personalizada-navbar{
+    background-color: #8a8d8f;
+    border-width: 1px;
+    border-style: groove;
+    border-color: #8a8d8f;
+
+}
+ 
+/*.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+*/
+.btn-outline-success{
+    background-color: transparent;
+    border-color: #4f0ad8;
+    color: #4f0ad8;
+}
+.btn-outline-success:hover {
+    background-color: #4f0ad8;
+    border-color: #4f0ad8;
+    color: #fff;
+}
+a{
+    color: #4f0ad8;
+}
+.drop-custom{
+    color: #000;
+}
+.drop-custom:hover{
+    color: #101820;
+}
+.dropdown-item{
+    background-color: #8a8d8f;
+    color: #4f0ad8;
+}
+.dropdown-item:hover{
+    background-color: #101820;
+    color:#fff;
+
+}
+.dropdown-menu{
+    background-color: #4f0ad8;
+}
