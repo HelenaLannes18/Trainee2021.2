@@ -1,0 +1,41 @@
+.navbar-brand {
+    text-decoration: none;
+    color: white !important;
+    font-family: 'Squada One', cursive;
+    font-size: 33px;
+    margin-left: 40px;
+}
+
+.nav-tops a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Squada One', cursive;
+    margin-left: 28px;
+    font-size: 25px;
+    text-transform: uppercase;
+    position: relative;
+    left: 437px;
+    right: 437px;
+
+}
+
+.d-flex input {
+    width: 250px;
+    height: 30px;
+    background-image: url('../assets/img_navbar/icon-search.png');
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: center;
+}
+
+.container-fluid img {
+    margin-left: 60px;
+}
+
+@media screen and (max-width: 600px) {
+    .nav-tops a{
+     left:0px;
+     
+     }
+     
+ }
