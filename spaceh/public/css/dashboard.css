@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+
+/*
+    Reset
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Squada One', cursive;   
+}
+
+li, a, button {
+    background-color: transparent;
+    color: #000000;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+}
+
+.container {
+    max-width: 71.25rem;
+    margin: auto;
+    padding: 0px 20px;
+}
+
+/*
+    Navbar
+*/
+
+.navbar {
+    width: 100%;
+    height: 9.375rem;
+    border-bottom: 1px solid #000000;
+}
+
+/*
+    Dashboard info: Contains links and profile
+*/
+
+.dashboard__info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 20px 0px;
+}
+
+.info__button {
+    width: 16.875rem;
+    padding: 5px 0px;
+    background-color: #4f0ad8;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 1.5625rem;
+    text-align: center;
+}
+
+.dropdown.active > .info__button,
+.info__button:hover {
+    background-color: rgba(79, 10, 216, .9);
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dashboard__links,
+.dashboard__profile {
+    width: 16.875rem;
+    padding: 12px;
+    position: absolute;
+    left: 0;
+    top: calc(100% + .5rem);
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px 2px rgba(0, 0, 0, .1);
+    opacity: 0;
+    pointer-events: none;
+    text-align: center;
+    transform: translateY(-10px);
+    transition: all 150ms ease-in-out;
+}
+
+.dropdown.active > .info__button + .dashboard__links,
+.dropdown.active > .info__button + .dashboard__profile {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.dashboard__links li,
+.dashboard__profile li {
+    width: 100%;
+    font-size: 1.25rem;
+    padding: 5px 0px;
+    margin: 5px 0px;
+    border-radius: 10px;
+}
+
+.dashboard__links li:hover,
+.dashboard__profile li:hover {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.dashboard__profile li span {
+    color: red;
+}
+
+.dashboard__message {
+    width: 100%;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 10px;
+    text-align: center;
+    line-height: 2.3125rem;
+}
+
+/*
+    Responsive Layout
+*/
+
+/* Small */
+
+@media screen and (max-width: 760px) {
+    .container {
+        width: 100%;
+        margin: auto;
+    }
+    .navbar {
+        width: 100%;
+    }
+
+    .dashboard__info {
+        justify-content: space-between;
+    }
+
+    .info__button {
+        width: 40vw;
+    }
+
+    .dashboard__profile {
+        right: 0;
+        left: auto;
+    }
+
+}
