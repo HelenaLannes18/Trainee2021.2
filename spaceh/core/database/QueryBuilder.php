@@ -2,6 +2,7 @@
 
 namespace App\Core\Database;
 
+use Exception;
 use PDO;
 
 class QueryBuilder
@@ -9,38 +10,57 @@ class QueryBuilder
     protected $pdo;
 
 
-    public function __construct()
+    public function selectAll($table)
     {
+      $statement = $this->pdo->prepare("select * from {$table}");
+
+      $statement->execute();
+
+      return $statement->fetchAll(PDO::FETCH_CLASS);
     
     }
 
-    public function selectAll()
+    public function adicionaCategorias ($table, $parametros)
     {
-      
+        $sql = "INSERT INTO '{$table}' ('categoria') VALUES ('{$parametros['categoria']}'";
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+
+            $stmt->execute();
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
     }
 
-    public function select()
-    {
 
+    public function delete($table, $id)
+    {
+        $sql = "DELETE FROM '{$table}' WHERE id = {$id}";
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+
+            $stmt->execute();
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        } 
     }
 
-    public function insert()
+    public function editCategorias($table, $parametros, $id)
     {
-      
-    }
+        $sql = "UPDATE `{$table}` SET 'categorias'='{$parametros['categoria']}'";
 
-    public function edit()
-    {
-         
-    }
+        try {
+            $stmt = $this->pdo->prepare($sql);
 
-    public function delete()
-    {
-      
-    }
+            $stmt->execute();
 
-    public function read()
-    {
-      
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+
     }
 }
