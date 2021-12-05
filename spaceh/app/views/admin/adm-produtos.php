@@ -9,8 +9,8 @@
   </head>
 
   <body>
-    <!-- Navbar: will be changed later for the real navbar -->
-    <div class="navbar"></div>
+    <!-- Navbar -->
+    <?php include('../includes/navbar_administrativa.php'); ?>
 
     <div class="container">
       <!-- Products Header: Contains search bar and add button -->
