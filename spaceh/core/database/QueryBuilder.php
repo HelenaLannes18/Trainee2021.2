@@ -9,16 +9,22 @@ class QueryBuilder
 {
     protected $pdo;
 
+    public function __construct(PDO $pdo) {
+        $this->pdo = $pdo;
+    } 
 
     public function selectAll($table)
     {
-      $statement = $this->pdo->prepare("select * from {$table}");
+    
+        $statement = $this->pdo->prepare("select * from {$table}");
 
-      $statement->execute();
+        $statement->execute();
 
-      return $statement->fetchAll(PDO::FETCH_CLASS);
+        return $statement->fetchAll(PDO::FETCH_CLASS);
     
     }
+
+    // Funções Categorias
 
     public function adicionaCategorias ($table, $parametros)
     {
@@ -63,4 +69,21 @@ class QueryBuilder
         }
 
     }
+
+    // Funções de Produtos
+    public function insereProdutos($table, $parametros)
+    {
+        $sql = "INSERT INTO {$table} (nome,descricao,preco,categoria,foto) VALUES ('{$parametros['nome']}','{$parametros['descricao']}','{$parametros['preco']}','{$parametros['categoria']}','{$parametros['foto']}')";
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+
+            $stmt->execute();
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+
 }

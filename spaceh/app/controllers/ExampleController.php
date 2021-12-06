@@ -9,7 +9,7 @@ class CategoriasController
 {
     public function view()
     {
-        $categorias = App::get('databse')->selectAll('categorias');
+        $categorias = App::get('database')->selectAll('categorias');
 
         return categorias('categorias',compact('categorias'));
     }
@@ -44,8 +44,41 @@ class CategoriasController
     }
 }
 
+class ProdutosAdmController
+{
+    public function view()
+    {
+        $produtos = App::get('database')->selectAll('produtos');
 
+        return view('admin/adm-produtos',compact('produtos'));
+    }
 
+    public function create()
+    {
+        $parametros = [
+            'nome' => $_POST['nome'],
+            'descricao' => $_POST['descricao'],
+            'preco' => $_POST['preco'],
+            'categoria' => $_POST['categoria'],
+            'foto' => $_POST['foto'],
+        ];
+
+        App:get('database')->insereProdutos('produtos', $parametros);
+
+        header('location: ???');
+
+    }
+
+    public function delete()
+    {
+        
+    }
+
+    public function update()
+    {
+        
+    }
+}
 
 
 

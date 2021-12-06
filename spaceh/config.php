@@ -2,7 +2,7 @@
 
 return [
     'database' => [
-        'name' => 'malu',
+        'name' => 'simula-spaceh',
         'username' => 'root',
         'password' => '',
         'connection' => 'mysql:host=127.0.0.1',

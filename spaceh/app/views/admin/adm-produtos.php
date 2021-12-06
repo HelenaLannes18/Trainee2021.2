@@ -10,7 +10,9 @@
 
   <body>
     <!-- Navbar -->
-    <?php include('../includes/navbar_administrativa.php'); ?>
+    <?php 
+      require('navbar_administrativa'); 
+    ?>
 
     <div class="container">
       <!-- Products Header: Contains search bar and add button -->
@@ -40,14 +42,15 @@
           </tr>
         </thead>
         <tbody>
+          <?php foreach($produtos as $produto) :?>
           <tr class="product__row">
             <td data-label="Imagem" class="product__image">
-              <img src="../../../public/assets/2.png" alt="" />
+              <img src="<?=$produto->imagem?>" alt="" />
             </td>
-            <td data-label="Nome">Produto 1</td>
-            <td data-label="Descrição">Descrição Legal do produto</td>
-            <td data-label="Preço">R$ 999.99</td>
-            <td data-label="Categoria">Categoria I</td>
+            <td data-label="Nome"><?=$produto->nome?></td>
+            <td data-label="Descrição"><?=$produto->descricao?></td>
+            <td data-label="Preço">R$ <?=$produto->preco?></td>
+            <td data-label="Categoria"><?=$produto->categoria?></td>
             <td data-label="Opções">
               <a href="#"
                 ><button class="product__button button--view button-animation">
@@ -62,6 +65,7 @@
               </button>
             </td>
           </tr>
+          <?php endforeach; ?>
         </tbody>
       </table>
     </div>
@@ -72,7 +76,7 @@
       <div class="modal">
         <button class="close__modal" id="close__modal">x</button>
         <h3>Adicionar Produto</h3>
-        <form>
+        <form action="">
           <input
             type="text"
             name="add-product__name"

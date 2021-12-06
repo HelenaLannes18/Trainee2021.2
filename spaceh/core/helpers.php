@@ -10,7 +10,14 @@ function view($name, $data = [])
 {
     extract($data);
 
-    return require "app/views/{$name}.view.php";
+    return require "app/views/{$name}.php";
+}
+
+function viewNavbar($name)
+{
+    extract($data);
+
+    return require "app/views/includes/{$name}.php";
 }
 
 /**
