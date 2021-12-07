@@ -10,7 +10,7 @@ class QueryBuilder
     protected $pdo;
 
 
-    public function selectAll($table)
+    public function selecionarUsuarios($table)
     {
       $statement = $this->pdo->prepare("select * from {$table}");
 
@@ -20,9 +20,9 @@ class QueryBuilder
     
     }
 
-    public function adicionaCategorias ($table, $parametros)
+    public function adicionaUsuarios ($table, $parametros)
     {
-        $sql = "INSERT INTO '{$table}' ('categoria') VALUES ('{$parametros['categoria']}'";
+        $sql = "INSERT INTO '{$table}' ('nome','email','senha','foto') VALUES ('{$parametros['nome']},'{$parametros['email']},'{$parametros['senha']},'{$parametros['foto']}')";
 
         try {
             $stmt = $this->pdo->prepare($sql);
@@ -31,7 +31,7 @@ class QueryBuilder
 
         } catch (Exception $e) {
             die($e->getMessage());
-        }
+        }   
     }
 
 
@@ -49,9 +49,9 @@ class QueryBuilder
         } 
     }
 
-    public function editCategorias($table, $parametros, $id)
+    public function editUsuarios($table, $parametros, $id)
     {
-        $sql = "UPDATE `{$table}` SET 'categorias'='{$parametros['categoria']}'";
+        $sql = "UPDATE `{$table}` SET 'nome'='{$parametros['nome']}','email'='{$parametros['email']}','senha'='{$parametros['senha']}','foto'='{$parametros['foto']}',WHERE id={$id}";
 
         try {
             $stmt = $this->pdo->prepare($sql);
