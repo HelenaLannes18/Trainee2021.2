@@ -9,9 +9,9 @@ class CategoriasController
 {
     public function view()
     {
-        $categorias = App::get('databse')->selectAll('categorias');
+        $categorias = App::get('database')->selectAll('categorias');
 
-        return categorias('categorias',compact('categorias'));
+        return view('categorias',compact('categorias'));
     }
 
     public function adicionar()
@@ -35,7 +35,7 @@ class CategoriasController
     public function update()
     {
         $parametros = [
-            'categoria' => $_POST['categoria'],
+            'nome' => $_POST['nome'],
         ];
 
         App::get('database')->editCategorias('categorias', $parametros, $_POST['id']);

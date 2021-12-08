@@ -48,7 +48,7 @@
                       <div class="modal-body">
                         <form action="/categorias/update" method="POST">
                             <div>
-                              <input name="categoria" type="text" class="form-control" placeholder="Adicione o nome da categoria" value="<?=  $categoria->nome ?>" require>
+                              <input name="categoria" type="text" class="form-control" placeholder="Adicione o nome da categoria" value="<?= $categoria->nome ?>" required>
                             </div>
                         </form>
                       </div>
