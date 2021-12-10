@@ -8,14 +8,9 @@ use Exception;
 class UsuariosController 
 {   
 
-    public function __construct($pdo)
-    {
-        $this->pdo = $pdo;
-    }
-
     public function view()
     {
-        $usuarios = App::get('databse')->selecionarUsuarios('usuarios');
+        $usuarios = App::get('database')->selecionarUsuarios('usuarios');
 
         return view('admin/viewusuarios',compact('usuarios'));
     }
@@ -23,10 +18,10 @@ class UsuariosController
     public function adicionar()
     {
         $parametros = [
-            'usuarios' => $_POST['nome'],
-            'usuarios' => $_POST['email'],
-            'usuarios' => $_POST['senha'],
-            'usuarios' => $_POST['foto']
+            'nome' => $_POST['nome'],
+            'email' => $_POST['email'],
+            'senha' => $_POST['senha'],
+            'foto' => $_POST['foto']
         ];
 
         App::get('database')->adicionaUsuarios('usuarios', $parametros);
