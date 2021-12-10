@@ -21,13 +21,17 @@
 <body>
 
 <!-- TÍTULO DA PÁGINA -->
+
    <h2 class="titulo-pagina mt-5"><b style="font-size: 4rem;">GESTÃO DE USUÁRIOS</b></h2>
    <div class="linhaHorizontal mb-5"></div>
 
 <!-- BOTÃO ADICIONAR -->
-<div class="container botao-adicionar mb-3" data-toggle="modal" data-target="#modalAdicionarUser">
-   <button type="button" class="btn cor-botoes" style="background-color: #4f0ad8;color: white;font-size: 1.5rem;">Adicionar</button>
-</div>
+
+<form action="usuario/adicionar" method="POST">
+  <div class="container botao-adicionar mb-3" data-toggle="modal" data-target="#modalAdicionarUser">
+    <button type="button" class="btn cor-botoes" style="background-color: #4f0ad8;color: white;font-size: 1.5rem;">Adicionar</button>
+  </div>
+</form>
 
 <!-- CONTEÚDO PRINCIPAL -->
    <div class="container table-responsive conteudo-principal mb-5">
@@ -43,46 +47,27 @@
            </thead>
            <tbody>
            
+           <?php foreach ($usuarios as $usuario):?>
+
            <tr>
-               <th scope="row"><img src="../../../public/assets/imgvu/am2.png" alt="Foto do Usuário" class="foto-tabela"></th>
-               <td class="align-middle">Amonguinho da Silva</td>
-               <td class="align-middle colunasInvisiveis">silva@mail.com</td>
-               <td class="align-middle colunasInvisiveis">daledele</td>
+
+               <th scope="row"><img src="../../../public/assets/imgvu/am2.png" <?= $usuario->foto ?> alt="Foto do Usuário" class="foto-tabela"></th>
+               <td class="align-middle"><?= $usuario->nome ?></td>
+               <td class="align-middle colunasInvisiveis"><?= $usuario->email ?> </td>
+               <td class="align-middle colunasInvisiveis"><?= $usuario->senha ?></td>
                <td class="align-middle">
                    <div class="btn-group d-flex justify-content-center" role="group">
-                       <button type="button" class="btn btn-success border" data-toggle="modal" data-target="#modalEditarUser">Editar<i class="fa fa-pencil" aria-hidden="true"></i></button>
-                       <button type="button" class="btn btn-danger border" data-toggle="modal" data-target="#modalExcluirUser">Excluir<i class="fa fa-trash" aria-hidden="true"></i></button>
+                       <button type="button" class="btn btn-success border" data-toggle="modal" data-target="#modalEditarUser">Editar<i class="fa fa-pencil" aria-hidden="true"><?= $usuario->id ?></i></button>
+                       <button type="button" class="btn btn-danger border" data-toggle="modal" data-target="#modalExcluirUser">Excluir<i class="fa fa-trash" aria-hidden="true"><?= $usuario->id ?></i></button>
                    </div>        
                </td>
+
            </tr>
 
-           <tr>
-            <th scope="row"><img src="../../../public/assets/imgvu/am3.png" alt="Foto do Usuário" class="foto-tabela"></th>
-            <td class="align-middle">Amonguinho Dias</td>
-            <td class="align-middle colunasInvisiveis">dias@mail.com</td>
-            <td class="align-middle colunasInvisiveis">daledele</td>
-            <td class="align-middle">
-                <div class="btn-group d-flex justify-content-center" role="group">
-                    <button type="button" class="btn btn-success border" data-toggle="modal" data-target="#modalEditarUser">Editar<i class="fa fa-pencil" aria-hidden="true"></i></button>
-                    <button type="button" class="btn btn-danger border" data-toggle="modal" data-target="#modalExcluirUser">Excluir<i class="fa fa-trash" aria-hidden="true"></i></button>
-                </div>        
-            </td>
-        </tr>
-
-        <tr>
-          <th scope="row"><img src="../../public/assets/imgvu/am1.png" alt="Foto do Usuário" class="foto-tabela"></th>
-          <td class="align-middle">Amonguinho Júnior</td>
-          <td class="align-middle colunasInvisiveis">junior@mail.com</td>
-          <td class="align-middle colunasInvisiveis">daledele</td>
-          <td class="align-middle">
-              <div class="btn-group d-flex justify-content-center" role="group">
-                  <button type="button" class="btn btn-success border" data-toggle="modal" data-target="#modalEditarUser">Editar<i class="fa fa-pencil" aria-hidden="true"></i></button>
-                  <button type="button" class="btn btn-danger border" data-toggle="modal" data-target="#modalExcluirUser">Excluir<i class="fa fa-trash" aria-hidden="true"></i></button>
-              </div>        
-          </td>
-      </tr>
+           <?php endforeach; ?>  
 
     <!-- Modal Adicionar -->
+
       <div class="modal fade" id="modalAdicionarUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -93,38 +78,46 @@
               </button>
             </div>
             <div class="modal-body">
+
                 <form>
+
+                <form method="POST" action="/usuarios">
+
                     <div class="form-group">
                       <label for="formGroupExampleInput">Nome de Usuário</label>
-                      <input type="text" class="form-control" id="formGroupExampleInput">
+                      <input type="text" class="form-control" id="formGroupExampleInput" required>
                     </div>
                     <div class="form-group">
                       <label for="formGroupExampleInput">Email</label>
-                      <input type="text" class="form-control" id="formGroupExampleInput">
+                      <input type="text" class="form-control" id="formGroupExampleInput" required>
                     </div>
                     <div class="form-group">
                       <label for="formGroupExampleInput">Senha</label>
-                      <input type="text" class="form-control" id="formGroupExampleInput">
+                      <input type="text" class="form-control" id="formGroupExampleInput" required>
                     </div>
                     <div class="form-group">
                       <label class="control-label col-sm-3">Enviar foto:</label>
                       <div class="col-xs-3">
-                        <input type="file" name="profilepic" />
+                        <input type="file" name="profilepic" required>
                       </div>
                     </div>
 
-                  </form>
+                  
             </div>
             <div class="modal-footer">
               <button type="button" class="finalizar" data-dismiss="modal">Fechar</button>
-              <button type="button" class="finalizar">Salvar</button>
+              <button type="submit" class="finalizar">Salvar</button>
             </div>
+            </form>
           </div>
         </div>
       </div>
 
     <!-- Modal Editar -->
-      <div class="modal fade" id="modalEditarUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+    <?php foreach ($usuarios as $usuario):?>
+    
+      <div class="modal fade" id="modalEditarUser" <?= $usuario->id ?> tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -134,75 +127,90 @@
               </button>
             </div>
             <div class="modal-body">
+
                 <form>
-                    <div class="form-group">
-                      <label for="formGroupExampleInput">Nome de Usuário</label>
-                      <input type="text" class="form-control" id="formGroupExampleInput">
-                    </div>
-                    <div class="form-group">
-                      <label for="formGroupExampleInput">Email</label>
-                      <input type="text" class="form-control" id="formGroupExampleInput">
-                    </div>
-                    <div class="form-group">
-                      <label for="formGroupExampleInput">Senha</label>
-                      <input type="text" class="form-control" id="formGroupExampleInput">
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label col-sm-3">Enviar foto:</label>
-                      <div class="col-xs-3">
-                        <input type="file" name="profilepic" />
+
+                  <form action="/usuarios/update" method="POST">
+
+                      <div class="form-group">
+                        <label for="formGroupExampleInput">Nome de Usuário</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" value="<?= $usuario->nome ?>" required>
                       </div>
-                    </div>
+
+                      <div class="form-group">
+                        <label for="formGroupExampleInput">Email</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" value="<?= $usuario->email ?>" required>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="formGroupExampleInput">Senha</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" value="<?= $usuario->senha ?>" required>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-sm-3">Enviar foto:</label>
+                        <div class="col-xs-3">
+                          <input type="file" name="profilepic" value="<?= $usuario->foto ?>" required>
+                        </div>
+                      </div>
     
-                  </form>
+                  
             </div>
             <div class="modal-footer">
-              <button type="button" class="finalizar" data-dismiss="modal">Fechar</button>
-              <button type="button" class="finalizar">Salvar</button>
+              <button type="button" class="finalizar" data-dismiss="modal">Fechar</button> 
+                <input type="hidden" value="<?= $usuario->id ?>" name="id">
+
+              <button type="submit" class="finalizar">Salvar</button>
             </div>
+            </form>
           </div>
         </div>
       </div>
 
     <!-- Modal Excluir -->
-      <div class="modal fade" id="modalExcluirUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Excluir usuário</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                      <label for="formGroupExampleInput">Tem certeza de que quer excluir esse usuário?</label>
-                      
-                    </div>
-                  </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="finalizar" data-dismiss="modal" style="background-color: rgb(220, 53, 69);font-size: 1.3rem;border-radius: 6%;">Excluir</button>
-              <button type="button" class="finalizar" data-dismiss="modal">Fechar</button>
-              <button type="button" class="finalizar">Salvar</button>
+
+        <div class="modal fade" id="modalExcluirUser" <?= $usuario->id ?> tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Excluir usuário</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <form>
+                      <div class="form-group">
+                        <label for="formGroupExampleInput">Tem certeza de que quer excluir esse usuário?</label>
+                        
+                      </div>
+                    
+              </div>
+              <div class="modal-footer">
+
+                <button type="button" class="finalizar" data-dismiss="modal" style="background-color: rgb(220, 53, 69);font-size: 1.3rem;border-radius: 6%;">Excluir</button>
+                <button type="button" class="finalizar" data-dismiss="modal">Fechar</button>
+                  <form action="/usuarios/delete" method="POST">
+                  
+                <input type="hidden" value="<?= $usuario->id ?>" name="id">
+                <button type="submit" class="finalizar">Salvar</button>
+
+              </div>
+              </form>
             </div>
           </div>
         </div>
-      </div>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-
-
+      <?php endforeach;?>
 
            </tbody>
+
        </table>
    </div>
 
-    
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
 </html>

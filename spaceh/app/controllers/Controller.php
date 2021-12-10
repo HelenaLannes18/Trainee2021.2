@@ -17,7 +17,7 @@ class UsuariosController
     {
         $usuarios = App::get('databse')->selecionarUsuarios('usuarios');
 
-        return viewusuarios('usuarios',compact('usuarios'));
+        return view('admin/viewusuarios',compact('usuarios'));
     }
 
     public function adicionar()
