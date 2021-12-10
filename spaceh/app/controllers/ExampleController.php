@@ -56,27 +56,39 @@ class ProdutosAdmController
     public function create()
     {
         $parametros = [
-            'nome' => $_POST['nome'],
-            'descricao' => $_POST['descricao'],
-            'preco' => $_POST['preco'],
-            'categoria' => $_POST['categoria'],
-            'foto' => $_POST['foto'],
+            'nome' => $_POST['add-product-name'],
+            'descricao' => $_POST['add-product-description'],
+            'preco' => $_POST['add-product-price'],
+            'categoria' => $_POST['add-product-category'],
+            'imagem' => $_POST['add-product-image'],
         ];
 
-        App:get('database')->insereProdutos('produtos', $parametros);
+        App::get('database')->insertProducts('produtos', $parametros);
 
-        header('location: ???');
+        header('location: /produtos');
 
     }
 
     public function delete()
     {
-        
+       App::get('database')->deleteProducts('produtos', $_POST['id']);
+       
+       header('location: /produtos');       
     }
 
     public function update()
     {
-        
+        $parametros = [
+            'nome' => $_POST['edit-product-name'],
+            'descricao' => $_POST['edit-product-description'],
+            'preco' => $_POST['edit-product-price'],
+            'categoria' => $_POST['edit-product-category'],
+            'imagem' => $_POST['edit-product-image'],
+        ];
+
+        App::get('database')->updateProducts('produtos', $parametros, $_POST['id']);
+
+        header('location: /produtos');
     }
 }
 

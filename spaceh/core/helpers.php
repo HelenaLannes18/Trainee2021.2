@@ -13,13 +13,6 @@ function view($name, $data = [])
     return require "app/views/{$name}.php";
 }
 
-function viewNavbar($name)
-{
-    extract($data);
-
-    return require "app/views/includes/{$name}.php";
-}
-
 /**
  * Redirect to a new page.
  *

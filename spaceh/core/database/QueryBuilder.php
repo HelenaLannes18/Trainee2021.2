@@ -71,9 +71,37 @@ class QueryBuilder
     }
 
     // Funções de Produtos
-    public function insereProdutos($table, $parametros)
+    public function insertProducts($table, $parametros)
     {
-        $sql = "INSERT INTO {$table} (nome,descricao,preco,categoria,foto) VALUES ('{$parametros['nome']}','{$parametros['descricao']}','{$parametros['preco']}','{$parametros['categoria']}','{$parametros['foto']}')";
+        $sql = "INSERT INTO {$table} (nome,descricao,preco,categoria,imagem) VALUES ('{$parametros['nome']}','{$parametros['descricao']}','{$parametros['preco']}','{$parametros['categoria']}','{$parametros['imagem']}')";
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+
+            $stmt->execute();
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+    public function deleteProducts($table, $id)
+    {
+        $sql = "DELETE FROM `{$table}` WHERE id = {$id}";
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+
+            $stmt->execute();
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+    public function updateProducts($table, $parametros, $id)
+    {
+        $sql = "UPDATE {$table} SET nome='{$parametros['nome']}',descricao='{$parametros['descricao']}',preco='{$parametros['preco']}',categoria='{$parametros['categoria']}',imagem='{$parametros['imagem']}' WHERE id = {$id}";
 
         try {
             $stmt = $this->pdo->prepare($sql);

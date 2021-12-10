@@ -6,15 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ADM - Produtos | Space-H</title>
     <link rel="stylesheet" href="../../../public/css/adm-produtos.css" />
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   </head>
 
   <body>
     <!-- Navbar -->
     <?php 
-      require('navbar_administrativa'); 
+      require('navbar_administrativa.php'); 
     ?>
 
-    <div class="container">
+    <div id="container">
       <!-- Products Header: Contains search bar and add button -->
       <div class="products__header">
         <h2 class="header__title">Lista de Produtos</h2>
@@ -25,7 +27,9 @@
           placeholder="Pesquise um produto"
           disabled
         />
-        <button class="product__add button-animation">Adicionar Produto</button>
+        <button type="button" class="button-animation" data-bs-toggle="modal" data-bs-target="#modal-add-product">
+          Adicionar Produto
+        </button>
       </div>
 
       <!-- Products List -->
@@ -53,15 +57,15 @@
             <td data-label="Categoria"><?=$produto->categoria?></td>
             <td data-label="Opções">
               <a href="#"
-                ><button class="product__button button--view button-animation">
+                ><button id="purple-btn" class="product__btn button-animation">
                   Visualizar
                 </button></a
               >
-              <button class="product__button button--edit button-animation">
+              <button type="button" id="black-btn" class="product__btn button-animation" data-bs-toggle="modal" data-bs-target="#modal-edit-product<?= $produto->id ?>">
                 Editar
               </button>
-              <button class="product__button button--delete button-animation">
-                Excluir
+              <button type="button" id="red-btn" class="product__btn button-animation" data-bs-toggle="modal" data-bs-target="#modal-delete-product<?=$produto->id?>">
+                Apagar
               </button>
             </td>
           </tr>
@@ -70,107 +74,160 @@
       </table>
     </div>
 
+
+    <!-- 
+      Modals 
+    -->
+
     <!-- Modal: Add Product-->
 
-    <div id="modal__add__product" class="modal__container">
-      <div class="modal">
-        <button class="close__modal" id="close__modal">x</button>
-        <h3>Adicionar Produto</h3>
-        <form action="">
-          <input
-            type="text"
-            name="add-product__name"
-            id="add-product__name"
-            placeholder="Nome"
-          />
-          <input
-            type="text"
-            name="add-product__description"
-            id="add-product__description"
-            placeholder="Preço (R$)"
-          />
-          <input
-            type="number"
-            name="add-product__price"
-            id="add-product__price"
-            placeholder="Preço"
-          />
-          <input
-            type="text"
-            name="add-product__category"
-            id="add-product__category"
-            placeholder="Categoria"
-          />
-          <input
-            type="button"
-            value="Cadastrar Produto"
-            class="button-animation"
-          />
-        </form>
+    <div class="modal fade" id="modal-add-product" tabindex="-1" aria-labelledby="modal-add-title" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <form action="produtos" method="POST">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modal-add-title">Adicionar Produtos</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                  <input
+                    type="text"
+                    name="add-product-name"
+                    id="add-product__name"
+                    placeholder="Nome"
+                  />
+                  <input
+                    type="text"
+                    name="add-product-description"
+                    id="add-product__description"
+                    placeholder="Digite a descrição do produto"
+                  />
+                  <input
+                    type="number"
+                    name="add-product-price"
+                    id="add-product__price"
+                    placeholder="Preço (R$)"
+                    step=".01"
+                  />
+                  <input
+                    type="text"
+                    name="add-product-category"
+                    id="add-product__category"
+                    placeholder="Categoria"
+
+                  />
+                  <input
+                    type="text"
+                    name="add-product-image"
+                    id="add-product__image"
+                    placeholder="Link da Imagem"
+                  />
+                
+              </div>
+              <div class="modal-footer">
+                <button type="button" id="black-btn" class="modal-btn button-animation" data-bs-dismiss="modal">Fechar</button>
+                <button type="submit" id="purple-btn" class="modal-btn button-animation">Cadastrar Produto</button>
+              </div>
+            </form>
+        </div>
       </div>
     </div>
 
-    <!-- Modal: Edit Product-->
+    <?php foreach($produtos as $produto) :?>
 
-    <div id="modal__edit__product" class="modal__container">
-      <div class="modal">
-        <button class="close__modal" id="close__modal">x</button>
-        <h3>Editar Produto</h3>
-        <form>
-          <input
-            type="text"
-            name="edit-product__name"
-            id="edit-product__name"
-            placeholder="Nome"
-          />
-          <input
-            type="text"
-            name="edit-product__description"
-            id="edit-product__description"
-            placeholder="Preço (R$)"
-          />
-          <input
-            type="number"
-            name="edit-product__price"
-            id="edit-product__price"
-            placeholder="Preço"
-          />
-          <input
-            type="text"
-            name="edit-product__category"
-            id="edit-product__category"
-            placeholder="Categoria"
-          />
-          <input
-            type="button"
-            value="Salvar Alterações"
-            class="button-animation"
-          />
-        </form>
+    <!-- Modal: Edit Product -->
+    
+    <div class="modal fade" id="modal-edit-product<?= $produto->id ?>" tabindex="-1" aria-labelledby="modal-edit-title" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <form action="produtos/update" method="POST">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modal-edit-title">Editar Produto</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                  
+              <input
+                type="text"
+                name="edit-product-name"
+                id="edit-product__name"
+                placeholder="Nome"
+                value="<?= $produto->nome ?>"
+              />
+              <input
+                type="text"
+                name="edit-product-description"
+                id="edit-product__description"
+                placeholder="Descrição do Produto"
+                value="<?= $produto->descricao ?>"
+              />
+              <input
+                type="number"
+                name="edit-product-price"
+                id="edit-product__price"
+                placeholder="Preço"
+                step=".01"
+                value="<?= $produto->preco ?>"
+              />
+              <input
+                type="text"
+                name="edit-product-category"
+                id="edit-product__category"
+                placeholder="Categoria"
+                value="<?= $produto->categoria ?>"
+              />
+              <input
+                type="text"
+                name="edit-product-image"
+                id="add-product__image"
+                placeholder="Link da Imagem"
+                value="<?= $produto->imagem ?>"
+              />
+              <input type="hidden" name="id" value="<?= $produto->id ?>">    
+                
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="black-btn" class="modal-btn button-animation" data-bs-dismiss="modal">Fechar</button>
+              <button type="submit" id="purple-btn" class="modal-btn button-animation">Salvar Alterações</button>
+            </div>
+            </form>
+        </div>
       </div>
     </div>
 
-    <!-- Modal: Edit Product-->
 
-    <div id="modal__delete__product" class="modal__container">
-      <div class="modal">
-        <button class="close__modal" id="close__modal">x</button>
-        <h3>Deseja realmente excluir o produto da lista?</h3>
-        <button
-          class="delete__product__modal button-animation"
-          id="confirm-delete"
-        >
-          Sim
-        </button>
-        <button
-          class="delete__product__modal button-animation"
-          id="cancel-delete"
-        >
-          Cancelar
-        </button>
+    <!-- Modal: Delete Product -->
+
+    <div class="modal fade" id="modal-delete-product<?=$produto->id?>" tabindex="-1" aria-labelledby="modal-delete-title" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <form action="produtos/delete" method="POST">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modal-delete-title">Apagar Produto</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Deseja realmente excluir o produto da lista? </p>
+              <input type="hidden" name="id" value="<?=$produto->id?>">
+                
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="black-btn" class="modal-btn button-animation" data-bs-dismiss="modal">Fechar</button>
+              <button type="submit" id="red-btn" class="modal-btn button-animation">Apagar</button>
+            </div>
+            </form>
+        </div>
       </div>
     </div>
+
+    <?php endforeach; ?>
+
+    <!-- 
+      End Modals 
+    -->
 
     <script src="../../public/js/admProdutos.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </body>
 </html>
