@@ -2,7 +2,7 @@
 
 return [
     'database' => [
-        'name' => 'simula-spaceh',
+        'name' => 'krypton-moedas',
         'username' => 'root',
         'password' => '',
         'connection' => 'mysql:host=127.0.0.1',
