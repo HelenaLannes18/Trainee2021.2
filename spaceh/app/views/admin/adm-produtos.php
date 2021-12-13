@@ -20,16 +20,22 @@
       <!-- Products Header: Contains search bar and add button -->
       <div class="products__header">
         <h2 class="header__title">Lista de Produtos</h2>
-        <input
-          type="search"
-          name="products__search"
-          id="products__search"
-          placeholder="Pesquise um produto"
-          disabled
-        />
-        <button type="button" class="button-animation" data-bs-toggle="modal" data-bs-target="#modal-add-product">
-          Adicionar Produto
-        </button>
+        <div class="header__options">
+          <button type="button" class="button-animation" data-bs-toggle="modal" data-bs-target="#modal-add-product">
+            Adicionar Produto
+          </button>
+          <div class="header__search">
+            <form>
+              <input
+                type="search"
+                name="products__search"
+                id="products__search"
+                placeholder="Pesquise um produto"
+              />
+              <button type="submit" id="purple-btn" class="button-animation">Pesquisar</button>
+            </form>
+          </div>
+        </div>
       </div>
 
       <!-- Products List -->
@@ -109,13 +115,15 @@
                     placeholder="Preço (R$)"
                     step=".01"
                   />
+                  <?php foreach($categorias as $categoria) :?>
                   <input
                     type="text"
                     name="add-product-category"
                     id="add-product__category"
                     placeholder="Categoria"
-
+                    value="<?= $categoria->categoria ?>"
                   />
+                  <?php endforeach; ?>
                   <input
                     type="text"
                     name="add-product-image"
