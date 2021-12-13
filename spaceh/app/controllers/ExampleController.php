@@ -9,9 +9,9 @@ class CategoriasController
 {
     public function view()
     {
-        $categorias = App::get('databse')->selectAll('categorias');
+        $categorias = App::get('database')->selectAll('categorias');
 
-        return categorias('categorias',compact('categorias'));
+        return view('admin/adm-categorias',compact('categorias'));
     }
 
     public function adicionar()
