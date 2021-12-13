@@ -22,7 +22,7 @@ class UsuariosController
             'email' => $_POST['email'],
             'senha' => $_POST['senha'],
             'foto' => $_POST['foto']
-        ];
+    ];
 
         App::get('database')->adicionaUsuarios('usuarios', $parametros);
 
@@ -39,10 +39,10 @@ class UsuariosController
     public function update()
     {
         $parametros = [
-            'usuarios' => $_POST['nome'],
-            'usuarios' => $_POST['email'],
-            'usuarios' => $_POST['senha'],
-            'usuarios' => $_POST['foto']        
+            'nome' => $_POST['nome'],
+            'email'=> $_POST['email'],
+            'senha'=> $_POST['senha'],
+            'foto'=> $_POST['foto']        
         ];
 
         App::get('database')->editUsuarios('usuarios', $parametros, $_POST['id']);

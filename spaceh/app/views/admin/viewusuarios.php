@@ -27,11 +27,11 @@
 
 <!-- BOTÃO ADICIONAR -->
 
-<form action="usuario/adicionar" method="POST">
+
   <div class="container botao-adicionar mb-3" data-toggle="modal" data-target="#modalAdicionarUser">
     <button type="button" class="btn cor-botoes" style="background-color: #4f0ad8;color: white;font-size: 1.5rem;">Adicionar</button>
   </div>
-</form>
+
 
 <!-- CONTEÚDO PRINCIPAL -->
    <div class="container table-responsive conteudo-principal mb-5">
@@ -51,14 +51,14 @@
 
            <tr>
 
-               <th scope="row"><img src="../../../public/assets/imgvu/am2.png" <?= $usuario->foto ?> alt="Foto do Usuário" class="foto-tabela"></th>
-               <td class="align-middle"><?= $usuario->nome ?></td>
-               <td class="align-middle colunasInvisiveis"><?= $usuario->email ?> </td>
-               <td class="align-middle colunasInvisiveis"><?= $usuario->senha ?></td>
+               <th scope="row"><img src="../../../public/img/<?= $usuario->foto; ?>"  alt="Foto do Usuário" class="foto-tabela"></th>
+               <td class="align-middle"><?= $usuario->nome; ?></td>
+               <td class="align-middle colunasInvisiveis"><?= $usuario->email; ?> </td>
+               <td class="align-middle colunasInvisiveis"><?= $usuario->senha; ?></td>
                <td class="align-middle">
                    <div class="btn-group d-flex justify-content-center" role="group">
-                       <button type="button" class="btn btn-success border" data-toggle="modal" data-target="#modalEditarUser">Editar<i class="fa fa-pencil" aria-hidden="true"><?= $usuario->id ?></i></button>
-                       <button type="button" class="btn btn-danger border" data-toggle="modal" data-target="#modalExcluirUser">Excluir<i class="fa fa-trash" aria-hidden="true"><?= $usuario->id ?></i></button>
+                       <button type="button" class="btn btn-success border" data-toggle="modal" data-target="#modalEditarUser<?= $usuario->id ?>">Editar<i class="fa fa-pencil" aria-hidden="true"></i></button>
+                       <button type="button" class="btn btn-danger border" data-toggle="modal" data-target="#modalExcluirUser"<?= $usuario->id ?>>Excluir<i class="fa fa-trash" aria-hidden="true"></i></button>
                    </div>        
                </td>
 
@@ -79,28 +79,29 @@
             </div>
             <div class="modal-body">
 
-                <form>
+             
 
                 <form method="POST" action="/usuarios">
 
                     <div class="form-group">
                       <label for="formGroupExampleInput">Nome de Usuário</label>
-                      <input type="text" class="form-control" id="formGroupExampleInput" required>
+                      <input name="nome" type="text" class="form-control" id="formGroupExampleInput" required>
                     </div>
                     <div class="form-group">
                       <label for="formGroupExampleInput">Email</label>
-                      <input type="text" class="form-control" id="formGroupExampleInput" required>
+                      <input name="email" type="text" class="form-control" id="formGroupExampleInput" required>
                     </div>
                     <div class="form-group">
                       <label for="formGroupExampleInput">Senha</label>
-                      <input type="text" class="form-control" id="formGroupExampleInput" required>
+                      <input name="senha" type="text" class="form-control" id="formGroupExampleInput" required>
                     </div>
                     <div class="form-group">
                       <label class="control-label col-sm-3">Enviar foto:</label>
                       <div class="col-xs-3">
-                        <input type="file" name="profilepic" required>
+                        <input name="foto" type="file" name="profilepic"required>
                       </div>
                     </div>
+                    
 
                   
             </div>
@@ -117,7 +118,7 @@
 
     <?php foreach ($usuarios as $usuario):?>
     
-      <div class="modal fade" id="modalEditarUser" <?= $usuario->id ?> tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="modalEditarUser<?= $usuario->id ?>"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -128,29 +129,29 @@
             </div>
             <div class="modal-body">
 
-                <form>
+                
 
                   <form action="/usuarios/update" method="POST">
 
                       <div class="form-group">
                         <label for="formGroupExampleInput">Nome de Usuário</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput" value="<?= $usuario->nome ?>" required>
+                        <input name="nome"type="text" class="form-control" id="formGroupExampleInput" value="<?= $usuario->nome ?>" required>
                       </div>
 
                       <div class="form-group">
                         <label for="formGroupExampleInput">Email</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput" value="<?= $usuario->email ?>" required>
+                        <input name="email" type="text" class="form-control" id="formGroupExampleInput" value="<?= $usuario->email ?>" required>
                       </div>
 
                       <div class="form-group">
                         <label for="formGroupExampleInput">Senha</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput" value="<?= $usuario->senha ?>" required>
+                        <input name="senha" type="text" class="form-control" id="formGroupExampleInput" value="<?= $usuario->senha ?>" required>
                       </div>
 
                       <div class="form-group">
                         <label class="control-label col-sm-3">Enviar foto:</label>
                         <div class="col-xs-3">
-                          <input type="file" name="profilepic" value="<?= $usuario->foto ?>" required>
+                          <input name="foto" type="file" name="profilepic" value="<?= $usuario->foto ?>" >
                         </div>
                       </div>
     
@@ -159,16 +160,16 @@
             <div class="modal-footer">
               <button type="button" class="finalizar" data-dismiss="modal">Fechar</button> 
                 <input type="hidden" value="<?= $usuario->id ?>" name="id">
-
-              <button type="submit" class="finalizar">Salvar</button>
+                <button type="submit" class="finalizar">Salvar</button>
+                </form>
             </div>
-            </form>
+            
           </div>
         </div>
       </div>
-
+     
     <!-- Modal Excluir -->
-
+    
         <div class="modal fade" id="modalExcluirUser" <?= $usuario->id ?> tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -179,7 +180,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                  <form>
+                
                       <div class="form-group">
                         <label for="formGroupExampleInput">Tem certeza de que quer excluir esse usuário?</label>
                         
@@ -188,15 +189,14 @@
               </div>
               <div class="modal-footer">
 
-                <button type="button" class="finalizar" data-dismiss="modal" style="background-color: rgb(220, 53, 69);font-size: 1.3rem;border-radius: 6%;">Excluir</button>
+                
                 <button type="button" class="finalizar" data-dismiss="modal">Fechar</button>
                   <form action="/usuarios/delete" method="POST">
-                  
                 <input type="hidden" value="<?= $usuario->id ?>" name="id">
-                <button type="submit" class="finalizar">Salvar</button>
-
+                <button type="submit" class="btn btn-danger">Excluir</button>
+                </form>
               </div>
-              </form>
+              
             </div>
           </div>
         </div>

@@ -11,7 +11,7 @@ $router->post('categorias/update', 'CategoriasController@update');
 
 $router->get('usuarios','UsuariosController@view');
 $router->post('usuarios','UsuariosController@adicionar');
-$router->post('usarios/delete','UsuariosController@apagar');
+$router->post('usuarios/delete','UsuariosController@apagar');
 $router->post('usuarios/update', 'UsuariosController@update');
 
 ?>

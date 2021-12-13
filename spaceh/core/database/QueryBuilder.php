@@ -34,7 +34,7 @@ class QueryBuilder
 
     public function adicionaUsuarios ($table, $parametros)
     {
-        $sql = "INSERT INTO {$table} ('nome','email','senha','foto') VALUES ('{$parametros['nome']},'{$parametros['email']},'{$parametros['senha']},'{$parametros['foto']}')";
+        $sql = "INSERT INTO `{$table}` (`nome`,`email`,`senha`,`foto`) VALUES ('{$parametros['nome']}','{$parametros['email']}','{$parametros['senha']}','{$parametros['foto']}')";
 
         try {
             $stmt = $this->pdo->prepare($sql);
@@ -49,7 +49,7 @@ class QueryBuilder
 
     public function delete($table, $id)
     {
-        $sql = "DELETE FROM {$table} WHERE id = {$id}";
+        $sql = "DELETE FROM `{$table}` WHERE id = {$id}";
 
         try {
             $stmt = $this->pdo->prepare($sql);
@@ -63,7 +63,7 @@ class QueryBuilder
 
     public function editUsuarios($table, $parametros, $id)
     {
-        $sql = "UPDATE {$table} SET 'nome'='{$parametros['nome']}','email'='{$parametros['email']}','senha'='{$parametros['senha']}','foto'='{$parametros['foto']}',WHERE id={$id}";
+        $sql = "UPDATE `{$table}` SET `nome`='{$parametros['nome']}',`email`='{$parametros['email']}',`senha`='{$parametros['senha']}',`foto`='{$parametros['foto']}' WHERE id = {$id}";
 
         try {
             $stmt = $this->pdo->prepare($sql);
