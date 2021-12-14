@@ -87,6 +87,8 @@
 
     <!-- Modal: Add Product-->
 
+    
+
     <div class="modal fade" id="modal-add-product" tabindex="-1" aria-labelledby="modal-add-title" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -115,15 +117,14 @@
                     placeholder="Preço (R$)"
                     step=".01"
                   />
-                  <?php foreach($categorias as $categoria) :?>
                   <input
                     type="text"
                     name="add-product-category"
                     id="add-product__category"
                     placeholder="Categoria"
-                    value="<?= $categoria->categoria ?>"
+                   
                   />
-                  <?php endforeach; ?>
+                 
                   <input
                     type="text"
                     name="add-product-image"
@@ -134,6 +135,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" id="black-btn" class="modal-btn button-animation" data-bs-dismiss="modal">Fechar</button>
+                <input type="hidden" value="<?= $produto->id ?>" name="id">
                 <button type="submit" id="purple-btn" class="modal-btn button-animation">Cadastrar Produto</button>
               </div>
             </form>
@@ -141,8 +143,8 @@
       </div>
     </div>
 
+    
     <?php foreach($produtos as $produto) :?>
-
     <!-- Modal: Edit Product -->
     
     <div class="modal fade" id="modal-edit-product<?= $produto->id ?>" tabindex="-1" aria-labelledby="modal-edit-title" aria-hidden="true">
