@@ -13,6 +13,61 @@
   <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+<<<<<<< HEAD:spaceh/app/views/admin/adm-categorias.php
+=======
+<body>
+    <!-- Titulo -->
+    <div>
+        <h1 class="title">LISTA DE CATEGORIAS</h1>        
+    </div>
+
+    <!-- Tabela -->
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th colspan="6">Categorias</th>
+            <th colspan="1">Ação</th>
+          </tr>
+        </thead>
+        <tbody">
+          <?php foreach ($categorias  as $categoria) : ?>
+          <tr>
+            <td class="align-middle larguraCategoria"><?= $categoria->categoria?></td>
+            <td colspan="1">
+                <!-- Botão Editar -->
+                <button type="button" class="editar" data-toggle="modal" data-target="#exampleModalCenter<?= $categoria->id ?>">Editar
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter<?= $categoria->id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Editar categoria</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <form action="/categorias/update" method="POST">
+                            <div>
+                              <input name="categoria" type="text" class="form-control" placeholder="Adicione o nome da categoria" value="<?= $categoria->nome ?>" required>
+                            </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sair</button>
+                        <input type="hidden" value="<?= $categorias->id ?>" name="id">
+                        <button type="button" class="btn btn-primary">Salvar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Botão Excluir -->
+                <button type="button" class="excluir" data-toggle="modal" data-target="#exampleModal<?= $categoria->id ?>">Excluir
+                </button>
+>>>>>>> 9093711dc85f81cf021123ee28b51678e182afb7:spaceh/app/views/admin/categorias.php
 
 <body>
   <!-- Titulo -->
