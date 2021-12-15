@@ -12,9 +12,6 @@
 
   <body>
 
-  
-
-
     <!-- Navbar -->
     <?php 
       require('navbar_administrativa.php'); 
@@ -32,7 +29,7 @@
             <form action="produtos" method="GET">
               <input
                 type="search"
-                name="products__search"
+                name="products--search"
                 id="products__search"
                 placeholder="Pesquise um produto"
               />
