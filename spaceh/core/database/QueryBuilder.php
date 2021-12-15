@@ -28,7 +28,7 @@ class QueryBuilder
 
     public function adicionaCategorias ($table, $parametros)
     {
-        $sql = "INSERT INTO `{$table}` (`categoria`) VALUES ('{$parametros['categoria']}')";
+        $sql = "INSERT INTO {$table} (categoria) VALUES ('{$parametros['categoria']}')";
 
         try {
             $stmt = $this->pdo->prepare($sql);
@@ -43,7 +43,7 @@ class QueryBuilder
 
     public function delete($table, $id)
     {
-        $sql = "DELETE FROM '{$table}' WHERE id = {$id}";
+        $sql = "DELETE FROM {$table} WHERE id = {$id}";
 
         try {
             $stmt = $this->pdo->prepare($sql);
@@ -57,7 +57,7 @@ class QueryBuilder
 
     public function editCategorias($table, $parametros, $id)
     {
-        $sql = "UPDATE `{$table}` SET 'categorias'='{$parametros['categoria']}'";
+        $sql = "UPDATE {$table} SET categoria='{$parametros['categoria']}' WHERE id={$id}";
 
         try {
             $stmt = $this->pdo->prepare($sql);
