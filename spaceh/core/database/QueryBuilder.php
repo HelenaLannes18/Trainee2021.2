@@ -115,16 +115,15 @@ class QueryBuilder
 
     public function searchProducts($table, $parametros)
     {
-        $sql = "SELECT * FROM {$table} WHERE `nome` LIKE '{$parametros['nome']}'";
+    
+        $sql = "SELECT * FROM '$table' WHERE `nome` LIKE '$parametros'";
 
-        try {
-            $stmt = $this->pdo->prepare($sql);
+        $stmt = $this->pdo->prepare($sql);
 
-            $stmt->execute();
+        $stmt->execute();
 
-        } catch (Exception $e) {
-            die($e->getMessage());
-        }
+        return $stmt->fetchAll(PDO::FETCH_CLASS);
+    
     }
 
 }

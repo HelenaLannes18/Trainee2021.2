@@ -11,6 +11,10 @@
   </head>
 
   <body>
+
+  
+
+
     <!-- Navbar -->
     <?php 
       require('navbar_administrativa.php'); 
@@ -25,7 +29,7 @@
             Adicionar Produto
           </button>
           <div class="header__search">
-            <form>
+            <form action="produtos" method="GET">
               <input
                 type="search"
                 name="products__search"
@@ -90,7 +94,7 @@
     <div class="modal fade" id="modal-add-product" tabindex="-1" aria-labelledby="modal-add-title" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-          <form action="produtos" method="POST">
+          <form action="produtos-adm" method="POST">
             <div class="modal-header">
               <h5 class="modal-title" id="modal-add-title">Adicionar Produtos</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -148,7 +152,7 @@
     <div class="modal fade" id="modal-edit-product<?= $produto->id ?>" tabindex="-1" aria-labelledby="modal-edit-title" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-          <form action="produtos/update" method="POST">
+          <form action="produtos-adm/update" method="POST">
             <div class="modal-header">
               <h5 class="modal-title" id="modal-edit-title">Editar Produto</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -209,7 +213,7 @@
     <div class="modal fade" id="modal-delete-product<?=$produto->id?>" tabindex="-1" aria-labelledby="modal-delete-title" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-          <form action="produtos/delete" method="POST">
+          <form action="produtos-adm/delete" method="POST">
             <div class="modal-header">
               <h5 class="modal-title" id="modal-delete-title">Apagar Produto</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
