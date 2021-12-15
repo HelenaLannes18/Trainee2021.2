@@ -28,7 +28,7 @@ class QueryBuilder
 
     public function adicionaCategorias ($table, $parametros)
     {
-        $sql = "INSERT INTO '{$table}' ('categoria') VALUES ('{$parametros['categoria']}'";
+        $sql = "INSERT INTO `{$table}` (`categoria`) VALUES ('{$parametros['categoria']}')";
 
         try {
             $stmt = $this->pdo->prepare($sql);
