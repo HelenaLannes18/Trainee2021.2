@@ -10,7 +10,7 @@ function view($name, $data = [])
 {
     extract($data);
 
-    return require "app/views/admin/{$name}.php";
+    return require "app/views/{$name}.php";
 }
 
 /**
