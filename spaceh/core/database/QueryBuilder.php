@@ -54,6 +54,21 @@ class QueryBuilder
     
     }
 
+    public function editUsuarios($table, $parametros, $id)
+    {
+        $sql = "UPDATE `{$table}` SET `nome`='{$parametros['nome']}',`email`='{$parametros['email']}',`senha`='{$parametros['senha']}',`foto`='{$parametros['foto']}' WHERE id = {$id}";
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+
+            $stmt->execute();
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+
+    }
+
     // Funções Categorias
 
     public function adicionaCategorias ($table, $parametros)
@@ -70,6 +85,21 @@ class QueryBuilder
         }   
     }
 
+    public function editCategorias($table, $parametros, $id)
+    {
+        $sql = "UPDATE `{$table}` SET `categoria`='{$parametros['categoria']}' WHERE id = {$id}";
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+
+            $stmt->execute();
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+
+    }
+    
 
     public function delete($table, $id)
     {
@@ -85,20 +115,7 @@ class QueryBuilder
         } 
     }
 
-    public function editUsuarios($table, $parametros, $id)
-    {
-        $sql = "UPDATE `{$table}` SET `nome`='{$parametros['nome']}',`email`='{$parametros['email']}',`senha`='{$parametros['senha']}',`foto`='{$parametros['foto']}' WHERE id = {$id}";
-
-        try {
-            $stmt = $this->pdo->prepare($sql);
-
-            $stmt->execute();
-
-        } catch (Exception $e) {
-            die($e->getMessage());
-        }
-
-    }
+    
 
     public function pesquisarCategoria($table, $parametros)
     {
