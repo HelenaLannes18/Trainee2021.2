@@ -20,7 +20,15 @@
     <link href="../../../public/css/login.css" rel="stylesheet">
     
   </head>
-
+  <?php if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    }
+    if (isset($_SESSION['usuario'])) {
+		
+      header('Location: /dashboard');
+    }
+    ?>
   <body class="text-center">
 
   <?php require ('navbar_administrativa.php');?>

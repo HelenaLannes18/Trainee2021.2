@@ -133,6 +133,8 @@ class contatoController {
     }
 }
 
+
+
 class ProdutosAdmController
 {
     public function view()
@@ -181,6 +183,11 @@ class ProdutosAdmController
     }
 
 }
+class DashboardController{
+    public function view() {
+        return view('admin/dashboard');
+    }
+}
 
 class LoginController {
 
@@ -189,16 +196,42 @@ class LoginController {
         return view('admin/login');
 
     }
+    public function login()
+    {
+        $email = $_GET['email'] ?? '';
+        $senha = $_GET['senha'] ?? '';
 
-}
+        if( $email == 'admin' && $senha == 'admin') {
+            $_SESSION['usuario'] = 'admin';
 
-class DashboardController{
+            header('Location: /dashboard');
+        }
 
-    public function view(){
-        return view('admin/dashboard');
+        $usuarios = App::get('database')->selectAll('usuarios');
+
+        foreach ($usuarios as $usuario) :
+
+        if( $usuario->email == $email && $usuario->senha == $senha) 
+        { 
+            $_SESSION['usuario'] = $usuario->nome;
+      
+            header('Location: /usuarios');
+        }
+        endforeach;
+
+        $_SESSION['error'] = true;
+        header('Location: /login');
+    }
+
+    public function deslogar() 
+    {
+        session_unset();
+        session_destroy();
+        header('Location: /login');
     }
 
 }
+
 
 class UsuariosController 
 {   

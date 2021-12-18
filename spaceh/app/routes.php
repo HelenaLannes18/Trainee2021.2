@@ -27,6 +27,10 @@ $router->post('produtos-adm/update', 'ProdutosAdmController@update');
 //Login Controller
 
 $router->get('login','LoginController@view');
+$router->get('logar','LoginController@login');
+$router->get('deslogar','LoginController@deslogar');
+
+$router->get('dashboard','DashboardController@view');
 
 //Dashboard
 
