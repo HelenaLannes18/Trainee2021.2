@@ -11,7 +11,7 @@ class CategoriasController
     {
         $categorias = App::get('databse')->selectAll('categorias');
 
-        return categorias('categorias',compact('categorias'));
+        return view('categorias',compact('categorias'));
     }
 
     public function adicionar()
@@ -44,10 +44,17 @@ class CategoriasController
     }
 }
 
+class LoginController 
+{   
 
+    public function view() {
 
+        return view('login');
 
+    }
 
+}
+?>
 
 class ExampleController
 {
