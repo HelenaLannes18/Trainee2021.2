@@ -6,6 +6,7 @@
         "files": ["core/helpers.php"]
     },
     "require": {
-        "doctrine/dbal": "^3.2"
+        "phpmailer/phpmailer": "^6.5"
+       
     }
 }
