@@ -89,6 +89,19 @@ class QueryBuilder
 
     }
 
+    public function pesquisarCategoria($table, $parametros)
+    {
+        $sql = "SELECT * FROM `{$table}` WHERE `categoria` LIKE '%{$parametros}%'";
+
+        $statement = $this->pdo->prepare($sql);
+
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+
+    }
+
+
     // Funções de Produtos
     public function insertProducts($table, $parametros)
     {

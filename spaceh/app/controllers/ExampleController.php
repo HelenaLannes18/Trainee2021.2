@@ -9,10 +9,19 @@ class CategoriasController
 {
     public function view()
     {
-        $categorias = App::get('database')->selectAll('categorias');
+
+        if(isset($_POST['buscar'])) {
+            $param = $_POST['nome-categoria'];
+
+            $categorias = App::get('database')->pesquisarCategoria('categorias', $param);
+        } else {
+            $categorias = App::get('database')->selectAll('categorias');
+        }
 
         return view('admin/adm-categorias',compact('categorias'));
+
     }
+
 
     public function adicionar()
     {
@@ -22,26 +31,27 @@ class CategoriasController
 
         App::get('database')->adicionaCategorias('categorias', $parametros);
 
-        header('Location: /categorias');
+        header('Location: /categorias-adm');
     }
 
     public function apagar()
     {
         App::get('database')->delete('categorias', $_POST['id']);
 
-        header('Location: /categorias');
+        header('Location: /categorias-adm');
     }
 
     public function update()
     {
         $parametros = [
-            'nome' => $_POST['nome'],
+            'categoria' => $_POST['categoria'],
         ];
 
         App::get('database')->editCategorias('categorias', $parametros, $_POST['id']);
 
-        header('Location: /categorias');
+        header('Location: /categorias-adm');
     }
+
 }
 
 class ProdutosAdmController
