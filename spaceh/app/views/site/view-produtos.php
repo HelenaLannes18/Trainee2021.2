@@ -19,18 +19,9 @@
         <!-- Ordering Area: Contains search and ordering -->
         
         <div class="ordering-area">
-            <!-- <div class="ordering__options">
-                <span>Ordenar:</span>
-                <select name="ordering-products" id="ordering__select" disabled>
-                    <option value="relevance">Relevância</option>
-                    <option value="category">Categoria</option>
-                    <option value="rising-price">Preço Crescente</option>
-                    <option value="decreasing-price">Preço Decrescente</option>
-                </select>
-            </div> -->
             <form action="produtos" method="GET">
                 <input type="search" name="products-search" id="ordering__search-bar" placeholder="Pesquisar" value="">
-                <button type="submit">Pesquisar</button>
+                <button type="submit" id="search__button">Pesquisar</button>
             </form>
         </div>
 

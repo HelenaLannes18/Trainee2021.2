@@ -103,19 +103,21 @@ class ProdutosController
     {
 
         // Pegar Número da página
-        $pagina_atual = $_GET['pagina'];
-        $pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
+        // $pagina_atual = $_GET['pagina'];
+        // $pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
 
-        // Definir quantidade por página
+        // // Definir quantidade por página
 
-        $qnt_result_pg = 10;
+        // $qnt_result_pg = 10;
 
-        // Início da visualização
-        $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
+        // // Início da visualização
+        // $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
 
-        // Requisitar do banco
+        // // Requisitar do banco
 
-        $produtos = App::get('database')->selectPagination('produtos', $inicio, $qnt_result_pg);
+        // $produtos = App::get('database')->selectPagination('produtos', $inicio, $qnt_result_pg);
+
+        $produtos = App::get('database')->selectAll('produtos');
 
         return view('site/view-produtos',compact('produtos'));
     }
