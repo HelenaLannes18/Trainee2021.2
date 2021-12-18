@@ -1,4 +1,7 @@
 .container-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 90%;
     max-width: 1250px;
     margin: auto;
@@ -48,7 +51,7 @@
 */
 
 .button {
-    padding: 5px;
+    padding: 5px 10px;
     color: #FFFFFF;
     background-color: #4F0AD8;
     box-shadow: 1px 1px 3px #8a8d8f;
@@ -63,7 +66,7 @@
 .table {
     width: 90%;
     max-width: 1250px;
-    margin: 0px auto;
+    margin: 15px auto;
     box-shadow: 5px 5px 10px #8a8d8f;
     table-layout: fixed;
 }

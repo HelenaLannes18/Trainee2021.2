@@ -42,7 +42,7 @@ class CategoriasController
         header('Location: /categorias-adm');
     }
 
-    public function update()
+    public function editCategoria()
     {
         $parametros = [
             'categoria' => $_POST['categoria'],
