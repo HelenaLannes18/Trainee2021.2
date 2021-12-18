@@ -1,3 +1,14 @@
+.container-div {
+    width: 90%;
+    max-width: 1250px;
+    margin: auto;
+}
+
+.title {
+    margin-top: 8rem;
+}
+
+
 /*
     Barra de Pesquisa
 */
