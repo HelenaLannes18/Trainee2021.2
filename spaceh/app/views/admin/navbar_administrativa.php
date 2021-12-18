@@ -6,6 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+    <link rel="icon" href="../site/img/mini-logo2.png">
 
     <title>Fixed top navbar example for Bootstrap</title>
 
@@ -21,7 +22,7 @@
 
     <nav class="navbar navbar-expand-md  fixed-top  personalizada-navbar">
          <a class="navbar-brand" href="#" style="color: #4f0ad8;">
-           <img src="../../../public/assets/1 - edit.png"  width="30" height="30" class="d-inline-block align-top" alt="">
+           <img src="../../../public/assets/img_navbar/mini-logo2.png"  width="30" height="30" class="d-inline-block align-top" alt="">
            Spaceh
           </a>
 
@@ -53,10 +54,7 @@
             </div>
     
         </ul>
-        <form class="form-inline mt-2 mt-md-0">
-          <input class="form-control mr-sm-2" style="max-width: 80%;" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn but_st btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+       
       </div>
     </nav>
 

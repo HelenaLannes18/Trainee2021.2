@@ -8,10 +8,10 @@ use PDO;
 class QueryBuilder
 {
     protected $pdo;
-
-    public function __construct(PDO $pdo) {
+    public function __construct($pdo)
+    {
         $this->pdo = $pdo;
-    } 
+    }
 
     public function selectAll($table)
     {
@@ -39,6 +39,52 @@ class QueryBuilder
 
 
     // Funções Categorias
+    public function selecionarUsuarios($table)
+    {
+        $sql = "select * from {$table}";
+        
+        try{
+            
+            $statement = $this->pdo->prepare($sql);
+
+            $statement->execute();
+
+            return $statement->fetchAll(PDO::FETCH_CLASS);
+        }
+        catch(Exception $e){
+            die($e->getMessage());
+        }
+    
+    }
+
+    public function adicionaUsuarios ($table, $parametros)
+    {
+        $sql = "INSERT INTO `{$table}` (`nome`,`email`,`senha`,`foto`) VALUES ('{$parametros['nome']}','{$parametros['email']}','{$parametros['senha']}','{$parametros['foto']}')";
+    
+        $statement = $this->pdo->prepare("select * from {$table}");
+
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+    
+    }
+
+    public function editUsuarios($table, $parametros, $id)
+    {
+        $sql = "UPDATE `{$table}` SET `nome`='{$parametros['nome']}',`email`='{$parametros['email']}',`senha`='{$parametros['senha']}',`foto`='{$parametros['foto']}' WHERE id = {$id}";
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+
+            $stmt->execute();
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+
+    }
+
+    // Funções Categorias
 
     public function adicionaCategorias ($table, $parametros)
     {
@@ -51,13 +97,28 @@ class QueryBuilder
 
         } catch (Exception $e) {
             die($e->getMessage());
-        }
+        }   
     }
 
+    public function editCategorias($table, $parametros, $id)
+    {
+        $sql = "UPDATE `{$table}` SET `categoria`='{$parametros['categoria']}' WHERE id = {$id}";
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+
+            $stmt->execute();
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+
+    }
+    
 
     public function delete($table, $id)
     {
-        $sql = "DELETE FROM {$table} WHERE id = {$id}";
+        $sql = "DELETE FROM `{$table}` WHERE id = {$id}";
 
         try {
             $stmt = $this->pdo->prepare($sql);
@@ -69,20 +130,20 @@ class QueryBuilder
         } 
     }
 
-    public function editCategorias($table, $parametros, $id)
+    
+
+    public function pesquisarCategoria($table, $parametros)
     {
-        $sql = "UPDATE {$table} SET categoria='{$parametros['categoria']}' WHERE id = {$id}";
+        $sql = "SELECT * FROM `{$table}` WHERE `categoria` LIKE '%{$parametros}%'";
 
-        try {
-            $stmt = $this->pdo->prepare($sql);
+        $statement = $this->pdo->prepare($sql);
 
-            $stmt->execute();
+        $statement->execute();
 
-        } catch (Exception $e) {
-            die($e->getMessage());
-        }
+        return $statement->fetchAll(PDO::FETCH_CLASS);
 
     }
+
 
     // Funções de Produtos
     public function insertProducts($table, $parametros)
