@@ -1,9 +1,13 @@
 <?php
 
+
+// Contato Controller
+
 $router->get('contato','contatoController@viewContato');
 $router->post('contato','contatoController@enviarEmail');
 
 //Categorias Controller
+
 $router->get('categorias-adm','CategoriasController@view');
 $router->post('categorias-adm','CategoriasController@adicionar');
 $router->post('categorias-adm/delete','CategoriasController@apagar');
@@ -25,7 +29,7 @@ $router->post('produtos-adm/delete','ProdutosAdmController@delete');
 $router->post('produtos-adm/update', 'ProdutosAdmController@update');
 $router->get('produtos-adm/search', 'PageController@searchProductADM');
 
-// Produtos
+// Produtos Controller
 
 $router->get('produtos','ProdutosController@view');
 //$router->get('produtos', 'PageController@searchProduct');
