@@ -22,9 +22,9 @@
 
   <!-- Barra de Pesquisar -->
 
-  <form action="" method="" id="form-pesquisa">
+  <form action="" method="POST" id="form-pesquisa">
     <input type="search" name="nome-categoria" id="barra-pesquisa" placeholder="Digite sua busca">
-    <input type="submit" value="Pesquisar" id="botao-buscar">
+    <button name="buscar" id="botao-buscar">Pesquisar</button>
   </form>
 
   <!-- Tabela -->
