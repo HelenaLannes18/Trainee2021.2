@@ -19,7 +19,7 @@
         <!-- Ordering Area: Contains search and ordering -->
         
         <div class="ordering-area">
-            <div class="ordering__options">
+            <!-- <div class="ordering__options">
                 <span>Ordenar:</span>
                 <select name="ordering-products" id="ordering__select" disabled>
                     <option value="relevance">Relevância</option>
@@ -27,7 +27,7 @@
                     <option value="rising-price">Preço Crescente</option>
                     <option value="decreasing-price">Preço Decrescente</option>
                 </select>
-            </div>
+            </div> -->
             <form action="produtos" method="GET">
                 <input type="search" name="products-search" id="ordering__search-bar" placeholder="Pesquisar" value="">
                 <button type="submit">Pesquisar</button>
@@ -53,6 +53,12 @@
         </div>
 
         <!-- Pagination -->
+
+        <?php 
+        
+                $result_pg = "SELECT COUNT(id) AS"
+
+        ?>
 
         <div class="paginate">
             <div class="paginate__item" id="paginate__first">&#171</div>

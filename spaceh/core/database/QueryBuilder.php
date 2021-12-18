@@ -24,6 +24,20 @@ class QueryBuilder
     
     }
 
+    public function selectPagination($table, $inicio, $qnt_result)
+    {
+    
+        $sql = "SELECT * FROM {$table} LIMIT {$inicio}, {$qnt_result}";
+
+        $statement = $this->pdo->prepare($sql);
+
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+    
+    }
+
+
     // Funções Categorias
 
     public function adicionaCategorias ($table, $parametros)
