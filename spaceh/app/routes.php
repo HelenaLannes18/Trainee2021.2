@@ -13,4 +13,8 @@ $router->post('produtos-adm','ProdutosAdmController@create');
 $router->post('produtos-adm/delete','ProdutosAdmController@delete');
 $router->post('produtos-adm/update', 'ProdutosAdmController@update');
 
+//Login Controller
+
+$router->get('login','LoginController@view');
+
 ?>

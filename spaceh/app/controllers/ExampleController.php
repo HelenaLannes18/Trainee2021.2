@@ -93,7 +93,15 @@ class ProdutosAdmController
 
 }
 
+class LoginController {
 
+    public function view() {
+
+        return view('admin/login');
+
+    }
+
+}
 
 class ExampleController
 {
