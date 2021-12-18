@@ -6,4 +6,14 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+<<<<<<< HEAD
+=======
+    'Psr\\Log\\' => array($vendorDir . '/psr/log/src'),
+    'Psr\\Cache\\' => array($vendorDir . '/psr/cache/src'),
+    'PackageVersions\\' => array($vendorDir . '/composer/package-versions-deprecated/src/PackageVersions'),
+    'Doctrine\\Deprecations\\' => array($vendorDir . '/doctrine/deprecations/lib/Doctrine/Deprecations'),
+    'Doctrine\\DBAL\\' => array($vendorDir . '/doctrine/dbal/src'),
+    'Doctrine\\Common\\Cache\\' => array($vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache'),
+    'Doctrine\\Common\\' => array($vendorDir . '/doctrine/event-manager/lib/Doctrine/Common'),
+>>>>>>> 17db53accab449ceed62375e8395ede56c351297
 );
