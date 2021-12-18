@@ -18,9 +18,21 @@
 
     <!-- Custom styles for this template -->
     <link href="../../../public/css/login.css" rel="stylesheet">
+    
   </head>
-
+  <?php if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    }
+    if (isset($_SESSION['usuario'])) {
+		
+      header('Location: /dashboard');
+    }
+    ?>
   <body class="text-center">
+
+  <?php require ('navbar_administrativa.php');?>
+
     <form class="form-signin">
       <img class="mb-4" src="../../../public/assets/login.png" alt="" width="72" height="72">
       <h1 class="h3 mb-3 font-weight-normal">Login ADM</h1>
