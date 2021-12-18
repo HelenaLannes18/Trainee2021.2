@@ -141,8 +141,8 @@
                   <input name="categoria" type="text" class="form-control" id="formGroupExampleInput" required>
                 </div>
                   <div class="modal-footer">
-                    <button type="button" class="fechar" data-dismiss="modal">Fechar</button>
-                    <button type="submit" class="salvar">Salvar</button>
+                    <button type="button" class="button fechar" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="button salvar">Salvar</button>
                   </div>
               </form>
           </div>
