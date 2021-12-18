@@ -7,5 +7,6 @@
     },
     "require": {
         "phpmailer/phpmailer": "^6.5"
+        "doctrine/dbal": "^3.2"
     }
 }
