@@ -54,7 +54,7 @@ class LoginController
     }
 
 }
-?>
+
 
 class ExampleController
 {
@@ -93,3 +93,5 @@ class ExampleController
  
     }
 }
+
+?>
