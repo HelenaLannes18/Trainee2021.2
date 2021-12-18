@@ -1,3 +1,73 @@
+.container-div {
+    width: 90%;
+    max-width: 1250px;
+    margin: auto;
+}
+
+.title {
+    margin-top: 8rem;
+}
+
+
+/*
+    Barra de Pesquisa
+*/
+
+#form-pesquisa {
+    width: 90%;
+    max-width: 1250px;
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#barra-pesquisa {
+    width: 90%;
+    margin-right: 10px;
+    outline: none;
+    border: 1px solid #8a8d8f;
+}
+
+#botao-buscar {
+    padding: 8px;
+    color: #FFFFFF;
+    background-color: #4F0AD8;
+    box-shadow: 2px 2px 5px #8a8d8f;
+    border: none;
+    border-radius: 10px;
+}
+
+#botao-buscar:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+
+
+/*
+    Tabela
+*/
+
+.button {
+    padding: 5px;
+    color: #FFFFFF;
+    background-color: #4F0AD8;
+    box-shadow: 1px 1px 3px #8a8d8f;
+    border: none;
+    border-radius: 10px;
+}
+.button:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+
+.table {
+    width: 90%;
+    max-width: 1250px;
+    margin: 0px auto;
+    box-shadow: 5px 5px 10px #8a8d8f;
+    table-layout: fixed;
+}
+
 thead {
     background-color: #4F0AD8 !important;
     font-family: 'Squada One', cursive;
@@ -12,16 +82,16 @@ tbody th {
 }
 
 .editar {
-    background-color: #8a8d8f !important;
-    color: white !important;
-    text-decoration: none !important;
+    background-color: #000000;
+    color: white;
+    text-decoration: none;
     border-radius: 3.5px;
     font-family: 'Squada One', cursive;
     font-size: 18px;
 }
 
 .excluir {
-    background-color:#4f0ad8;
+    background-color: #ff0000;
     color: white;
     border-radius: 3.5px;
     font-family: 'Squada One', cursive;
@@ -37,15 +107,6 @@ tbody th {
 .excluir a {
     text-decoration: none;
     color: white;
-}
-
-table {
-    width: 1250px !important;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 80px;
-    box-shadow: 7px 7px 2px #8a8d8f;
-    table-layout: fixed;
 }
 
 .categoria {
@@ -70,7 +131,6 @@ h1 {
 }
 
 .btn {
-    background-color: #4f0ad8 !important;
     font-family: 'Squada One', cursive;
     color: white;
     font-size: 20px;
@@ -103,13 +163,15 @@ td {
 }
 
 .btn1 {
-    background-color: #4f0ad8 !important;
+    background-color: #4f0ad8;
     font-family: 'Squada One', cursive;
     color: white;
     font-size: 23px;
     position: relative;
-    border-color: transparent;
+    border: none;
     margin-top: 30px;
     margin-left: 45%;
     border-radius: 4px;
 }
+
+

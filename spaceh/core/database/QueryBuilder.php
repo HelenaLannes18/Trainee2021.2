@@ -13,6 +13,17 @@ class QueryBuilder
         $this->pdo = $pdo;
     }
 
+    public function selectAll($table)
+    {
+    
+        $statement = $this->pdo->prepare("select * from {$table}");
+
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+    
+    }
+
     public function selecionarUsuarios($table)
     {
         $sql = "select * from {$table}";
@@ -88,6 +99,19 @@ class QueryBuilder
         }
 
     }
+
+    public function pesquisarCategoria($table, $parametros)
+    {
+        $sql = "SELECT * FROM `{$table}` WHERE `categoria` LIKE '%{$parametros}%'";
+
+        $statement = $this->pdo->prepare($sql);
+
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+
+    }
+
 
     // Funções de Produtos
     public function insertProducts($table, $parametros)
