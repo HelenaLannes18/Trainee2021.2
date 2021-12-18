@@ -44,7 +44,7 @@ class CategoriasController
     public function update()
     {
         $parametros = [
-            'nome' => $_POST['nome'],
+            'categoria' => $_POST['categoria'],
         ];
 
         App::get('database')->editCategorias('categorias', $parametros, $_POST['id']);
