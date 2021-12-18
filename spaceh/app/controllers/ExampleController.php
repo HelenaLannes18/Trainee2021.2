@@ -22,14 +22,14 @@ class CategoriasController
 
         App::get('database')->adicionaCategorias('categorias', $parametros);
 
-        header('Location: /categorias');
+        header('Location: /categorias-adm');
     }
 
     public function apagar()
     {
         App::get('database')->delete('categorias', $_POST['id']);
 
-        header('Location: /categorias');
+        header('Location: /categorias-adm');
     }
 
     public function update()
@@ -40,7 +40,7 @@ class CategoriasController
 
         App::get('database')->editCategorias('categorias', $parametros, $_POST['id']);
 
-        header('Location: /categorias');
+        header('Location: /categorias-adm');
     }
 }
 
@@ -91,44 +91,4 @@ class ProdutosAdmController
         header('location: /produtos-adm');
     }
 
-}
-
-
-
-class ExampleController
-{
-    public function index()
-    {
-        
-    }
-
-    public function show()
-    {
-
-    }
-
-    public function create()
-    {
- 
-    }
-
-    public function store()
-    {
-
-    }
-
-    public function edit()
-    {
-  
-    }
-
-    public function update()
-    {
-        
-    }
-
-    public function delete()
-    {
- 
-    }
 }

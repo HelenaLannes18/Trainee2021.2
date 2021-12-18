@@ -57,7 +57,7 @@ class QueryBuilder
 
     public function editCategorias($table, $parametros, $id)
     {
-        $sql = "UPDATE {$table} SET categoria='{$parametros['categoria']}' WHERE id={$id}";
+        $sql = "UPDATE {$table} SET categoria='{$parametros['categoria']}' WHERE id = {$id}";
 
         try {
             $stmt = $this->pdo->prepare($sql);
