@@ -81,6 +81,10 @@ li, a, button {
     transform: scale(1.02);
 }
 
+.product a {
+    text-decoration: none;
+}
+
 .product__image {
     width: 100%;
     height: 230px;
@@ -92,7 +96,7 @@ li, a, button {
 }
 
 .product__name {
-    padding: 15px 0px;
+    padding: 15px 0px 0px 0px;
     font-size: 1.875rem;
 }
 

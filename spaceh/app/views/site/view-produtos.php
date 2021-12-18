@@ -9,8 +9,10 @@
 </head>
 <body>
 
-    <!-- Navbar: will be changed later for the real navbar -->
-    <div class="navbar"></div>
+    <!-- Navbar -->
+    <?php
+        require('navbar.php');
+    ?>
 
     <div class="container">
         
@@ -26,28 +28,28 @@
                     <option value="decreasing-price">Preço Decrescente</option>
                 </select>
             </div>
-            <input type="search" name="search-bar" id="ordering__search-bar" placeholder="Pesquisar">
+            <form action="produtos" method="GET">
+                <input type="search" name="products-search" id="ordering__search-bar" placeholder="Pesquisar" value="">
+                <button type="submit">Pesquisar</button>
+            </form>
         </div>
 
         <!-- Showcase Area: contains product cards -->
 
         <div class="showcase-area">
-
-            <!-- 
-                This is only a model, the cards are created dynamically 
-
-                <div class="product">
-                    <a href="#">
-                        <img src="" alt="" class="product__image">
-                        <div class="product__info">
-                            <h2 class="product__name"></h2>
-                            <span class="product__price"></span>
-                            <span class="product__category"></span>
-                        </div>
-                        <button class="product__cta"></button>
-                    </a>
-                </div> 
-            -->
+        <?php foreach($produtos as $produto) :?>
+            <div class="product">
+                <a href="#">
+                    <img src="<?= $produto->imagem ?>" alt="Imagem do Produto" class="product__image">
+                    <div class="product__info">
+                        <h2 class="product__name"><?= $produto->nome ?></h2>
+                        <span class="product__price"><?= $produto->preco ?></span>
+                        <span class="product__category"><?= $produto->categoria ?></span>
+                    </div>
+                    <button class="product__cta">Ver Produto</button>
+                </a>
+            </div> 
+        <?php endforeach; ?>
         </div>
 
         <!-- Pagination -->

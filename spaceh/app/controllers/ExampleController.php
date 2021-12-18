@@ -44,6 +44,8 @@ class CategoriasController
     }
 }
 
+// Produtos ADM
+
 class ProdutosAdmController
 {
     public function view()
@@ -90,5 +92,63 @@ class ProdutosAdmController
 
         header('location: /produtos-adm');
     }
+
+}
+
+// Produtos
+
+class ProdutosController
+{
+    public function view()
+    {
+        $produtos = App::get('database')->selectAll('produtos');
+
+        return view('site/view-produtos',compact('produtos'));
+    }
+
+}
+
+
+
+class PageController
+{
+    public function searchProductADM()
+    {
+        
+        if(isset($_GET['product-search'])) {
+
+            $searchContent = $_GET['product-search'];
+
+            $produtos = App::get('database')->searchProducts('produtos', $searchContent);
+
+            if($produtos) {
+                return view('admin/adm-produtos',compact('produtos'));
+            } else {
+                echo "<center><h1>Produto não encontrado!</h1></center>";
+                echo "<center><h5>Aguarde para ser redirecionado para a página principal</h5></center>";
+                header("refresh:5;url=/produtos-adm");
+            }
+            
+        } 
+
+    }
+
+    // public function searchProduct()
+    // {
+    //     if(isset($_GET['products-search'])) {
+
+    //         $searchContent = $_GET['products-search'];
+
+    //         $produtos = App::get('database')->searchProducts('produtos', $searchContent);
+
+    //         if($produtos) {
+    //             return view('admin/view-produtos',compact('produtos'));
+    //         } else {
+    //             echo "Produto não encontrado";
+    //             header( "refresh:5;url=/produtos-adm" );
+    //         }
+    //     }
+
+    // }
 
 }
