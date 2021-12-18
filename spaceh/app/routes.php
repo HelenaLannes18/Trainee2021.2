@@ -1,12 +1,9 @@
 <?php
 
-
-
 $router->get('contato','contatoController@viewContato');
-
 $router->post('contato','contatoController@enviarEmail');
 
-
+//Categorias Controller
 $router->get('categorias-adm','CategoriasController@view');
 $router->post('categorias-adm','CategoriasController@adicionar');
 $router->post('categorias-adm/delete','CategoriasController@apagar');
@@ -30,5 +27,9 @@ $router->post('produtos-adm/update', 'ProdutosAdmController@update');
 //Login Controller
 
 $router->get('login','LoginController@view');
+
+//Dashboard
+
+$router->get('dashboard','DashboardController@view');
 
 ?>

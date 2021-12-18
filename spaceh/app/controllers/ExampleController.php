@@ -192,6 +192,14 @@ class LoginController {
 
 }
 
+class DashboardController{
+
+    public function view(){
+        return view('admin/dashboard');
+    }
+
+}
+
 class UsuariosController 
 {   
 
