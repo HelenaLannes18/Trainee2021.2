@@ -72,7 +72,7 @@ class QueryBuilder
 
     public function pesquisarCategoria($table, $parametros)
     {
-        $sql = "SELECT * FROM {$table} WHERE categoria LIKE '%{$parametros}%'";
+        $sql = "SELECT * FROM `{$table}` WHERE `categoria` LIKE '%{$parametros}%'";
 
         $statement = $this->pdo->prepare($sql);
 

@@ -9,20 +9,19 @@ class CategoriasController
 {
     public function view()
     {
+
         if(isset($_POST['buscar'])) {
-            $nomeCategoria = $_POST['nome-categoria'];
+            $param = $_POST['nome-categoria'];
 
-            $categorias = App::get('database')->pesquisarCategoria('categorias', $nomeCategoria);
-
-            return view('admin/adm-categorias',compact('categorias'));            
-
+            $categorias = App::get('database')->pesquisarCategoria('categorias', $param);
         } else {
             $categorias = App::get('database')->selectAll('categorias');
-
-            return view('admin/adm-categorias',compact('categorias'));
         }
-        
+
+        return view('admin/adm-categorias',compact('categorias'));
+
     }
+
 
     public function adicionar()
     {
@@ -52,18 +51,6 @@ class CategoriasController
 
         header('Location: /categorias-adm');
     }
-
-    // public function buscaCategorias()
-    // {
-    //     if(isset($_POST['buscar'])) {
-    //         $nomeCategoria = $_GET['nome-categoria'];
-
-    //         $categorias = App::get('database')->pesquisarCategoria('categorias', $nomeCategoria);
-
-    //         return view('admin/adm-categorias',compact('categorias'));            
-
-    //     }
-    // }
 
 }
 

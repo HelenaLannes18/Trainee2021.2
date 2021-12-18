@@ -22,9 +22,9 @@
 
   <!-- Barra de Pesquisar -->
 
-  <form action="" method="POST" id="form-pesquisa">
+  <form action="busca-categorias" method="POST" id="form-pesquisa">
     <input type="search" name="nome-categoria" id="barra-pesquisa" placeholder="Digite sua busca">
-    <button name="buscar" id="botao-buscar">Pesquisar</button>
+    <button type="submit" name="buscar" id="botao-buscar">Pesquisar</button>
   </form>
 
   <!-- Tabela -->
@@ -112,7 +112,7 @@
   <!-- Botão Adicionar Categoria -->
 
   
-  <button type="button" class="btn1" data-toggle="modal" data-target="#modalAdicionar">Adicionar categoria</button>
+  <button id="button-adicionar" type="button" class="btn1 button" data-toggle="modal" data-target="#modalAdicionar">Adicionar categoria</button>
     
   <!-- Modal Adicionar Categoria--> 
 
