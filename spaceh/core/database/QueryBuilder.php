@@ -189,9 +189,9 @@ class QueryBuilder
     }
 
 
-    public function searchProducts($table, $parametros)
+    public function pesquisarProdutos($table, $parametros)
     {
-        $sql = "SELECT * FROM {$table} WHERE `nome` LIKE '%{$parametros}%'";
+        $sql = "SELECT * FROM `{$table}` WHERE `nome` LIKE '%{$parametros}%'";
 
         $statement = $this->pdo->prepare($sql);
 

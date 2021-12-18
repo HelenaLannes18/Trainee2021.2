@@ -190,23 +190,13 @@ class ProdutosController
 {
     public function view()
     {
+        if(isset($_POST['buscar-prod'])) {
+            $param = $_POST['nome-produto'];
 
-        // Pegar Número da página
-        // $pagina_atual = $_GET['pagina'];
-        // $pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
-
-        // // Definir quantidade por página
-
-        // $qnt_result_pg = 10;
-
-        // // Início da visualização
-        // $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
-
-        // // Requisitar do banco
-
-        // $produtos = App::get('database')->selectPagination('produtos', $inicio, $qnt_result_pg);
-
-        $produtos = App::get('database')->selectAll('produtos');
+            $produtos = App::get('database')->pesquisarProdutos('produtos', $param);
+        } else {
+            $produtos = App::get('database')->selectAll('produtos');
+        }
 
         return view('site/view-produtos',compact('produtos'));
     }
@@ -219,7 +209,8 @@ class DashboardController
     }
 }
 
-class LoginController {
+class LoginController 
+{
 
     public function view() {
 

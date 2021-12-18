@@ -19,9 +19,9 @@
         <!-- Ordering Area: Contains search and ordering -->
         
         <div class="ordering-area">
-            <form action="produtos" method="GET">
-                <input type="search" name="products-search" id="ordering__search-bar" placeholder="Pesquisar" value="">
-                <button type="submit" id="search__button">Pesquisar</button>
+            <form action="busca-produtos" method="POST">
+                <input type="search" name="nome-produto" id="ordering__search-bar" placeholder="Pesquisar" value="">
+                <button type="submit" name="buscar-prod" id="search__button">Pesquisar</button>
             </form>
         </div>
 
@@ -47,7 +47,7 @@
 
         <?php 
         
-                $result_pg = "SELECT COUNT(id) AS"
+                //$result_pg = "SELECT COUNT(id) AS"
 
         ?>
 
