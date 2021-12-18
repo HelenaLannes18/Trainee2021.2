@@ -8,13 +8,32 @@ use PDO;
 class QueryBuilder
 {
     protected $pdo;
-
-    public function __construct(PDO $pdo) {
-        $this->pdo = $pdo;
-    } 
-
-    public function selectAll($table)
+    public function __construct($pdo)
     {
+        $this->pdo = $pdo;
+    }
+
+    public function selecionarUsuarios($table)
+    {
+        $sql = "select * from {$table}";
+        
+        try{
+            
+            $statement = $this->pdo->prepare($sql);
+
+            $statement->execute();
+
+            return $statement->fetchAll(PDO::FETCH_CLASS);
+        }
+        catch(Exception $e){
+            die($e->getMessage());
+        }
+    
+    }
+
+    public function adicionaUsuarios ($table, $parametros)
+    {
+        $sql = "INSERT INTO `{$table}` (`nome`,`email`,`senha`,`foto`) VALUES ('{$parametros['nome']}','{$parametros['email']}','{$parametros['senha']}','{$parametros['foto']}')";
     
         $statement = $this->pdo->prepare("select * from {$table}");
 
@@ -37,13 +56,13 @@ class QueryBuilder
 
         } catch (Exception $e) {
             die($e->getMessage());
-        }
+        }   
     }
 
 
     public function delete($table, $id)
     {
-        $sql = "DELETE FROM {$table} WHERE id = {$id}";
+        $sql = "DELETE FROM `{$table}` WHERE id = {$id}";
 
         try {
             $stmt = $this->pdo->prepare($sql);
@@ -55,9 +74,9 @@ class QueryBuilder
         } 
     }
 
-    public function editCategorias($table, $parametros, $id)
+    public function editUsuarios($table, $parametros, $id)
     {
-        $sql = "UPDATE {$table} SET categoria='{$parametros['categoria']}' WHERE id = {$id}";
+        $sql = "UPDATE `{$table}` SET `nome`='{$parametros['nome']}',`email`='{$parametros['email']}',`senha`='{$parametros['senha']}',`foto`='{$parametros['foto']}' WHERE id = {$id}";
 
         try {
             $stmt = $this->pdo->prepare($sql);
