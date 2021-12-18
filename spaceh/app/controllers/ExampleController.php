@@ -204,7 +204,7 @@ class LoginController {
         if( $email == 'admin' && $senha == 'admin') {
             $_SESSION['usuario'] = 'admin';
 
-            header('Location: /dashboard');
+            header('Location: /usuarios');
         }
 
         $usuarios = App::get('database')->selectAll('usuarios');
