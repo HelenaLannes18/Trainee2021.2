@@ -44,4 +44,8 @@ $router->get('dashboard','DashboardController@view');
 
 $router->get('viewhome','ViewHomeController@view');
 
+//ViewProdutos 
+
+$router->get('viewprodutos','ViewProdutos@view');
+
 ?>
