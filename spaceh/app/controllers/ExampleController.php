@@ -265,6 +265,16 @@ class ViewHomeController
         }
 
 
+class QuemSomosController
+{   
+    
+    public function view() {
+    
+            return view('site/quem-somos');
+        
+    }
+}
+
 class UsuariosController 
 {   
 
