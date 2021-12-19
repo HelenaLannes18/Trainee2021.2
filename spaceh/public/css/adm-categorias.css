@@ -1,3 +1,7 @@
+*{
+    font-family: 'Squada One', cursive;
+}
+
 .container-div {
     display: flex;
     flex-direction: column;

@@ -1,3 +1,9 @@
+a{
+    color: white;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
 .nav-link{
     color: white;
 }
@@ -25,11 +31,7 @@
     border-color: #4f0ad8;
     color: #fff;
 }
-a{
-    color: white;
-    text-decoration: none;
-    transition: 0.5s;
-}
+
 
 .nav-link{
     text-decoration: none;
