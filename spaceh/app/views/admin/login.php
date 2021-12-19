@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
-    <link rel="icon" href="../site/img/mini-logo2.png">
+    <link rel="icon" href="../../../public/assets/img_navbar/mini-logo2.png">
 
     <title>ADM - Login | Space-H</title>
 

@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
-  <link rel="icon" href="../site/img/mini-logo2.png">
+  <link rel="icon" href="../../../public/assets/img_navbar/mini-logo2.png">
   
   <title>HOME | Space-H</title>
 

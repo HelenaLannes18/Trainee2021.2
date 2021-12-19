@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="../../../public/css/produto.css">
-        <link rel="icon" href="../site/img/mini-logo2.png">
+        <link rel="icon" href="../../../public/assets/img_navbar/mini-logo2.png">
         <title>PRODUTO | Space-H</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

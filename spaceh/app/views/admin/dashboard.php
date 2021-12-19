@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADM - DASHBOARD | Space-H</title>
     <link rel="stylesheet" href="../../../public/css/dashboard.css">
+    <link rel="icon" href="../../../public/assets/img_navbar/mini-logo2.png">
 </head>
 <body>
     <!-- Navbar: will be changed later for the real navbar -->
