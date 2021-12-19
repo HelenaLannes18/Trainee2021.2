@@ -366,20 +366,20 @@ class ViewHomeController
 {  
 
             
-        public function view() {
+    public function view() {
 
-            $produtosPorPagina = "4";
-            $inicio = 0;
-            $limite = 'LIMIT ' . $inicio . ',' . $produtosPorPagina;
-            $produtos2 = App::get('database')->selectAll2('produtos');
-            $produtos = App::get('database')->selectAll('produtos');
-            $produtos = App::get('database')->selectAllPaginacao($limite,$produtos2);
+        $produtosPorPagina = "4";
+        $inicio = 0;
+        $limite = 'LIMIT ' . $inicio . ',' . $produtosPorPagina;
+        $produtos2 = App::get('database')->selectAll2('produtos');
+        $produtos = App::get('database')->selectAll('produtos');
+        $produtos = App::get('database')->selectAllPaginacao($limite,$produtos2);
     
-            return view('site/viewhome',compact('produtos'));
+        return view('site/viewhome',compact('produtos'));
+    }
     
-        }
-    
-        }
+        
+}
 
 
 class QuemSomosController
@@ -387,7 +387,7 @@ class QuemSomosController
     
     public function view() {
     
-            return view('site/quem-somos');
+        return view('site/quem-somos');
         
     }
 }

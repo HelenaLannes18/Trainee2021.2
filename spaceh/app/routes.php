@@ -39,7 +39,7 @@ $router->get('login','LoginController@view');
 $router->get('logar','LoginController@login');
 $router->get('deslogar','LoginController@deslogar');
 
-$router->get('dashboard','DashboardController@view');
+//$router->get('dashboard','DashboardController@view');
 
 //Dashboard
 

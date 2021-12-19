@@ -19,8 +19,8 @@
 
         <div class="dashboard__info">
         
-            <div class="dropdown" data-dropdown>
-                <button class="info__button" data-dropdown-button>Links</button>
+            <div>
+                <div class="info__button">Links</div>
                 <div class="dashboard__links">
                     <ul>
                         <a href="usuarios">
@@ -38,23 +38,8 @@
                         <a href="produtos">
                             <li>Produtos</li>
                         </a>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="dropdown" data-dropdown>
-                <button class="info__button" data-dropdown-button>Profile</button>
-                <div class="dashboard__profile">
-                    <ul>
-                        <a href="#" class="dashboard__profile__link">
-                            <li>Nome: Darth Vader</li>
-                        </a>
                         <hr>
-                        <a href="#" class="dashboard__profile__link">
-                            <li>Permissões: Administrador</li>
-                        </a>
-                        <hr>
-                        <a href="#" class="dashboard__profile__link">
+                        <a href="deslogar" class="dashboard__profile__link">
                             <li><span>Sair</span></li>
                         </a>
                     </ul>
@@ -65,6 +50,5 @@
 
     </div>
 
-    <script src="../../../public/js/dashboard.js"></script>
 </body>
 </html>
