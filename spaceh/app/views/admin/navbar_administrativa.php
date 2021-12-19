@@ -26,7 +26,7 @@
       <button class="navbar-toggler bg-dark navbar-dark" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"> </span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="collapse d-flex navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto ">
           <li class="nav-item active">
             <a class="nav-link st_link "  href="#">Usuários-ADM <span class="sr-only">(current)</span></a>
