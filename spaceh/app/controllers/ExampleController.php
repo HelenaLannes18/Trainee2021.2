@@ -149,11 +149,6 @@ class ProdutosAdmController
 {
     public function view()
     {
-        // $produtos = App::get('database')->selectAll('produtos');
-
-        // return view('admin/adm-produtos',compact('produtos','categorias'));
-
-        // Paginação
         
         if(isset($_GET['pagina'])) {
             $paginaAtual = $_GET['pagina'];
@@ -203,7 +198,7 @@ class ProdutosAdmController
             'descricao' => $_POST['add-product-description'],
             'preco' => $_POST['add-product-price'],
             'categoria' => $_POST['add-product-category'],
-            'imagem' => $_POST['add-product-image'],
+            'imagem' => '../../../public/img/img-produto/'.$_POST['add-product-image'],
         ];
 
         App::get('database')->insertProducts('produtos', $parametros);
@@ -226,7 +221,7 @@ class ProdutosAdmController
             'descricao' => $_POST['edit-product-description'],
             'preco' => $_POST['edit-product-price'],
             'categoria' => $_POST['edit-product-category'],
-            'imagem' => $_POST['edit-product-image'],
+            'imagem' => '../../../public/assets/'.$_POST['edit-product-image'],
         ];
 
         App::get('database')->updateProducts('produtos', $parametros, $_POST['id']);
@@ -408,7 +403,7 @@ class UsuariosController
             'nome' => $_POST['nome'],
             'email' => $_POST['email'],
             'senha' => $_POST['senha'],
-            'foto' => $_POST['foto']
+            'foto' => '../../../public/img/img-user/'.$_POST['profilepic']
         ];
 
         App::get('database')->adicionaUsuarios('usuarios', $parametros);
@@ -429,7 +424,7 @@ class UsuariosController
             'nome' => $_POST['nome'],
             'email'=> $_POST['email'],
             'senha'=> $_POST['senha'],
-            'foto'=> $_POST['foto']        
+            'foto'=> '../../../public/img/img-user/'.$_POST['profilepic-edit']        
         ];
 
         App::get('database')->editUsuarios('usuarios', $parametros, $_POST['id']);

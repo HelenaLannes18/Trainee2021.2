@@ -69,7 +69,7 @@
 
            <tr>
 
-               <th scope="row"><img src="../../../public/assets/1.png<?= $produto->foto; ?>"  alt="Foto do Usuário" class="foto-tabela"></th>
+               <th scope="row"><img src="<?= $usuario->foto; ?>"  alt="Foto do Usuário" class="foto-tabela"></th>
                <td class="align-middle"><?= $usuario->nome; ?></td>
                <td class="align-middle colunasInvisiveis"><?= $usuario->email; ?> </td>
                <td class="align-middle colunasInvisiveis"><?= $usuario->senha; ?></td>
@@ -101,20 +101,20 @@
 
                     <div class="form-group">
                       <label for="formGroupExampleInput">Nome de Usuário</label>
-                      <input name="nome" type="text" class="form-control" id="formGroupExampleInput" required>
+                      <input required name="nome" type="text" class="form-control" id="formGroupExampleInput" required>
                     </div>
                     <div class="form-group">
                       <label for="formGroupExampleInput">Email</label>
-                      <input name="email" type="text" class="form-control" id="formGroupExampleInput" required>
+                      <input required name="email" type="text" class="form-control" id="formGroupExampleInput" required>
                     </div>
                     <div class="form-group">
                       <label for="formGroupExampleInput">Senha</label>
-                      <input name="senha" type="text" class="form-control" id="formGroupExampleInput" required>
+                      <input required name="senha" type="text" class="form-control" id="formGroupExampleInput" required>
                     </div>
                     <div class="form-group">
                       <label class="control-label col-sm-3">Enviar foto:</label>
                       <div class="col-xs-3">
-                        <input name="foto" type="file" name="profilepic">
+                        <input type="file" name="profilepic" required>
                       </div>
                     </div>
                     
@@ -151,23 +151,23 @@
 
                       <div class="form-group">
                         <label for="formGroupExampleInput">Nome de Usuário</label>
-                        <input name="nome"type="text" class="form-control" id="formGroupExampleInput" value="<?= $usuario->nome ?>" required>
+                        <input required name="nome"type="text" class="form-control" id="formGroupExampleInput" value="<?= $usuario->nome ?>" required>
                       </div>
 
                       <div class="form-group">
                         <label for="formGroupExampleInput">Email</label>
-                        <input name="email" type="text" class="form-control" id="formGroupExampleInput" value="<?= $usuario->email ?>" required>
+                        <input required name="email" type="text" class="form-control" id="formGroupExampleInput" value="<?= $usuario->email ?>" required>
                       </div>
 
                       <div class="form-group">
                         <label for="formGroupExampleInput">Senha</label>
-                        <input name="senha" type="text" class="form-control" id="formGroupExampleInput" value="<?= $usuario->senha ?>" required>
+                        <input required name="senha" type="text" class="form-control" id="formGroupExampleInput" value="<?= $usuario->senha ?>" required>
                       </div>
 
                       <div class="form-group">
                         <label class="control-label col-sm-3">Enviar foto:</label>
                         <div class="col-xs-3">
-                          <input name="foto" type="file" name="profilepic" value="<?= $usuario->foto ?>" >
+                          <input required type="file" name="profilepic-edit" value="<?= $usuario->foto ?>" >
                         </div>
                       </div>
     

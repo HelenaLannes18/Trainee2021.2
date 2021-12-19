@@ -137,7 +137,7 @@
                   <select name="add-product-category" id="add-product__category" >
                     <option value="" disabled selected hidden id="selecione-categoria">Selecione uma Categoria</option>
                   <?php foreach($categorias as $categoria) :?>
-                    <option>(<?= $categoria->id ?>) - <?= $categoria->categoria ?> </option>
+                    <option><?= $categoria->id ?> - <?= $categoria->categoria ?></option>
                   <?php endforeach; ?>
                   </select>
                   <input
@@ -201,7 +201,7 @@
                 value="<?= $produto->categoria ?>"
               />
               <input
-                type="text"
+                type="file"
                 name="edit-product-image"
                 id="add-product__image"
                 placeholder="Link da Imagem"
