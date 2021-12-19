@@ -28,7 +28,7 @@
 		
       header('Location: /dashboard');
     }
-    ?>
+  ?>
   <body class="text-center">
 
   <?php require ('navbar_administrativa.php');?>
