@@ -17,7 +17,7 @@
           <a href="#" class="navbar-brand">Space-H</a>
 
           <a href="#">
-            <img src="../../../public/assets/img_navbar/mini-logo2.png" alt="" width="45" height="55" class="d-inline-block align-text-top">
+            <img src="../../../public/assets/img_navbar/mini-logo2.png" alt="" width="45" height="50" class="d-inline-block align-text-top">
           </a>
 
           <form class="d-flex">
@@ -32,7 +32,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav justify-content-center me-auto mb-2 mb-lg-0">
               <li class="nav-tops">
                 <a class="nav-inicio" aria-current="page" href="#">Início</a>
               </li>

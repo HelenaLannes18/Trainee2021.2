@@ -1,3 +1,7 @@
+a{
+    text-decoration: none;
+}
+
 .navbar-brand {
     text-decoration: none;
     color: white !important;
@@ -39,3 +43,10 @@
      }
      
  }
+
+ .nav-tops a:hover{
+
+    color: aquamarine;
+    transform: scale(1.3);
+  
+  }
