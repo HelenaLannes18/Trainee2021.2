@@ -7,9 +7,6 @@
     <meta name="author" content="">
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
     <link rel="icon" href="../site/img/mini-logo2.png">
-
-    <title>Fixed top navbar example for Bootstrap</title>
-
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/navbar-fixed/">
 
     <!-- Bootstrap core CSS -->
@@ -29,7 +26,7 @@
       <button class="navbar-toggler bg-dark navbar-dark" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"> </span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="collapse d-flex navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto ">
           <li class="nav-item active">
             <a class="nav-link st_link "  href="#">Usuários-ADM <span class="sr-only">(current)</span></a>

@@ -24,7 +24,7 @@
 
 <!-- TÍTULO DA PÁGINA -->
 
-   <h2 class="titulo-pagina mt-5"><b style="font-size: 4rem;">GESTÃO DE USUÁRIOS</b></h2>
+   <h2 class="titulo-pagina "><b style="font-size: 4rem;">GESTÃO DE USUÁRIOS</b></h2>
    <div class="linhaHorizontal mb-5"></div>
 
 <!-- BOTÃO ADICIONAR -->
@@ -53,7 +53,7 @@
 
            <tr>
 
-               <th scope="row"><img src="../../../public/img/<?= $usuario->foto; ?>"  alt="Foto do Usuário" class="foto-tabela"></th>
+               <th scope="row"><img src="../../../public/assets/imgvu/ $usuario->foto; ?>"  alt="Foto do Usuário" class="foto-tabela"></th>
                <td class="align-middle"><?= $usuario->nome; ?></td>
                <td class="align-middle colunasInvisiveis"><?= $usuario->email; ?> </td>
                <td class="align-middle colunasInvisiveis"><?= $usuario->senha; ?></td>
@@ -80,8 +80,6 @@
               </button>
             </div>
             <div class="modal-body">
-
-             
 
                 <form method="POST" action="/usuarios">
 
@@ -213,6 +211,7 @@
    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+      
 </body>
+
 </html>
