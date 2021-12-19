@@ -18,7 +18,7 @@
   <body>
 
     <nav class="navbar navbar-expand-md  fixed-top  personalizada-navbar">
-         <a class="navbar-brand" href="#" style="color: #4f0ad8;">
+         <a class="navbar-brand" href="viewhome" style="color: #4f0ad8;">
            <img src="../../../public/assets/img_navbar/mini-logo2.png"  width="30" height="30" class="d-inline-block align-top" alt="">
            Spaceh
           </a>
@@ -29,25 +29,25 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto ">
           <li class="nav-item active">
-            <a class="nav-link st_link "  href="#">Usuários-ADM <span class="sr-only">(current)</span></a>
+            <a class="nav-link st_link "  href="usuarios">Usuários-ADM <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link st_link "  href="#">Categorias-ADM <span class="sr-only">(current)</span></a>
+            <a class="nav-link st_link "  href="categorias-adm">Categorias-ADM <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link st_link"  href="#">Produtos-ADM <span class="sr-only">(current)</span></a>
+            <a class="nav-link st_link"  href="produtos-adm">Produtos-ADM <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link st_link"  href="#">Dashboard-ADM <span class="sr-only">(current)</span></a>
+            <a class="nav-link st_link"  href="dashboard">Dashboard-ADM <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle drop-custom"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Páginas não-administrativas
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Quem somos</a>
-              <a class="dropdown-item" href="#">Produtos</a>
-              <a class="dropdown-item" href="#">Home</a>
+              <a class="dropdown-item" href="quemsomos">Quem somos</a>
+              <a class="dropdown-item" href="produtos">Produtos</a>
+              <a class="dropdown-item" href="viewhome">Home</a>
             </div>
     
         </ul>
