@@ -21,12 +21,17 @@ $router->post('usuarios','UsuariosController@adicionar');
 $router->post('usuarios/delete','UsuariosController@apagar');
 $router->post('usuarios/update', 'UsuariosController@update');
 
-//Produtos Controller
+// Produtos-ADM Controller
 
 $router->get('produtos-adm','ProdutosAdmController@view');
 $router->post('produtos-adm','ProdutosAdmController@create');
 $router->post('produtos-adm/delete','ProdutosAdmController@delete');
 $router->post('produtos-adm/update', 'ProdutosAdmController@update');
+$router->get('produtos-adm/search', 'PageController@searchProductADM');
+
+// Produtos Controller
+
+$router->get('produtos','ProdutosController@view');
 
 //Login Controller
 
@@ -50,6 +55,6 @@ $router->get('quemsomos','QuemSomosController@view');
 
 //ViewProdutos 
 
-$router->get('viewprodutos','ViewProdutos@view');
+$router->get('viewproduto','ViewProdutos@view');
 
 ?>

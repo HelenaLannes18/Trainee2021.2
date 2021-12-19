@@ -10,25 +10,29 @@
     </head>
 
     <body>
-        <h1>INSERIR NOME DO PRODUTO</h1>
+    <?php require ('navbar.php');?>
+    <?php foreach ($produtos as $produto) : ?>
+    <h1><?= $produto->nome ?></h1>
+    <?php endforeach; ?>
+        
         <hr>
         <div class="slideshow-container">
 
-            <div class="mySlides fade">
+            <div class="mySlides " id="<?=$produto->id?>">
               <div class="numbertext">1 / 3</div>
-              <img src="https://upload.wikimedia.org/wikipedia/pt/thumb/1/16/Concep%C3%A7%C3%A3o_art%C3%ADstica_do_Prometheus_em_%C3%B3rbita.jpg/300px-Concep%C3%A7%C3%A3o_art%C3%ADstica_do_Prometheus_em_%C3%B3rbita.jpg" style="width:100%">
+              <img src="../../../public/assets/imgh/<?= $produto->imagem ?>" style="width:100%">
               <div class="text">Texto 1</div>
             </div>
             
-            <div class="mySlides fade">
+            <div class="mySlides ">
               <div class="numbertext">2 / 3</div>
-              <img src="https://www.w3schools.com/howto/img_nature_wide.jpg" style="width:100%">
+              <img src="../../../public/assets/imgh/<?= $produto->imagem ?>" style="width:100%">
               <div class="text">Texto 2</div>
             </div>
             
-            <div class="mySlides fade">
+            <div class="mySlides ">
               <div class="numbertext">3 / 3</div>
-              <img src="https://www.w3schools.com/howto/img_snow_wide.jpg" style="width:100%">
+              <img src="../../../public/assets/imgh/<?= $produto->imagem ?>" style="width:100%">
               <div class="text">Texto 3</div>
             </div>
             
@@ -71,17 +75,17 @@
             }
         </script>
         
-        
+        <br>
         <div class="cla_e_prec"><!CLASSE - PREÇO>
 
-            <div><!Conjunto CLASSE - INSERIR CLASSE>
+            <div>
 
                 
 
-                <h2>CLASSE:</h2>
+                <h2>CATEGORIA:</h2>
 
 
-                <p>INSERIR CLASSE DO PRODUTO</p>
+                <p>CATEGORIA: <?= $produto->categoria ?></p>
 
             </div>
             
@@ -91,7 +95,7 @@
 
                 <h2>PREÇO:</h2>
                 
-                <p>R$ (INSERIR PREÇO),00</p>
+                <p>PREÇO:<?= $produto->preco ?></p>
 
             </div>
             
@@ -102,9 +106,10 @@
 
             <h2>DESCRIÇÃO</h2>
 
-            <p>INSERIR PARÁGRAFO DE DESCRIÇÃO</p>
+            <p>DESCRIÇÃO:<?= $produto->descricao ?></p>
 
-            <p>INSERIR PARÁGRAFO DE DESCRIÇÃO</p>
+            
 
         </div>
+        <?php require('footer.php'); ?>
     </body>

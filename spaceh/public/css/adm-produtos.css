@@ -129,15 +129,15 @@ button {
   cursor: pointer;
 }
 
-#purple-btn {
+.purple-btn {
   background-color: #4f0ad8;
 }
 
-#black-btn {
+.black-btn {
   background-color: #101820;
 }
 
-#red-btn{
+.red-btn{
   background-color: #ff0000;
 }
 
@@ -145,12 +145,17 @@ button {
     Modal
 */
 
-.modal input {
+.modal input,
+.modal select{
   width: 60%;
   padding: 0.8rem;
   margin: 10px auto;
   display: block;
   font-size: 1.2rem;
+}
+
+#selecione-categoria { 
+  color: #808080; 
 }
 
 .modal-btn {

@@ -37,23 +37,37 @@ li, a, button {
 */
 
 .ordering-area {
-    width: 100%;
-    padding: 20px 0px;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #8a8d8f44;
-    font-size: 1.25rem;
+    margin-top: 20px;
 }
 
-#ordering__select {
-    width: 200px;
-    padding: 5px;
-    font-size: 1.25rem;
+.ordering-area form {
+    width: 90%;
+    max-width: 1250px;
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-between;
 }
 
 #ordering__search-bar {
+    width: 90%;
     padding: 5px;
-    font-size: 1.25rem;
+    outline: none;
+    border: 1px solid #8a8d8f;
+}
+
+#search__button {
+    padding: 5px;
+    margin-left: 5px;
+    color: #FFFFFF;
+    background-color: #4F0AD8;
+    box-shadow: 2px 2px 5px #8a8d8f;
+    border: none;
+    border-radius: 10px;
+}
+
+#search__button:hover {
+    cursor: pointer;
+    opacity: .8;
 }
 
 /*
@@ -81,6 +95,10 @@ li, a, button {
     transform: scale(1.02);
 }
 
+.product a {
+    text-decoration: none;
+}
+
 .product__image {
     width: 100%;
     height: 230px;
@@ -92,7 +110,7 @@ li, a, button {
 }
 
 .product__name {
-    padding: 15px 0px;
+    padding: 15px 0px 0px 0px;
     font-size: 1.875rem;
 }
 
@@ -175,24 +193,6 @@ li, a, button {
         width: 100%;
         margin: auto;
     }
-    .navbar {
-        width: 100%;
-    }
-
-    .ordering-area {
-        width: 100%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .ordering-area span {
-        display: none;
-    }
-
-    #ordering__search-bar {
-        margin-top: 10px;
-    }
 
     .showcase-area {
         display: grid;
@@ -211,21 +211,6 @@ li, a, button {
     .container {
         width: 100%;
         margin: auto;
-    }
-    .navbar {
-        width: 100%;
-    }
-
-    .ordering-area {
-        width: 100%;
-        justify-content: space-between;
-        align-items: center;
-        /* flex-direction: column;
-        align-items: center; */
-    }
-
-    .ordering-area span {
-        display: none;
     }
 
     .showcase-area {
