@@ -36,4 +36,8 @@ $router->get('dashboard','DashboardController@view');
 
 $router->get('dashboard','DashboardController@view');
 
+//Home
+
+$router->get('viewhome','ViewHomeController@view');
+
 ?>

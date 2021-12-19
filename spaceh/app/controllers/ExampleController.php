@@ -189,6 +189,7 @@ class DashboardController{
     }
 }
 
+session_start();
 class LoginController {
 
     public function view() {
@@ -232,6 +233,15 @@ class LoginController {
 
 }
 
+class ViewHomeController
+{   
+
+        public function view() {
+
+            return view('site/viewhome');
+    
+        }
+    } 
 
 class UsuariosController 
 {   
