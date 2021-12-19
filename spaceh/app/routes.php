@@ -48,6 +48,7 @@ $router->get('dashboard','DashboardController@view');
 //Home
 
 $router->get('viewhome','ViewHomeController@view');
+$router->get('','ViewHomeController@view');
 
 // Quem Somos
 
