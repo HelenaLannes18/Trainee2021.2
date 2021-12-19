@@ -13,7 +13,6 @@
 
 li, a, button {
     background-color: transparent;
-    color: #000000;
     text-decoration: none;
     list-style: none;
     border: none;
@@ -27,7 +26,6 @@ li, a, button {
 
 a:visited {
     text-decoration: none;
-    color: #000000;
 }
 
 /*
@@ -35,9 +33,6 @@ a:visited {
 */
 
 .dashboard__info {
-    /* display: flex;
-    justify-content: center;
-    flex-wrap: wrap; */
     margin: 20px 0px;
 }
 
@@ -68,6 +63,7 @@ a:visited {
     padding: 5px 0px;
     margin: 5px 0px;
     border-radius: 10px;
+    color: #000000;
 }
 
 .dashboard__links li:hover {
