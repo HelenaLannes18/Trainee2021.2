@@ -87,11 +87,15 @@ class QueryBuilder
     {
         $sql = "INSERT INTO `{$table}` (`nome`,`email`,`senha`,`foto`) VALUES ('{$parametros['nome']}','{$parametros['email']}','{$parametros['senha']}','{$parametros['foto']}')";
     
-        $statement = $this->pdo->prepare("select * from {$table}");
+        
+        try {
+            $statement = $this->pdo->prepare($sql);
 
-        $statement->execute();
-
-        return $statement->fetchAll(PDO::FETCH_CLASS);
+            $statement->execute();
+            
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
     
     }
 
