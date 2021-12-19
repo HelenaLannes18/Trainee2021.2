@@ -105,7 +105,7 @@ function showSlides(n) {
                   <h2 class="product__name"><?= $produto->nome ?></h2>
                   <span class="product__price"><?= $produto->preco ?></span>
                   <span class="product__category"><?= $produto->categoria ?></span>
-                  <form action="/viewprodutos" method="GET">
+                  <form action="/viewproduto" method="GET">
                   <input type="hidden" name ="id" value="<?=$produto->id ?>">
                   </div>
                   <button type="submit" class="product__cta" style="font-family: 'Squada One', cursive;">Ver Produto</button>
@@ -120,7 +120,7 @@ function showSlides(n) {
 </div>
 
 
-
+<?php require ('footer.php');?>
 </body>
 
 
