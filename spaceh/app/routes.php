@@ -49,6 +49,6 @@ $router->get('viewhome','ViewHomeController@view');
 $router->get('quemsomos','QuemSomosController@view');
 //ViewProdutos 
 
-$router->get('viewprodutos','ViewProdutos@view');
+$router->get('viewproduto','ViewProdutos@view');
 
 ?>

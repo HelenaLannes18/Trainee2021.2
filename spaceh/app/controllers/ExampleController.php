@@ -240,7 +240,7 @@ class ViewProdutos
     { 
         
         $produtos = App::get('database')->selectcomId('produtos',$_GET['id']);
-        return view('produto',compact('produtos'));
+        return view('site/viewproduto',compact('produtos'));
     
     }
 }
