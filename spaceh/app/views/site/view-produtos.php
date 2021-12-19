@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produtos | Space-H</title>
+    <title>PRODUTOS | Space-H</title>
     <link rel="stylesheet" href="../../../public/css/view-produtos.css">
+    <link rel="icon" href="../../../public/assets/img_navbar/mini-logo2.png">
 </head>
 <body>
 

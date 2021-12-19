@@ -162,7 +162,7 @@ class ProdutosAdmController
         }
 
         $pagina = (!empty($paginaAtual)) ? $paginaAtual : 1;
-        $limitePorPagina = 5;
+        $limitePorPagina = 10;
         $inicio = ($limitePorPagina * $pagina) - $limitePorPagina;
         $produtosT = App::get('database')->selectAll('produtos');
         $totalProdutos = count($produtosT);
@@ -253,7 +253,7 @@ class ProdutosController
         }
 
         $pagina = (!empty($paginaAtual)) ? $paginaAtual : 1;
-        $limitePorPagina = 5;
+        $limitePorPagina = 10;
         $inicio = ($limitePorPagina * $pagina) - $limitePorPagina;
         $produtosT = App::get('database')->selectAll('produtos');
         $totalProdutos = count($produtosT);

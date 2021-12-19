@@ -63,7 +63,7 @@
 
            <tr>
 
-               <th scope="row"><img src="../../../public/assets/imgvu/ $usuario->foto; ?>"  alt="Foto do Usuário" class="foto-tabela"></th>
+               <th scope="row"><img src="../../../public/assets/1.png<?= $produto->foto; ?>"  alt="Foto do Usuário" class="foto-tabela"></th>
                <td class="align-middle"><?= $usuario->nome; ?></td>
                <td class="align-middle colunasInvisiveis"><?= $usuario->email; ?> </td>
                <td class="align-middle colunasInvisiveis"><?= $usuario->senha; ?></td>
@@ -108,7 +108,7 @@
                     <div class="form-group">
                       <label class="control-label col-sm-3">Enviar foto:</label>
                       <div class="col-xs-3">
-                        <input name="foto" type="file" name="profilepic"required>
+                        <input name="foto" type="file" name="profilepic">
                       </div>
                     </div>
                     

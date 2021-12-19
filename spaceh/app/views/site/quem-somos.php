@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../site/img/mini-logo2.png">
+    <link rel="icon" href="../../../public/assets/img_navbar/mini-logo2.png">
     <title>QUEM SOMOS | Space-H</title>
     <link rel="stylesheet" href="../../../public/css/quem-somos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">

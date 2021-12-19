@@ -33,19 +33,19 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-tops">
-                <a class="nav-inicio" aria-current="page" href="#">Início</a>
+                <a class="nav-inicio" aria-current="page" href="viewhome">Início</a>
               </li>
               <li class="nav-tops">
-                <a class="nav-quemsomos" href="#">Quem Somos</a>
+                <a class="nav-quemsomos" href="quemsomos">Quem Somos</a>
               </li>
               <li class="nav-tops">
-                <a class="nav-produtos" href="#" >Produtos</a>
+                <a class="nav-produtos" href="produtos" >Produtos</a>
               </li>
               <li class="nav-tops">
-                <a class="nav-contatos" href="#" >Contato</a>
+                <a class="nav-contatos" href="contato" >Contato</a>
               </li>
               <li class="nav-tops">
-                <a class="nav-login" href="#" >Login</a>
+                <a class="nav-login" href="login" >Login</a>
               </li>
             </ul>
           </div>
