@@ -111,12 +111,14 @@
                     name="add-product-name"
                     id="add-product__name"
                     placeholder="Nome"
+                    required
                   />
                   <input
                     type="text"
                     name="add-product-description"
                     id="add-product__description"
                     placeholder="Digite a descrição do produto"
+                    required
                   />
                   <input
                     type="number"
@@ -124,18 +126,19 @@
                     id="add-product__price"
                     placeholder="Preço (R$)"
                     step=".01"
+                    required
                   />
                   <select name="add-product-category" id="add-product__category" >
                     <option value="" disabled selected hidden id="selecione-categoria">Selecione uma Categoria</option>
                   <?php foreach($categorias as $categoria) :?>
-                    <option><?= $categoria->id ?></option>
+                    <option>(<?= $categoria->id ?>) - <?= $categoria->categoria ?> </option>
                   <?php endforeach; ?>
                   </select>
                   <input
-                    type="text"
+                    type="file"
                     name="add-product-image"
                     id="add-product__image"
-                    placeholder="Link da Imagem"
+                    required
                   />
                 
               </div>
