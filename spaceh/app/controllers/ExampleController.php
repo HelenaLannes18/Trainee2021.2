@@ -203,6 +203,17 @@ class ProdutosController
 {
     public function view()
     {
+        // Paginação
+        
+        $paginaAtual = $_GET['pagina'];
+        $pagina = (!empty($paginaAtual)) ? $paginaAtual : 1;
+        $limite = 5;
+
+        // Inicio visualização
+
+        $inicio = ($limiteResultado * $pagina) - $limiteResultado;
+
+        // Busca
         if(isset($_GET['busca']) && $_GET['busca'] != '') {
             $busca = $_GET['busca'];
             $condicoes = [
@@ -213,7 +224,7 @@ class ProdutosController
 
             $produtos = App::get('database')->pesquisarProdutos('produtos', $where);
         } else {
-            $produtos = App::get('database')->selectAll('produtos');
+            $produtos = App::get('database')->selectPagination('produtos', $inicio, $limiteResultado);
         }
 
         return view('site/view-produtos',compact('produtos'));
@@ -332,3 +343,15 @@ class UsuariosController
 
 }
 
+/* 
+    Página - Controller
+*/
+
+
+class Pagination 
+{   
+
+    
+
+    
+}

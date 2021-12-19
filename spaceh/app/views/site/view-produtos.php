@@ -48,15 +48,7 @@
         <?php endforeach; ?>
         </div>
 
-        <!-- Pagination -->
-
-        <?php 
-        
-                //$result_pg = "SELECT COUNT(id) AS"
-
-        ?>
-
-        <div class="paginate">
+        <!-- <div class="paginate">
             <div class="paginate__item" id="paginate__first">&#171</div>
             <div class="paginate__item" id="paginate__prev">&lt</div>
             <div class="paginate__item" id="paginate__numbers">
@@ -64,7 +56,7 @@
             </div>
             <div class="paginate__item" id="paginate__next">&gt</div>
             <div class="paginate__item" id="paginate__last">&#187</div>
-        </div>
+        </div> -->
 
     </div>
 
