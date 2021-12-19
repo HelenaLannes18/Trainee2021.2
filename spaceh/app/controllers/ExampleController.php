@@ -6,6 +6,10 @@ use App\Core\App;
 use Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 
+/* 
+    Categorias - Controller
+*/
+
 class CategoriasController 
 {
     public function view()
@@ -54,6 +58,10 @@ class CategoriasController
     }
 
 }
+
+/* 
+    Contato - Controller
+*/
 
 class contatoController {
 
@@ -133,15 +141,18 @@ class contatoController {
     }
 }
 
-
+/* 
+    Produtos-ADM - Controller
+*/
 
 class ProdutosAdmController
 {
     public function view()
     {
         $produtos = App::get('database')->selectAll('produtos');
+        $categorias = App::get('database')->selectAll('categorias');
 
-        return view('admin/adm-produtos',compact('produtos'));
+        return view('admin/adm-produtos',compact('produtos','categorias'));
     }
 
     public function create()
@@ -183,11 +194,73 @@ class ProdutosAdmController
     }
 
 }
-class DashboardController{
+
+/* 
+    Produtos - Controller
+*/
+
+class ProdutosController
+{
+    public function view()
+    {
+        // Paginação
+        
+        if(isset($_GET['pagina'])) {
+            $paginaAtual = $_GET['pagina'];
+        } else {
+            $paginaAtual = 1;
+        }
+
+        $pagina = (!empty($paginaAtual)) ? $paginaAtual : 1;
+        $limitePorPagina = 5;
+        $inicio = ($limitePorPagina * $pagina) - $limitePorPagina;
+        $produtosT = App::get('database')->selectAll('produtos');
+        $totalProdutos = count($produtosT);
+        $totalPaginas = $totalProdutos / $limitePorPagina;
+
+        // Busca
+        if(isset($_GET['busca']) && $_GET['busca'] != '') {
+            $busca = $_GET['busca'];
+            $condicoes = [
+                strlen($busca) ? 'nome LIKE "%'.str_replace(' ','%',$busca).'%" ' : null
+            ];
+
+            $where = implode(' AND ', $condicoes);
+
+            $produtos = App::get('database')->pesquisarProdutos('produtos', $where, $inicio, $limitePorPagina);
+        } else {
+            $produtos = App::get('database')->selectPagination('produtos', $inicio, $limitePorPagina);
+        }
+
+        $paginacao = new \stdClass();
+        $paginacao->pagina = $pagina;
+        $paginacao->totalPaginas = $totalPaginas;
+        $paginacao->totalProdutos = $totalProdutos;
+        $paginacao->qntdPorPagina = $limitePorPagina;
+        $paginacao->inicio = $inicio;
+
+
+        return view('site/view-produtos',compact('produtos', 'paginacao'));
+
+    }
+
+}
+
+/* 
+    Dashboard - Controller
+*/
+
+class DashboardController
+{
     public function view() {
         return view('admin/dashboard');
     }
 }
+
+/* 
+    Login - Controller
+*/
+
 
 session_start();
 class LoginController {
@@ -233,6 +306,9 @@ class LoginController {
 
 }
 
+/* 
+    Usuários - Controller
+*/
 class ViewProdutos
 {
     
@@ -292,7 +368,7 @@ class UsuariosController
             'email' => $_POST['email'],
             'senha' => $_POST['senha'],
             'foto' => $_POST['foto']
-    ];
+        ];
 
         App::get('database')->adicionaUsuarios('usuarios', $parametros);
 
@@ -322,3 +398,15 @@ class UsuariosController
 
 }
 
+/* 
+    Página - Controller
+*/
+
+
+class Pagination 
+{   
+
+    
+
+    
+}

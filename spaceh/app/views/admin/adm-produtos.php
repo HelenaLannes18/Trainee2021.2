@@ -27,14 +27,15 @@
             Adicionar Produto
           </button>
           <div class="header__search">
-            <form action="produtos" method="GET">
+            <form action="produtos-adm/search" method="GET">
               <input
                 type="search"
-                name="products--search"
+                name="product-search"
                 id="products__search"
                 placeholder="Pesquise um produto"
+                value=""
               />
-              <button type="submit" id="purple-btn" class="button-animation">Pesquisar</button>
+              <button type="submit" class="button-animation purple-btn">Pesquisar</button>
             </form>
           </div>
         </div>
@@ -65,14 +66,14 @@
             <td data-label="Categoria"><?=$produto->categoria?></td>
             <td data-label="Opções">
               <a href="#"
-                ><button id="purple-btn" class="product__btn button-animation">
+                ><button class="product__btn button-animation purple-btn">
                   Visualizar
                 </button></a
               >
-              <button type="button" id="black-btn" class="product__btn button-animation" data-bs-toggle="modal" data-bs-target="#modal-edit-product<?= $produto->id ?>">
+              <button type="button" class="product__btn button-animation black-btn" data-bs-toggle="modal" data-bs-target="#modal-edit-product<?= $produto->id ?>">
                 Editar
               </button>
-              <button type="button" id="red-btn" class="product__btn button-animation" data-bs-toggle="modal" data-bs-target="#modal-delete-product<?=$produto->id?>">
+              <button type="button" class="product__btn button-animation red-btn" data-bs-toggle="modal" data-bs-target="#modal-delete-product<?=$produto->id?>">
                 Apagar
               </button>
             </td>
@@ -119,14 +120,12 @@
                     placeholder="Preço (R$)"
                     step=".01"
                   />
-                  <input
-                    type="text"
-                    name="add-product-category"
-                    id="add-product__category"
-                    placeholder="Categoria"
-                   
-                  />
-                 
+                  <select name="add-product-category" id="add-product__category" >
+                    <option value="" disabled selected hidden id="selecione-categoria">Selecione uma Categoria</option>
+                  <?php foreach($categorias as $categoria) :?>
+                    <option><?= $categoria->id ?></option>
+                  <?php endforeach; ?>
+                  </select>
                   <input
                     type="text"
                     name="add-product-image"
@@ -136,9 +135,8 @@
                 
               </div>
               <div class="modal-footer">
-                <button type="button" id="black-btn" class="modal-btn button-animation" data-bs-dismiss="modal">Fechar</button>
-                <input type="hidden" value="<?= $produto->id ?>" name="id">
-                <button type="submit" id="purple-btn" class="modal-btn button-animation">Cadastrar Produto</button>
+                <button type="button" class="modal-btn button-animation black-btn" data-bs-dismiss="modal">Fechar</button>
+                <button type="submit" class="modal-btn button-animation purple-btn">Cadastrar Produto</button>
               </div>
             </form>
         </div>
@@ -199,8 +197,8 @@
                 
             </div>
             <div class="modal-footer">
-              <button type="button" id="black-btn" class="modal-btn button-animation" data-bs-dismiss="modal">Fechar</button>
-              <button type="submit" id="purple-btn" class="modal-btn button-animation">Salvar Alterações</button>
+              <button type="button" class="modal-btn button-animation black-btn" data-bs-dismiss="modal">Fechar</button>
+              <button type="submit" class="modal-btn button-animation purple-btn">Salvar Alterações</button>
             </div>
             </form>
         </div>
@@ -224,8 +222,8 @@
                 
             </div>
             <div class="modal-footer">
-              <button type="button" id="black-btn" class="modal-btn button-animation" data-bs-dismiss="modal">Fechar</button>
-              <button type="submit" id="red-btn" class="modal-btn button-animation">Apagar</button>
+              <button type="button" class="modal-btn button-animation black-btn" data-bs-dismiss="modal">Fechar</button>
+              <button type="submit" class="modal-btn button-animation red-btn">Apagar</button>
             </div>
             </form>
         </div>

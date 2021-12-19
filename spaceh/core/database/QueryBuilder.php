@@ -47,6 +47,24 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
+    public function selectPagination($table, $inicio, $qnt_result)
+    {
+    
+        $sql = "SELECT * FROM {$table} LIMIT {$inicio}, {$qnt_result}";
+
+        $statement = $this->pdo->prepare($sql);
+
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+    
+    }
+
+
+    /* 
+        Funções Usuários
+    */
+
     public function selecionarUsuarios($table)
     {
         $sql = "select * from {$table}";
@@ -92,7 +110,9 @@ class QueryBuilder
 
     }
 
-    // Funções Categorias
+    /* 
+        Funções Categorias
+    */
 
     public function adicionaCategorias ($table, $parametros)
     {
@@ -153,7 +173,10 @@ class QueryBuilder
     }
 
 
-    // Funções de Produtos
+    /* 
+        Funções Produtos
+    */
+
     public function insertProducts($table, $parametros)
     {
         $sql = "INSERT INTO {$table} (nome,descricao,preco,categoria,imagem) VALUES ('{$parametros['nome']}','{$parametros['descricao']}','{$parametros['preco']}','{$parametros['categoria']}','{$parametros['imagem']}')";
@@ -203,6 +226,18 @@ class QueryBuilder
         } catch (Exception $e) {
             die($e->getMessage());
         }
+    }
+
+
+    public function pesquisarProdutos($table, $parametros, $inicio, $qnt_result)
+    {
+        $sql = "SELECT * FROM  `{$table}` WHERE {$parametros} LIMIT {$inicio}, {$qnt_result}";
+
+        $statement = $this->pdo->prepare($sql);
+
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
 }
