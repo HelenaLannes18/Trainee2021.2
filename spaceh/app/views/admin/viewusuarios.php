@@ -15,7 +15,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-    <link rel="icon" href="../site/img/mini-logo2.png">
+    <link rel="icon" href="../../../public/assets/img_navbar/mini-logo2.png">
     <?php require ('navbar_administrativa.php');?>
     <title>ADM - USUÁRIOS | Space-H</title>
 
