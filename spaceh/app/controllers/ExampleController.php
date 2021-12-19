@@ -72,7 +72,8 @@ class contatoController {
 
     public function enviarEmail()
     {
-                
+        require 'vendor/autoload.php';
+        
         //Variáveis
         $nome = $_POST['nome'];
         $email = $_POST['email'];
@@ -82,8 +83,7 @@ class contatoController {
         $hora_envio = date('H:i:s');
 
         if (!$nome || !$email || !$assunto || !$mensagem) {
-            echo'cheguei aqui';
-            die ();
+        
             return redirect('contato');
         }
 

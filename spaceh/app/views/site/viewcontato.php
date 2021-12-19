@@ -62,7 +62,7 @@
             </div>
 
             <div class="d-grid gap-2">
-                <button class="btn btn-primary" id="btmsg" style="font-size:26px;padding: 1%;padding-right:5%;margin-left:11.2%;background-color: #4f0ad8;width: 77.5%;margin-bottom: 1%;border-color:#4f0ad8" type="submit">Enviar sua mensagem</button>
+                <button class="btn btn-primary" href="contato" id="btmsg" style="font-size:26px;padding: 1%;padding-right:5%;margin-left:11.2%;background-color: #4f0ad8;width: 77.5%;margin-bottom: 1%;border-color:#4f0ad8" type="submit">Enviar sua mensagem</button>
             </div>
         </form>
     </div>
