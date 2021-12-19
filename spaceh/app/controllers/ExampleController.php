@@ -205,13 +205,18 @@ class ProdutosController
     {
         // Paginação
         
-        $paginaAtual = $_GET['pagina'];
+        if(isset($_GET['pagina'])) {
+            $paginaAtual = $_GET['pagina'];
+        } else {
+            $paginaAtual = 1;
+        }
+
         $pagina = (!empty($paginaAtual)) ? $paginaAtual : 1;
-        $limite = 5;
-
-        // Inicio visualização
-
-        $inicio = ($limiteResultado * $pagina) - $limiteResultado;
+        $limitePorPagina = 5;
+        $inicio = ($limitePorPagina * $pagina) - $limitePorPagina;
+        $produtosT = App::get('database')->selectAll('produtos');
+        $totalProdutos = count($produtosT);
+        $totalPaginas = $totalProdutos / $limitePorPagina;
 
         // Busca
         if(isset($_GET['busca']) && $_GET['busca'] != '') {
@@ -224,10 +229,18 @@ class ProdutosController
 
             $produtos = App::get('database')->pesquisarProdutos('produtos', $where);
         } else {
-            $produtos = App::get('database')->selectPagination('produtos', $inicio, $limiteResultado);
+            $produtos = App::get('database')->selectPagination('produtos', $inicio, $limitePorPagina);
         }
 
-        return view('site/view-produtos',compact('produtos'));
+        $paginacao = new \stdClass();
+        $paginacao->pagina = $pagina;
+        $paginacao->totalPaginas = $totalPaginas;
+        $paginacao->totalProdutos = $totalProdutos;
+        $paginacao->qntdPorPagina = $limitePorPagina;
+        $paginacao->inicio = $inicio;
+
+
+        return view('site/view-produtos',compact('produtos', 'paginacao'));
 
     }
 

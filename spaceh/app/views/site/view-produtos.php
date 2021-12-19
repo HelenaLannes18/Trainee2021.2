@@ -48,15 +48,36 @@
         <?php endforeach; ?>
         </div>
 
-        <!-- <div class="paginate">
-            <div class="paginate__item" id="paginate__first">&#171</div>
-            <div class="paginate__item" id="paginate__prev">&lt</div>
-            <div class="paginate__item" id="paginate__numbers">
-                <div>1</div>
-            </div>
-            <div class="paginate__item" id="paginate__next">&gt</div>
-            <div class="paginate__item" id="paginate__last">&#187</div>
-        </div> -->
+        <?php
+            $totalPaginas = ceil($paginacao->totalPaginas);
+            if ($paginacao->pagina > $totalPaginas) {
+                $paginacao->pagina = $totalPaginas;
+            }
+
+            if($paginacao->pagina == 1) {
+                $anterior = $paginacao->pagina;
+            } else {
+                $anterior = $paginacao->pagina - 1;
+            }
+
+            if($paginacao->pagina == $totalPaginas) {
+                $proximo = $paginacao->pagina;
+            } else {
+                $proximo = $paginacao->pagina + 1;
+            }
+        ?>   
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item"><a class="page-link" href="/produtos?pagina=<?=$anterior?>">Anterior</a></li>
+                <?php
+                
+                for($i = 1; $i < $totalPaginas + 1; $i++) { ?>
+                    <li class="page-item"><a class="page-link" href="/produtos?pagina=<?= $i ?>"><?= $i ?></a></li>
+                <?php } ?>
+                <li class="page-item"><a class="page-link" href="/produtos?pagina=<?= $proximo ?>">Proximo</a></li>
+            </ul>
+        </nav>
 
     </div>
 
