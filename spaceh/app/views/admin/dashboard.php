@@ -10,6 +10,13 @@
 </head>
 
 <body>
+
+    <?php 
+        if(!isset($_SESSION['usuario'])) { 
+            header('Location: /login'); 
+        }
+    ?>
+
     <!-- Navbar: will be changed later for the real navbar -->
     <?php require ('navbar_administrativa.php');?>
 
