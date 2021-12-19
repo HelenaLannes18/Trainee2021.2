@@ -39,7 +39,7 @@
                 <a class="nav-quemsomos" href="quemsomos">Quem Somos</a>
               </li>
               <li class="nav-tops">
-                <a class="nav-produtos" href="#" >Produtos</a>
+                <a class="nav-produtos" href="produtos" >Produtos</a>
               </li>
               <li class="nav-tops">
                 <a class="nav-contatos" href="contato" >Contato</a>
