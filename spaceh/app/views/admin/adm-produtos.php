@@ -13,6 +13,10 @@
 
   <body>
 
+    <?php
+        $busca = $_GET['busca'] ?? '';
+    ?>
+
     <!-- Navbar -->
     <?php 
       require('navbar_administrativa.php'); 
@@ -27,13 +31,13 @@
             Adicionar Produto
           </button>
           <div class="header__search">
-            <form action="produtos-adm/search" method="GET">
+            <form method="GET">
               <input
                 type="search"
-                name="product-search"
+                name="busca"
                 id="products__search"
                 placeholder="Pesquise um produto"
-                value=""
+                value="<?=$busca?>"
               />
               <button type="submit" class="button-animation purple-btn">Pesquisar</button>
             </form>
@@ -235,6 +239,40 @@
     <!-- 
       End Modals 
     -->
+
+    <?php
+            $totalPaginas = ceil($paginacao->totalPaginas);
+            if ($paginacao->pagina > $totalPaginas) {
+                $paginacao->pagina = $totalPaginas;
+            }
+
+            if($paginacao->pagina == 1) {
+                $anterior = $paginacao->pagina;
+            } else {
+                $anterior = $paginacao->pagina - 1;
+            }
+
+            if($paginacao->pagina == $totalPaginas) {
+                $proximo = $paginacao->pagina;
+            } else {
+                $proximo = $paginacao->pagina + 1;
+            }
+        ?>   
+
+        <nav aria-label="Page navigation example" class="mt-4">
+            <ul class="pagination justify-content-center">
+                <li class="page-item"><a class="page-link" href="/produtos-adm?pagina=<?=$anterior?>">Anterior</a></li>
+                <?php
+                
+                for($i = 1; $i < $totalPaginas + 1; $i++) { ?>
+                    <li class="page-item"><a class="page-link" href="/produtos-adm?pagina=<?= $i ?>"><?= $i ?></a></li>
+                <?php } ?>
+                <li class="page-item"><a class="page-link" href="/produtos-adm?pagina=<?= $proximo ?>">Proximo</a></li>
+            </ul>
+        </nav>
+
+    </div>
+
 
     <script src="../../public/js/admProdutos.js"></script>
     <!-- Bootstrap -->

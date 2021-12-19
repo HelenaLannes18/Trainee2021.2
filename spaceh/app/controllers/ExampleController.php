@@ -149,10 +149,51 @@ class ProdutosAdmController
 {
     public function view()
     {
-        $produtos = App::get('database')->selectAll('produtos');
+        // $produtos = App::get('database')->selectAll('produtos');
+
+        // return view('admin/adm-produtos',compact('produtos','categorias'));
+
+        // Paginação
+        
+        if(isset($_GET['pagina'])) {
+            $paginaAtual = $_GET['pagina'];
+        } else {
+            $paginaAtual = 1;
+        }
+
+        $pagina = (!empty($paginaAtual)) ? $paginaAtual : 1;
+        $limitePorPagina = 5;
+        $inicio = ($limitePorPagina * $pagina) - $limitePorPagina;
+        $produtosT = App::get('database')->selectAll('produtos');
+        $totalProdutos = count($produtosT);
+        $totalPaginas = $totalProdutos / $limitePorPagina;
+
+        // Busca
+        if(isset($_GET['busca']) && $_GET['busca'] != '') {
+            $busca = $_GET['busca'];
+            $condicoes = [
+                strlen($busca) ? 'nome LIKE "%'.str_replace(' ','%',$busca).'%" ' : null
+            ];
+
+            $where = implode(' AND ', $condicoes);
+
+            $produtos = App::get('database')->pesquisarProdutos('produtos', $where, $inicio, $limitePorPagina);
+        } else {
+            $produtos = App::get('database')->selectPagination('produtos', $inicio, $limitePorPagina);
+        }
+
+        $paginacao = new \stdClass();
+        $paginacao->pagina = $pagina;
+        $paginacao->totalPaginas = $totalPaginas;
+        $paginacao->totalProdutos = $totalProdutos;
+        $paginacao->qntdPorPagina = $limitePorPagina;
+        $paginacao->inicio = $inicio;
+
         $categorias = App::get('database')->selectAll('categorias');
 
-        return view('admin/adm-produtos',compact('produtos','categorias'));
+        return view('admin/adm-produtos',compact('produtos','categorias','paginacao', 'categorias'));
+
+
     }
 
     public function create()
@@ -398,15 +439,5 @@ class UsuariosController
 
 }
 
-/* 
-    Página - Controller
-*/
 
 
-class Pagination 
-{   
-
-    
-
-    
-}
