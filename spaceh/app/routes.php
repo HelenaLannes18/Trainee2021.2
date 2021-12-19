@@ -44,4 +44,8 @@ $router->get('dashboard','DashboardController@view');
 
 $router->get('viewhome','ViewHomeController@view');
 
+// Quem Somos
+
+$router->get('quemsomos','QuemSomosController@view');
+
 ?>
