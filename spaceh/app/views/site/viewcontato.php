@@ -12,6 +12,9 @@
 </head>
 <body>
 
+<?php require ('navbar.php');?>
+  
+
     <!--Título da página-->
 
     <div class="titulo">
@@ -59,7 +62,7 @@
             </div>
 
             <div class="d-grid gap-2">
-                <button class="btn btn-primary" id="btmsg" style="font-size:26px;padding: 1%;padding-right:5%;margin-left:11.2%;background-color: #4f0ad8;width: 77.5%;margin-bottom: 1%;" type="submit">Enviar sua mensagem</button>
+                <button class="btn btn-primary" id="btmsg" style="font-size:26px;padding: 1%;padding-right:5%;margin-left:11.2%;background-color: #4f0ad8;width: 77.5%;margin-bottom: 1%;border-color:#4f0ad8" type="submit">Enviar sua mensagem</button>
             </div>
         </form>
     </div>
@@ -79,4 +82,7 @@
     </div>
     
 </body>
+
+<?php require ('footer.php');?>
+
 </html>

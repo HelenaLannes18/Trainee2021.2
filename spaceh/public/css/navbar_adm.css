@@ -1,9 +1,17 @@
+.nav-link{
+    color: white;
+}
+
+.nav-link:hover{
+    color: aquamarine;
+}
+
 .personalizada-navbar{
     background-color: #101820;
     color: white;
     border-width: 1px;
     border-style: groove;
-    border-color: #8a8d8f;
+    border-color: #101820;
     font-family: 'Squada One', cursive;
 }
  
@@ -20,6 +28,7 @@
 a{
     color: white;
     text-decoration: none;
+    transition: 0.5s;
 }
 
 .nav-link{
@@ -49,4 +58,10 @@ a{
 .collapse ul{
     width: 100%;
 }
+
+a:hover{
+    color: aquamarine;
+    transition: 0.5s;
+}
+
 

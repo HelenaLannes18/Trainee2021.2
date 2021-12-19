@@ -261,8 +261,9 @@ class DashboardController
     Login - Controller
 */
 
-class LoginController 
-{
+
+session_start();
+class LoginController {
 
     public function view() {
 
@@ -308,6 +309,47 @@ class LoginController
 /* 
     Usuários - Controller
 */
+class ViewProdutos
+{
+    
+    public function view()
+    { 
+        
+        $produtos = App::get('database')->selectcomId('produtos',$_GET['id']);
+        return view('produto',compact('produtos'));
+    
+    }
+}
+
+class ViewHomeController
+{  
+
+            
+        public function view() {
+
+            $produtosPorPagina = "4";
+            $inicio = 0;
+            $limite = 'LIMIT ' . $inicio . ',' . $produtosPorPagina;
+            $produtos2 = App::get('database')->selectAll2('produtos');
+            $produtos = App::get('database')->selectAll('produtos');
+            $produtos = App::get('database')->selectAllPaginacao($limite,$produtos2);
+    
+            return view('site/viewhome',compact('produtos'));
+    
+        }
+    
+        }
+
+
+class QuemSomosController
+{   
+    
+    public function view() {
+    
+            return view('site/quem-somos');
+        
+    }
+}
 
 class UsuariosController 
 {   

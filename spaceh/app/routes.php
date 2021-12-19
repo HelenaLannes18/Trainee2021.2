@@ -45,4 +45,15 @@ $router->get('dashboard','DashboardController@view');
 
 $router->get('dashboard','DashboardController@view');
 
+//Home
+
+$router->get('viewhome','ViewHomeController@view');
+
+// Quem Somos
+
+$router->get('quemsomos','QuemSomosController@view');
+//ViewProdutos 
+
+$router->get('viewprodutos','ViewProdutos@view');
+
 ?>

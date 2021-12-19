@@ -11,29 +11,33 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
   <link rel="icon" href="../site/img/mini-logo2.png">
+  
   <title>HOME | Space-H</title>
 
 </head>
 
 <body>
 
+  <?php require ('navbar.php');?>
+  
+
 <!--Carousel-->
 
 <div class="slideshow-container">
 
-<div class="mySlides fade">
+<div class="mySlides">
   <a href="categorias"><img src=".././../../public/assets/imgh/slides_1.png" style="width:100%" ></a>
 </div>
 
-<div class="mySlides fade">
+<div class="mySlides">
   <a href="https://www.americanas.com.br"><img src=".././../../public/assets/imgh/slides_2.png" style="width:100%" ></a>
 </div>
 
-<div class="mySlides fade">
+<div class="mySlides ">
   <img src=".././../../public/assets/imgh/slides_3.png" style="width:100%">
 </div>
 
-<div class="mySlides fade">
+<div class="mySlides ">
   <img src=".././../../public/assets/imgh/slides_4.png" style="width:100%">
 </div>
 
@@ -94,52 +98,23 @@ function showSlides(n) {
 <!--Destaques parte dos produtos-->
 
  
-  <div class="product">
-    <a href="#">
-      <img src=".././../../public/assets/imgh/1D4440C5-CD59-4A53-A23648FF2C7CD0DD_source.jpg" alt="" class="product__image">
+  <?php foreach($produtos as $produto) :?>
+    <div class="product">
+      <img src=".././../../public/assets/imgh/<?= $produto->imagem ?>" alt="" class="product__image">
                   <div class="product__info">
-                  <h2 class="product__name">Nome do Produto</h2>
-                  <span class="product__price">R$99999</span>
-                  <span class="product__category">Categoria 1</span>
+                  <h2 class="product__name"><?= $produto->nome ?></h2>
+                  <span class="product__price"><?= $produto->preco ?></span>
+                  <span class="product__category"><?= $produto->categoria ?></span>
+                  <form action="/viewprodutos" method="GET">
+                  <input type="hidden" name ="id" value="<?=$produto->id ?>">
                   </div>
-                  <button class="product__cta" style="font-family: 'Squada One', cursive;">Ver Produto</button>
-    </a>
+                  <button type="submit" class="product__cta" style="font-family: 'Squada One', cursive;">Ver Produto</button>
+                  </form>    
+                </a>
   </div>  
-  <div class="product">
-    <a href="#">
-      <img src=".././../../public/assets/imgh/1D4440C5-CD59-4A53-A23648FF2C7CD0DD_source.jpg" alt="" class="product__image">
-                  <div class="product__info">
-                  <h2 class="product__name">Nome do Produto</h2>
-                  <span class="product__price">R$99999</span>
-                  <span class="product__category">Categoria 1</span>
-                  </div>
-                  <button class="product__cta" style="font-family: 'Squada One', cursive;">Ver Produto</button>
-    </a>
-  </div>  
+  <?php endforeach; ?>
 
-  <div class="product">
-    <a href="#">
-      <img src=".././../../public/assets/imgh/1D4440C5-CD59-4A53-A23648FF2C7CD0DD_source.jpg" alt="" class="product__image">
-                  <div class="product__info">
-                  <h2 class="product__name">Nome do Produto</h2>
-                  <span class="product__price">R$99999</span>
-                  <span class="product__category">Categoria 1</span>
-                  </div>
-                  <button class="product__cta" style="font-family: 'Squada One', cursive;">Ver Produto</button>
-    </a>
-  </div>  
-
-  <div class="product">
-    <a href="#">
-      <img src=".././../../public/assets/imgh/1D4440C5-CD59-4A53-A23648FF2C7CD0DD_source.jpg" alt="" class="product__image">
-                  <div class="product__info">
-                  <h2 class="product__name">Nome do Produto</h2>
-                  <span class="product__price">R$99999</span>
-                  <span class="product__category">Categoria 1</span>
-                  </div>
-                  <button class="product__cta" style="font-family: 'Squada One', cursive;">Ver Produto</button>
-    </a>
-  </div>  
+  
 
   
 </div>
@@ -147,4 +122,10 @@ function showSlides(n) {
 
 
 </body>
+
+
+
 </html>
+
+
+

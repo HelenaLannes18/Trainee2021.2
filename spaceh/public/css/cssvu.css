@@ -8,7 +8,7 @@
     font-size: 30px;
     text-align: center;
     text-decoration: underline;
-    margin-top: 1%;
+    margin-top: 5%;
     margin-bottom: 1%;
     color: #101820;
 
@@ -77,11 +77,15 @@ tr:hover{
     width: 15%;
 }
 
-@media(max-width:768px){
+@media(max-width:1200px){
 
     .titulo-pagina{
-        font-size: 100%;
+        font: 100px;
+        margin-top: 100px;
     }
+}
+
+@media(max-width:768px){
 
     .colunasInvisiveis{
         display: none;
