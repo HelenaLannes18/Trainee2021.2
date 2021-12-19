@@ -9,6 +9,11 @@
 </head>
 <body>
 
+    <?php
+        $busca = $_GET['busca'] ?? '';
+    ?>
+
+
     <!-- Navbar -->
     <?php
         require('navbar.php');
@@ -19,9 +24,9 @@
         <!-- Ordering Area: Contains search and ordering -->
         
         <div class="ordering-area">
-            <form action="busca-produtos" method="POST">
-                <input type="search" name="nome-produto" id="ordering__search-bar" placeholder="Pesquisar" value="">
-                <button type="submit" name="buscar-prod" id="search__button">Pesquisar</button>
+            <form method="GET">
+                <input type="text" name="busca" id="ordering__search-bar" placeholder="Pesquisar" value="<?=$busca?>">
+                <button type="submit" id="search__button">Pesquisar</button>
             </form>
         </div>
 

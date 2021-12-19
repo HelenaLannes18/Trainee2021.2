@@ -120,12 +120,12 @@
                     placeholder="Preço (R$)"
                     step=".01"
                   />
-                  <?php foreach($categorias as $categoria) :?>
                   <select name="add-product-category" id="add-product__category" >
-                    <option value="" disabled selected hidden>Selecione uma Categoria</option>
-                    <option><?= $categoria ?></option>
-                  </select>
+                    <option value="" disabled selected hidden id="selecione-categoria">Selecione uma Categoria</option>
+                  <?php foreach($categorias as $categoria) :?>
+                    <option><?= $categoria->id ?></option>
                   <?php endforeach; ?>
+                  </select>
                   <input
                     type="text"
                     name="add-product-image"

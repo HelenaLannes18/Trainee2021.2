@@ -6,6 +6,10 @@ use App\Core\App;
 use Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 
+/* 
+    Categorias - Controller
+*/
+
 class CategoriasController 
 {
     public function view()
@@ -54,6 +58,10 @@ class CategoriasController
     }
 
 }
+
+/* 
+    Contato - Controller
+*/
 
 class contatoController {
 
@@ -133,15 +141,18 @@ class contatoController {
     }
 }
 
-// Produtos ADM
+/* 
+    Produtos-ADM - Controller
+*/
 
 class ProdutosAdmController
 {
     public function view()
     {
         $produtos = App::get('database')->selectAll('produtos');
+        $categorias = App::get('database')->selectAll('categorias');
 
-        return view('admin/adm-produtos',compact('produtos'));
+        return view('admin/adm-produtos',compact('produtos','categorias'));
     }
 
     public function create()
@@ -184,23 +195,36 @@ class ProdutosAdmController
 
 }
 
-// Produtos
+/* 
+    Produtos - Controller
+*/
 
 class ProdutosController
 {
     public function view()
     {
-        if(isset($_POST['buscar-prod'])) {
-            $param = $_POST['nome-produto'];
+        if(isset($_GET['busca']) && $_GET['busca'] != '') {
+            $busca = $_GET['busca'];
+            $condicoes = [
+                strlen($busca) ? 'nome LIKE "%'.str_replace(' ','%',$busca).'%" ' : null
+            ];
 
-            $produtos = App::get('database')->pesquisarProdutos('produtos', $param);
+            $where = implode(' AND ', $condicoes);
+
+            $produtos = App::get('database')->pesquisarProdutos('produtos', $where);
         } else {
             $produtos = App::get('database')->selectAll('produtos');
         }
 
         return view('site/view-produtos',compact('produtos'));
+
     }
+
 }
+
+/* 
+    Dashboard - Controller
+*/
 
 class DashboardController
 {
@@ -208,6 +232,10 @@ class DashboardController
         return view('admin/dashboard');
     }
 }
+
+/* 
+    Login - Controller
+*/
 
 class LoginController 
 {
@@ -253,48 +281,9 @@ class LoginController
 
 }
 
-class PageController
-{
-    public function searchProductADM()
-    {
-        
-        if(isset($_GET['product-search'])) {
-
-            $searchContent = $_GET['product-search'];
-
-            $produtos = App::get('database')->searchProducts('produtos', $searchContent);
-
-            if($produtos) {
-                return view('admin/adm-produtos',compact('produtos'));
-            } else {
-                echo "<center><h1>Produto não encontrado!</h1></center>";
-                echo "<center><h5>Aguarde para ser redirecionado para a página principal</h5></center>";
-                header("refresh:5;url=/produtos-adm");
-            }
-            
-        } 
-
-    }
-
-    // public function searchProduct()
-    // {
-    //     if(isset($_GET['products-search'])) {
-
-    //         $searchContent = $_GET['products-search'];
-
-    //         $produtos = App::get('database')->searchProducts('produtos', $searchContent);
-
-    //         if($produtos) {
-    //             return view('admin/view-produtos',compact('produtos'));
-    //         } else {
-    //             echo "Produto não encontrado";
-    //             header( "refresh:5;url=/produtos-adm" );
-    //         }
-    //     }
-
-    // }
-
-}
+/* 
+    Usuários - Controller
+*/
 
 class UsuariosController 
 {   

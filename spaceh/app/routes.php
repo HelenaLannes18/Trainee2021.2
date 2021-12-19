@@ -32,9 +32,6 @@ $router->get('produtos-adm/search', 'PageController@searchProductADM');
 // Produtos Controller
 
 $router->get('produtos','ProdutosController@view');
-$router->post('busca-produtos','ProdutosController@view');
-//$router->get('produtos', 'PageController@searchProduct');
-
 
 //Login Controller
 

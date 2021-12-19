@@ -38,7 +38,10 @@ class QueryBuilder
     }
 
 
-    // Funções Categorias
+    /* 
+        Funções Usuários
+    */
+
     public function selecionarUsuarios($table)
     {
         $sql = "select * from {$table}";
@@ -84,7 +87,9 @@ class QueryBuilder
 
     }
 
-    // Funções Categorias
+    /* 
+        Funções Categorias
+    */
 
     public function adicionaCategorias ($table, $parametros)
     {
@@ -145,7 +150,10 @@ class QueryBuilder
     }
 
 
-    // Funções de Produtos
+    /* 
+        Funções Produtos
+    */
+
     public function insertProducts($table, $parametros)
     {
         $sql = "INSERT INTO {$table} (nome,descricao,preco,categoria,imagem) VALUES ('{$parametros['nome']}','{$parametros['descricao']}','{$parametros['preco']}','{$parametros['categoria']}','{$parametros['imagem']}')";
@@ -191,7 +199,7 @@ class QueryBuilder
 
     public function pesquisarProdutos($table, $parametros)
     {
-        $sql = "SELECT * FROM `{$table}` WHERE `nome` LIKE '%{$parametros}%'";
+        $sql = "SELECT * FROM `{$table}` WHERE $parametros";
 
         $statement = $this->pdo->prepare($sql);
 
