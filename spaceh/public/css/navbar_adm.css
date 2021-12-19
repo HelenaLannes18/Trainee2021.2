@@ -61,7 +61,6 @@ a{
 
 a:hover{
     color: aquamarine;
-    transform: scale(1.3);
     transition: 0.5s;
 }
 
