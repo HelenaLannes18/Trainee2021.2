@@ -197,9 +197,9 @@ class QueryBuilder
     }
 
 
-    public function pesquisarProdutos($table, $parametros)
+    public function pesquisarProdutos($table, $parametros, $inicio, $qnt_result)
     {
-        $sql = "SELECT * FROM `{$table}` WHERE $parametros";
+        $sql = "SELECT * FROM  `{$table}` WHERE {$parametros} LIMIT {$inicio}, {$qnt_result}";
 
         $statement = $this->pdo->prepare($sql);
 

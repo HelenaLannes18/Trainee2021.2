@@ -227,7 +227,7 @@ class ProdutosController
 
             $where = implode(' AND ', $condicoes);
 
-            $produtos = App::get('database')->pesquisarProdutos('produtos', $where);
+            $produtos = App::get('database')->pesquisarProdutos('produtos', $where, $inicio, $limitePorPagina);
         } else {
             $produtos = App::get('database')->selectPagination('produtos', $inicio, $limitePorPagina);
         }
