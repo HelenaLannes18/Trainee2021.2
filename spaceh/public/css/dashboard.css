@@ -112,3 +112,15 @@ a:visited {
     }
 
 }
+
+@media (max-width: 500px) {
+
+    .dashboard__message{
+        margin-top: 100px;
+    }
+
+    .info__button {
+        width: 100%;
+    }
+  
+  }
