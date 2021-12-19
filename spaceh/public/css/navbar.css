@@ -50,3 +50,9 @@ a{
     transform: scale(1.3);
   
   }
+
+.collapse {
+   margin-left: 11%;
+   margin-right: 11%;
+   position: relative;
+}

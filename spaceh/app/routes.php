@@ -52,6 +52,7 @@ $router->get('viewhome','ViewHomeController@view');
 // Quem Somos
 
 $router->get('quemsomos','QuemSomosController@view');
+
 //ViewProdutos 
 
 $router->get('viewproduto','ViewProdutos@view');
