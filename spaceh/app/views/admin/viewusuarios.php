@@ -24,7 +24,7 @@
 
 <!-- TÍTULO DA PÁGINA -->
 
-   <h2 class="titulo-pagina "><b style="font-size: 4rem;">GESTÃO DE USUÁRIOS</b></h2>
+   <h2 class="titulo-pagina "><b style="font-size: 3rem;">GESTÃO DE USUÁRIOS</b></h2>
    <div class="linhaHorizontal mb-5"></div>
 
 <!-- BOTÃO ADICIONAR -->
