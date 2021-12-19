@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="../../../public/css/dashboard.css">
     <link rel="icon" href="../../../public/assets/img_navbar/mini-logo2.png">
 </head>
+
 <body>
     <!-- Navbar: will be changed later for the real navbar -->
-    <div class="navbar"></div>
+    <?php require ('navbar_administrativa.php');?>
 
     <div class="container">
     
@@ -22,15 +23,19 @@
                 <button class="info__button" data-dropdown-button>Links</button>
                 <div class="dashboard__links">
                     <ul>
-                        <a href="#">
+                        <a href="usuarios">
                             <li>Usuários</li>
                         </a>
                         <hr>
-                        <a href="#">
+                        <a href="categorias-adm">
                             <li>Categorias</li>
                         </a>
                         <hr>
-                        <a href="#">
+                        <a href="produtos-adm">
+                            <li>Produtos-ADM</li>
+                        </a>
+                        <hr>
+                        <a href="produtos">
                             <li>Produtos</li>
                         </a>
                     </ul>

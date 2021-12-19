@@ -18,7 +18,7 @@
   <body>
 
     <nav class="navbar navbar-expand-md  fixed-top  personalizada-navbar">
-         <a class="navbar-brand" href="#" style="color: #4f0ad8;">
+         <a class="navbar-brand" href="viewhome" style="color: #4f0ad8;">
            <img src="../../../public/assets/img_navbar/mini-logo2.png"  width="30" height="30" class="d-inline-block align-top" alt="">
            Spaceh
           </a>
