@@ -36,7 +36,7 @@ a{
     margin-left: 60px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1024px) {
     .nav-tops a{
      left:0px;
      
