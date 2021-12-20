@@ -435,7 +435,7 @@ class UsuariosController
 
     public function apagar()
     {
-        $id = $_POST['id-user'];
+        $id = $_POST['id'];
 
         App::get('database')->delete('usuarios', $id);
 
