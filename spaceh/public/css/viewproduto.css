@@ -50,6 +50,7 @@ li, a, button {
 }
 
 #nome-produto {
+    width: 100%;
     text-align: center;
     border-radius: 20px;
     color: #ffffff;
@@ -58,6 +59,7 @@ li, a, button {
 }
 
 #desc-produto {
+    align-self: flex-start;
     text-align: justify;
 }
 
@@ -75,7 +77,6 @@ li, a, button {
 
 .product-info button {
     width: 60%;
-    margin: auto;
     padding: 15px 0px;
     display: block;
     color: #ffffff;
@@ -89,6 +90,27 @@ li, a, button {
 
 .product-info button:hover {
     opacity: .8;
+}
+
+
+@media screen and (max-width: 760px) {
+    .container-div {
+        width: 100%;
+        margin: auto;
+        flex-direction: column;
+        align-items: center;
+        margin: 60px 0px;
+    }
+    .product-image {
+        width: 100%;
+    }
+    .product-info {
+        width: 100%;
+    }
+    .product-info button {
+        width: 100%;
+    }
+
 }
 
 

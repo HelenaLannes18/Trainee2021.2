@@ -200,7 +200,7 @@ button {
   }
 
   .products__header button {
-    width: 100%;
+    width: 50%;
   }
 
   .table__header {
@@ -224,6 +224,7 @@ button {
     padding-right: 15px;
     padding-left: 50%;
     position: relative;
+    font-size: 15px;
   }
 
   table td::before {
@@ -240,7 +241,8 @@ button {
   }
 
   .product__image img {
-    width: 100%;
+    width: 60%;
+    margin-left: 30%;
   }
 
   /*
@@ -262,6 +264,6 @@ button {
   }
 
   .product__btn {
-    width: 90%;
+    width: 50%;
   }
 }
