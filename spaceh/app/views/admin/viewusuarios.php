@@ -76,7 +76,7 @@
                <td class="align-middle">
                    <div class="btn-group d-flex justify-content-center" role="group">
                        <button type="button" class="btn btn-success border" data-toggle="modal" data-target="#modalEditarUser<?= $usuario->id ?>">Editar<i class="fa fa-pencil" aria-hidden="true"></i></button>
-                       <button type="button" class="btn btn-danger border" data-toggle="modal" data-target="#modalExcluirUser"<?= $usuario->id ?>>Excluir<i class="fa fa-trash" aria-hidden="true"></i></button>
+                       <button type="button" class="btn btn-danger border" data-toggle="modal" data-target="#modalExcluirUser<?= $usuario->id ?>">Excluir<i class="fa fa-trash" aria-hidden="true"></i></button>
                    </div>        
                </td>
 
@@ -181,10 +181,11 @@
           </div>
         </div>
       </div>
+      <?php endforeach;?>
      
     <!-- Modal Excluir -->
-    
-        <div class="modal fade" id="modalExcluirUser" <?= $usuario->id ?> tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <?php foreach ($usuarios as $usuario):?>
+        <div class="modal fade" id="modalExcluirUser<?= $usuario->id ?>"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -204,9 +205,11 @@
               <div class="modal-footer">
                 
                 <button type="button" class="finalizar" data-dismiss="modal">Fechar</button>
-                  <form action="usuarios/delete" method="POST">
-                  <input type="hidden" name="id-user" value="<?=$usuario->id?>">
-                    <button type="submit" class="btn btn-danger">Excluir</button>
+                  <form action="/usuarios/delete" method="POST">
+                <input type="hidden" value="<?= $usuario->id ?>" name="id">
+                
+                <button type="submit" class="btn btn-danger">Excluir</button>
+               
                 </form>
               </div>
               
