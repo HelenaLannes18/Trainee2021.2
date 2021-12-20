@@ -212,9 +212,7 @@
                 <input type="hidden" value="<?= $usuario->id ?>" name="id">
                 
                 <button type="submit" class="btn btn-danger">Excluir</button>
-                <?php
-                var_dump($usuario->id);
-                ?>
+               
                 </form>
               </div>
               
