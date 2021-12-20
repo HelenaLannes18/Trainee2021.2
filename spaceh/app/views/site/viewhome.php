@@ -26,19 +26,19 @@
 <div class="slideshow-container">
 
 <div class="mySlides">
-  <a href="categorias"><img src=".././../../public/assets/imgh/slides_1.png" style="width:100%" ></a>
+  <a href="produtos"><img src=".././../../public/assets/imgh/slides_1.png" style="width:100%" ></a>
 </div>
 
 <div class="mySlides">
-  <a href="https://www.americanas.com.br"><img src=".././../../public/assets/imgh/slides_2.png" style="width:100%" ></a>
+  <a href="produtos"><img src=".././../../public/assets/imgh/slides_2.png" style="width:100%" ></a>
 </div>
 
 <div class="mySlides ">
-  <img src=".././../../public/assets/imgh/slides_3.png" style="width:100%">
+<a href="produtos"><img src=".././../../public/assets/imgh/slides_3.png" style="width:100%"></a>
 </div>
 
 <div class="mySlides ">
-  <img src=".././../../public/assets/imgh/slides_4.png" style="width:100%">
+<a href="produtos"><img src=".././../../public/assets/imgh/slides_4.png" style="width:100%"></a>
 </div>
 
 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
