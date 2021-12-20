@@ -283,6 +283,28 @@ class ProdutosController
 }
 
 /* 
+    Produto - Controller
+*/
+
+class ProdutoController
+{
+
+    public function view()
+    { 
+        
+        $id = $_GET['id'];
+
+        $produtos = App::get('database')->selectProduto('produtos',$id);
+        return view('site/viewproduto',compact('produtos'));
+    
+    }
+
+}
+
+
+
+
+/* 
     Dashboard - Controller
 */
 
@@ -344,6 +366,7 @@ class LoginController {
 /* 
     Usuários - Controller
 */
+
 class ViewProdutos
 {
     

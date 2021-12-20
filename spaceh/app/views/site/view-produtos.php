@@ -36,15 +36,16 @@
         <div class="showcase-area">
         <?php foreach($produtos as $produto) :?>
             <div class="product">
-                <a href="#">
+                <form action="produto" method="get">
+                    <input type="hidden" name ="id" value="<?=$produto->id ?>">
                     <img src="<?= $produto->imagem ?>" alt="Imagem do Produto" class="product__image">
                     <div class="product__info">
                         <h2 class="product__name"><?= $produto->nome ?></h2>
                         <span class="product__price"><?= $produto->preco ?></span>
                         <span class="product__category"><?= $produto->categoria ?></span>
                     </div>
-                    <button class="product__cta">Ver Produto</button>
-                </a>
+                    <button type="submit" class="product__cta">Ver Produto</button>
+                </form>
             </div> 
         <?php endforeach; ?>
         </div>

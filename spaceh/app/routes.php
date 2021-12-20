@@ -58,4 +58,7 @@ $router->get('quemsomos','QuemSomosController@view');
 
 $router->get('viewproduto','ViewProdutos@view');
 
+//Produto
+$router->get('produto','ProdutoController@view');
+
 ?>

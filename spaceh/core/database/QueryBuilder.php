@@ -244,4 +244,20 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
+
+    public function selectProduto($table, $id)
+    {
+        
+        $sql = "SELECT * FROM {$table} WHERE id = {$id}";
+        
+        $statement = $this->pdo->prepare($sql);
+
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+    }
+
+
 }
+
+

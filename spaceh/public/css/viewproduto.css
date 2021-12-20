@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+
+/*
+    Reset
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Squada One', cursive;   
+}
+
+li, a, button {
+    color: #000000;
+    text-decoration: none;
+}
+
+.container-div {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    max-width: 71.25rem;
+    margin: 60px 0px;
+    padding: 0px 20px;
+}
+
+/* Produto */
+
+.product-image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image img {
+    width: 70%;
+    border-radius: 20px;
+    box-shadow: 3px 3px 5px #8a8d8f;
+}
+
+.product-info {
+    width: 50%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-self: center;
+}
+
+#nome-produto {
+    text-align: center;
+    border-radius: 20px;
+    color: #ffffff;
+    background-color: #4F0AD8;
+    font-size: 50px;
+}
+
+#desc-produto {
+    text-align: justify;
+}
+
+#cat-produto {
+    width: 30%;
+    background-color: rgba(16, 24, 32, 0.7);
+    color: #ffffff;
+    text-align: center;
+    border-radius: 20px;
+}
+
+#info-uteis {
+    color: #99742f;
+}
+
+.product-info button {
+    width: 60%;
+    margin: auto;
+    padding: 15px 0px;
+    display: block;
+    color: #ffffff;
+    background-color: #4f0ad8;
+    font-size: 1.25rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    box-shadow: 3px 3px 5px #8a8d8f;
+}
+
+.product-info button:hover {
+    opacity: .8;
+}
+
+
