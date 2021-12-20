@@ -13,9 +13,9 @@
 <body>
     <nav class="navbar navbar-light" style="background-color: #101820">
         <div class="container-fluid">
-          <a href="#" class="navbar-brand">Space-H</a>
+          <a href="viewhome" class="navbar-brand">Space-H</a>
 
-          <a href="#">
+          <a href="viewhome">
             <img src="../../../public/assets/img_navbar/mini-logo2.png" alt="" width="45" height="50" class="d-inline-block align-text-top">
           </a>
 
