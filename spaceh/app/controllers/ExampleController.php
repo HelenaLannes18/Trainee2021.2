@@ -221,7 +221,7 @@ class ProdutosAdmController
             'descricao' => $_POST['edit-product-description'],
             'preco' => $_POST['edit-product-price'],
             'categoria' => $_POST['edit-product-category'],
-            'imagem' => '../../../public/assets/'.$_POST['edit-product-image'],
+            'imagem' => '../../../public/img/img-produto/'.$_POST['edit-product-image'],
         ];
 
         App::get('database')->updateProducts('produtos', $parametros, $_POST['id']);
@@ -435,7 +435,9 @@ class UsuariosController
 
     public function apagar()
     {
-        App::get('database')->delete('usuarios', $_POST['id']);
+        $id = $_POST['id-user'];
+
+        App::get('database')->delete('usuarios', $id);
 
         header('Location: /usuarios');
     }

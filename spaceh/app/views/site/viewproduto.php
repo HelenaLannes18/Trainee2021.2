@@ -20,8 +20,6 @@
             <img src="<?= $produto->imagem ?>" alt="Imagem do Produto">
         </div>
         <div class="product-info">
-
-        
             <h1 id="nome-produto"><?= $produto->nome ?></h1>
             <p id="desc-produto"><?= $produto->descricao ?></p>
             <p id="cat-produto"><?= $produto->categoria ?></p>

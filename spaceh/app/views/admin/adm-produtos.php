@@ -76,11 +76,12 @@
             <td data-label="Preço">R$ <?=$produto->preco?></td>
             <td data-label="Categoria"><?=$produto->categoria?></td>
             <td data-label="Opções">
-              <a href="#"
-                ><button class="product__btn button-animation purple-btn">
-                  Visualizar
-                </button></a
-              >
+            <form action="produto" method="get">
+              <input type="hidden" name ="id" value="<?=$produto->id ?>">
+              <button type="submit" class="product__btn button-animation purple-btn">
+                Visualizar
+              </button>
+            </form>
               <button type="button" class="product__btn button-animation black-btn" data-bs-toggle="modal" data-bs-target="#modal-edit-product<?= $produto->id ?>">
                 Editar
               </button>
@@ -193,13 +194,12 @@
                 step=".01"
                 value="<?= $produto->preco ?>"
               />
-              <input
-                type="text"
-                name="edit-product-category"
-                id="edit-product__category"
-                placeholder="Categoria"
-                value="<?= $produto->categoria ?>"
-              />
+              <select name="edit-product-category" id="add-product__category" >
+                  <option value="" disabled selected hidden id="selecione-categoria">Selecione uma Categoria</option>
+                <?php foreach($categorias as $categoria) :?>
+                  <option><?= $categoria->id ?> - <?= $categoria->categoria ?></option>
+                <?php endforeach; ?>
+              </select>
               <input
                 type="file"
                 name="edit-product-image"

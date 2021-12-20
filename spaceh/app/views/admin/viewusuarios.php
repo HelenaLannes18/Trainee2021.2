@@ -145,9 +145,7 @@
             </div>
             <div class="modal-body">
 
-                
-
-                  <form action="/usuarios/update" method="POST">
+                  <form action="usuarios/update" method="POST">
 
                       <div class="form-group">
                         <label for="formGroupExampleInput">Nome de Usuário</label>
@@ -204,12 +202,11 @@
                     
               </div>
               <div class="modal-footer">
-
                 
                 <button type="button" class="finalizar" data-dismiss="modal">Fechar</button>
-                  <form action="/usuarios/delete" method="POST">
-                <input type="hidden" value="<?= $usuario->id ?>" name="id">
-                <button type="submit" class="btn btn-danger">Excluir</button>
+                  <form action="usuarios/delete" method="POST">
+                  <input type="hidden" name="id-user" value="<?=$usuario->id?>">
+                    <button type="submit" class="btn btn-danger">Excluir</button>
                 </form>
               </div>
               
